@@ -1,0 +1,134 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// materialize
+@import "materialize";
+
+// Bootstrap
+@import '~bootstrap/dist/css/bootstrap-grid';
+.gradient {
+  background: #00C3D2;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #008DD7, #00C3D2);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #008DD7, #00C3D2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+.view-height {
+  height: 100vh;
+
+}
+.h-100 {
+  height: 100%;
+}
+.testimonial-card {
+  position: relative;
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-orient: vertical;
+-webkit-box-direction: normal;
+-ms-flex-direction: column;
+flex-direction: column;
+min-width: 0;
+word-wrap: break-word;
+background-color: #fff;
+background-clip: border-box;
+border: 1px solid rgba(0,0,0,.125);
+border-radius: .25rem;
+}
+.testimonial-card .card-up {
+    overflow: hidden;
+    height: 120px;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+}
+.testimonial-card .avatar {
+    border-radius: 50%;
+    width: 120px;
+    margin-top: -65px;
+    overflow: hidden;
+    border: 5px solid #fff;
+    margin-left: auto;
+    margin-right: auto;
+}
+.testimonial-card .avatar img {
+  width: 100%;
+}
+
+
+.avatar {
+    max-width: 150px;
+}
+.testimonial-card .card-body {
+    text-align: center;
+}
+.card .card-body {
+    position: relative;
+}
+
+.card-body {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+
+html, body {
+    background-color: $body-bg;
+    color: #636b6f;
+    // font-family: $font-family-sans-serif;
+    font-weight: 100;
+    height: 100vh;
+    margin: 0;
+}
+a:focus {
+    outline: none!important;
+}
+.grey-bg {
+  background: url('/images/grey-geometric.jpg');
+}
+.full-height {
+    height: 100vh;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+
+.content {
+    text-align: center;
+}
+
+.title {
+    font-size: 84px;
+}
+
+.links > a {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.m-b-md {
+    margin-bottom: 30px;
+}
