@@ -13,5 +13,11 @@
    $('.sidenav').sidenav();
    $(".dropdown-trigger").dropdown();
    $('.collapsible').collapsible();
+   $('.carousel.carousel-slider').carousel({
+      fullWidth: true,
+      indicators: true
+    });
+    $('.modal').modal();
+    $('.tabs').tabs();
   });
 </script>

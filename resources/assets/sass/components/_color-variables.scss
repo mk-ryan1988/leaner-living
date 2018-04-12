@@ -2,9 +2,22 @@
 
 $leaner-green: (
   "base":       #64D9C4,
-  // "lighten-5":  #fdeaeb,
-  // "lighten-4":  #f8c1c3,
-  // "lighten-3":  #f3989b,
+  "accent-1":  #BFF196,
+  "darken-1":  #88B962,
+  "darken-2":  #538330,
+  // "lighten-2":  #ee6e73,
+  // "lighten-1":  #ea454b,
+  // "darken-1":   #d0181e,
+  // "darken-2":   #b9151b,
+  // "darken-3":   #a21318,
+  // "darken-4":   #8b1014,
+);
+$leaner-blue: (
+  "base":       #28c9cf,
+  "darken-1":  #5A94D3,
+  "darken-2":  #00AADB,
+  "accent-1":  #5F6BC0,
+  "accent-2":  #854496,
   // "lighten-2":  #ee6e73,
   // "lighten-1":  #ea454b,
   // "darken-1":   #d0181e,
@@ -345,6 +358,7 @@ $shades: (
 
 $colors: (
   "leaner-green": $leaner-green,
+  "leaner-blue": $leaner-blue,
   "materialize-red": $materialize-red,
   "red": $red,
   "pink": $pink,
