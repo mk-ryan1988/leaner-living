@@ -3249,7 +3249,7 @@ th {
 }
 
 .collection {
-  margin: 0.5rem 0 1rem 0;
+  margin: 10px 0 20px 0;
   border: 1px solid #e0e0e0;
   border-radius: 2px;
   overflow: hidden;
@@ -3375,7 +3375,7 @@ th {
   width: 100%;
   background-color: #cef4f5;
   border-radius: 2px;
-  margin: 0.5rem 0 1rem 0;
+  margin: 10px 0 20px 0;
   overflow: hidden;
 }
 
@@ -4160,14 +4160,14 @@ small {
   transition: box-shadow .25s;
   transition: box-shadow .25s, -webkit-box-shadow .25s;
   padding: 24px;
-  margin: 0.5rem 0 1rem 0;
+  margin: 10px 0 20px 0;
   border-radius: 2px;
   background-color: #fff;
 }
 
 .card {
   position: relative;
-  margin: 0.5rem 0 1rem 0;
+  margin: 10px 0 20px 0;
   background-color: #fff;
   -webkit-transition: -webkit-box-shadow .25s;
   transition: -webkit-box-shadow .25s;
@@ -5292,7 +5292,7 @@ button.btn-floating {
   border-top: 1px solid #ddd;
   border-right: 1px solid #ddd;
   border-left: 1px solid #ddd;
-  margin: 0.5rem 0 1rem 0;
+  margin: 10px 0 20px 0;
 }
 
 .collapsible-header {
@@ -5969,12 +5969,12 @@ textarea.materialize-textarea + label:after,
 }
 
 .input-field.col label {
-  left: 0.75rem;
+  left: 15px;
 }
 
 .input-field.col .prefix ~ label,
 .input-field.col .prefix ~ .validate ~ label {
-  width: calc(100% - 3rem - 1.5rem);
+  width: calc(100% - 3rem - 30px);
 }
 
 .input-field > label {
@@ -8622,6 +8622,525 @@ input[type=range].focused:focus:not(.active)::-ms-thumb {
     text-align: center;
     margin-top: 1.2rem;
   }
+}
+
+.baseline {
+  position: absolute;
+  width: 90%;
+  height: 1px;
+  left: 0;
+  bottom: -20px;
+  background-color: #9e9e9e;
+  -webkit-transition: background-color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: background-color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+#payment-form label {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 8px;
+  color: #cfd7df;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  -webkit-transform-origin: 0 50%;
+          transform-origin: 0 50%;
+  cursor: text;
+  -webkit-transition-property: color, -webkit-transform;
+  transition-property: color, -webkit-transform;
+  transition-property: color, transform;
+  transition-property: color, transform, -webkit-transform;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+          transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#payment-form .input {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  padding-bottom: 7px;
+  color: #32325d;
+  background-color: transparent;
+}
+
+#payment-form .input::-webkit-input-placeholder {
+  color: transparent;
+  -webkit-transition: color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#payment-form .input::-moz-placeholder {
+  color: transparent;
+  -webkit-transition: color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.input:-ms-input-placeholder {
+  color: transparent;
+  -webkit-transition: color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.input.StripeElement {
+  opacity: 0;
+  -webkit-transition: opacity 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: opacity 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  will-change: opacity;
+}
+
+.input.focused,
+.input:not(.empty) {
+  opacity: 1;
+}
+
+.input.focused::-webkit-input-placeholder,
+.input:not(.empty)::-webkit-input-placeholder {
+  color: #cfd7df;
+}
+
+.input.focused::-moz-placeholder,
+.input:not(.empty)::-moz-placeholder {
+  color: #cfd7df;
+}
+
+.input.focused:-ms-input-placeholder,
+.input:not(.empty):-ms-input-placeholder {
+  color: #cfd7df;
+}
+
+.input.focused + label,
+.input:not(.empty) + label {
+  color: #aab7c4;
+  -webkit-transform: scale(0.85) translateY(-25px);
+          transform: scale(0.85) translateY(-25px);
+  cursor: default;
+}
+
+.input.focused + label {
+  color: #64D9C4;
+}
+
+.input.invalid + label {
+  color: #ffa27b;
+}
+
+.input.focused + label + .baseline {
+  background-color: #64D9C4;
+}
+
+.input.focused.invalid + label + .baseline {
+  background-color: #64D9C4;
+  -webkit-box-shadow: 0 1px 0 0 #64D9C4;
+  box-shadow: 0 1px 0 0 #64D9C4;
+  bottom: 0;
+}
+
+#payment-form input,
+#payment-form button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border-style: none;
+}
+
+#payment-form input:-webkit-autofill {
+  -webkit-text-fill-color: #e39f48;
+  -webkit-transition: background-color 100000000s;
+  transition: background-color 100000000s;
+  -webkit-animation: 1ms void-animation-out;
+}
+
+#payment-form .StripeElement--webkit-autofill {
+  background: transparent !important;
+}
+
+#payment-form input,
+#payment-form button {
+  -webkit-animation: 1ms void-animation-out;
+}
+
+#payment-form button {
+  display: block;
+  width: calc(100% - 30px);
+  height: 40px;
+  margin: 40px 15px 0;
+  background-color: #24b47e;
+  border-radius: 4px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#payment-form input:active {
+  background-color: #159570;
+}
+
+#payment-form .error svg {
+  margin-top: 0 !important;
+}
+
+#payment-form .error svg .base {
+  fill: #e25950;
+}
+
+#payment-form .error svg .glyph {
+  fill: #fff;
+}
+
+#payment-form .error .message {
+  color: #e25950;
+}
+
+#payment-form .success .icon .border {
+  stroke: #abe9d2;
+}
+
+#payment-form .success .icon .checkmark {
+  stroke: #24b47e;
+}
+
+#payment-form .success .title {
+  color: #32325d;
+  font-size: 16px !important;
+}
+
+#payment-form .success .message {
+  color: #8898aa;
+  font-size: 13px !important;
+}
+
+#payment-form .success .reset path {
+  fill: #24b47e;
+}
+
+/* Stepper */
+
+.stepper-content {
+  min-height: calc(100vh - 84px);
+}
+
+label.invalid {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: red !important;
+  top: 50px !important;
+}
+
+label.invalid.active {
+  -webkit-transform: translateY(0%) !important;
+  transform: translateY(0%) !important;
+}
+
+/*Validate.js FIX*/
+
+ul.stepper {
+  counter-reset: section;
+  /*max-width: 800px;*/
+}
+
+ul.stepper.horizontal {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.card-content ul.stepper.horizontal {
+  margin-left: -20px;
+  margin-right: -20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  overflow: hidden;
+}
+
+.card-content ul.stepper.horizontal:first-child {
+  margin-top: -20px;
+}
+
+ul.stepper.horizontal::before {
+  content: '';
+  background-color: transparent;
+  width: 100%;
+  min-height: 84px;
+  -webkit-box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+          box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  position: absolute;
+  left: 0;
+}
+
+ul.stepper .wait-feedback {
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+ul.stepper:not(.horizontal) .step {
+  position: relative;
+}
+
+ul.stepper .step.feedbacking .step-content > *:not(.wait-feedback) {
+  opacity: 0.1;
+}
+
+ul.stepper.horizontal .step {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 84px;
+}
+
+ul.stepper.horizontal .step:last-child {
+  width: auto;
+}
+
+ul.stepper.horizontal .step:not(:last-child)::after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+ul.stepper:not(.horizontal) .step:not(:last-child) {
+  margin-bottom: 10px;
+  -webkit-transition: margin-bottom 0.4s;
+  transition: margin-bottom 0.4s;
+}
+
+ul.stepper:not(.horizontal) .step:not(:last-child).active {
+  margin-bottom: 36px;
+}
+
+ul.stepper:not(.horizontal) .step::before {
+  position: absolute;
+  top: 12px;
+  counter-increment: section;
+  content: counter(section);
+  height: 28px;
+  width: 28px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 28px;
+  font-weight: 400;
+}
+
+ul.stepper:not(.horizontal) .step.active::before,
+ul.stepper:not(.horizontal) .step.done::before,
+ul.stepper.horizontal .step.active .step-title::before,
+ul.stepper.horizontal .step.done .step-title::before {
+  background-color: #64D9C4;
+}
+
+ul.stepper:not(.horizontal) .step.done::before,
+ul.stepper.horizontal .step.done .step-title::before {
+  content: '\E5CA';
+  font-size: 16px;
+  font-family: 'Material Icons';
+}
+
+ul.stepper:not(.horizontal) .step.wrong::before,
+ul.stepper.horizontal .step.wrong .step-title::before {
+  content: '\E001';
+  font-size: 24px;
+  font-family: 'Material Icons';
+  background-color: red !important;
+}
+
+ul.stepper:not(.horizontal) .step-title {
+  margin: 0 -20px;
+  cursor: pointer;
+  padding: 15.5px 44px 24px 60px;
+  display: block;
+}
+
+ul.stepper.horizontal .step-title {
+  line-height: 84px;
+  height: 84px;
+  padding-left: 65px;
+  padding-right: 25px;
+  display: inline-block;
+  max-width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+ul.stepper.horizontal .step .step-title::before {
+  position: absolute;
+  top: 28.5px;
+  left: 19px;
+  counter-increment: section;
+  content: counter(section);
+  height: 28px;
+  width: 28px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 28px;
+  font-weight: 400;
+}
+
+/*.card-content ul.stepper.horizontal .step .step-title:first-child {
+   margin-left: -20px;
+   padding-left: 85px;
+}
+.card-content ul.stepper.horizontal .step .step-title:first-child::before {
+   left: 39px;
+}
+.card-content ul.stepper.horizontal .step .step-title:last-child {
+   margin-right: -20px;
+   padding-right: 45px;
+}
+.card-content ul.stepper.horizontal .step .step-title:last-child::before {
+   left: 39px;
+}*/
+
+ul.stepper .step-title::after {
+  content: attr(data-step-label);
+  display: block;
+  position: absolute;
+  font-size: 0.8rem;
+  color: #424242;
+  font-weight: 400;
+}
+
+ul.stepper.horizontal .step-title::after {
+  top: 15px;
+}
+
+ul.stepper .step-title:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+ul.stepper .step.active .step-title {
+  font-weight: 500;
+}
+
+ul.stepper .step-content {
+  position: relative;
+  display: none;
+  height: calc(100% - 132px);
+  width: inherit;
+  overflow: visible;
+  margin-left: 41px;
+  margin-right: 24px;
+}
+
+ul.stepper.horizontal .step-content {
+  position: absolute;
+  height: calc(100% - 84px);
+  top: 84px;
+  left: 0;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 20px 20px 76px 20px;
+}
+
+.card-content ul.stepper.horizontal .step-content {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+ul.stepper:not(.horizontal) > .step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 50px;
+  left: 13.5px;
+  width: 1px;
+  height: calc(100% - 38px);
+  background-color: rgba(0, 0, 0, 0.1);
+  -webkit-transition: height 0.4s;
+  transition: height 0.4s;
+}
+
+ul.stepper:not(.horizontal) > .step.active:not(:last-child)::after {
+  height: calc(100% - 12px);
+}
+
+ul.stepper .step-actions {
+  padding-top: 16px;
+  -webkit-display: flex;
+  -moz-display: flex;
+  -ms-display: flex;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+ul.stepper:not(.horizontal) .step-actions .btn:not(:last-child),
+ul.stepper:not(.horizontal) .step-actions .btn-large:not(:last-child),
+ul.stepper:not(.horizontal) .step-actions .btn-small:not(:last-child),
+ul.stepper:not(.horizontal) .step-actions .btn-flat:not(:last-child),
+ul.stepper:not(.horizontal) .step-actions .btn-large:not(:last-child) {
+  margin-right: 5px;
+}
+
+ul.stepper.horizontal .step-actions .btn:not(:last-child),
+ul.stepper.horizontal .step-actions .btn-large:not(:last-child),
+ul.stepper.horizontal .step-actions .btn-small:not(:last-child),
+ul.stepper.horizontal .step-actions .btn-flat:not(:last-child),
+ul.stepper.horizontal .step-actions .btn-large:not(:last-child) {
+  margin-left: 5px;
+}
+
+ul.stepper.horizontal .step-actions {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+.card-content ul.stepper.horizontal .step-actions {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+ul.stepper .step-content .row {
+  margin-bottom: 7px;
 }
 
 /*!

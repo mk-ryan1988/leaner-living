@@ -15,13 +15,9 @@
     <body>
 
       <div id="app" class="">
-        @include('partials.navbar')
-        {{-- <navbar></navbar> --}}
         <main>
-
           @yield('content')
         </main>
-        @include('partials.footer')
       </div>
 
       @include('partials.scripts')

@@ -19,5 +19,8 @@
     });
     $('.modal').modal();
     $('.tabs').tabs();
+    $('.modal').modal();
   });
 </script>
+
+<script src="https://js.stripe.com/v3/"></script>

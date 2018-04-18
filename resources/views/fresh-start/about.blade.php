@@ -177,7 +177,7 @@
       <div class="col-12 col-md-6 ">
         <div class="card-panel white">
           <h5 class="leaner-green-text">Ready for your Fresh Start?</h5>
-          <p>Places are limited and your programme will commence on the beginning of the upcoming month.</p>
+          {{-- <p>Places are limited and your programme will commence on the beginning of the upcoming month.</p> --}}
           <h3>£--- <span style="font-size: 1.15rem;">one off payment</span> </h3>
 
           <a class="waves-effect waves-light btn leaner-green z-depth-0" href="{{route('fresh-start.about')}}">Sign up now</a>

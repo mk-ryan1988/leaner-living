@@ -4,6 +4,10 @@
   <li><a href="{{ route('fresh-start.register')}}">Sign up</a></li>
   <li><a href="{{ route('fresh-start.login')}}">Login</a></li>
 </ul>
+<ul id="auth" class="dropdown-content">
+  <li><a href="">Dashboard</a></li>
+  <li><a href="/logout">Logout</a></li>
+</ul>
 
 <div class="navbar-fixe">
   <nav class="transparent z-depth-0">
@@ -18,12 +22,25 @@
         {{-- <li><a href="{{ route('about')}}">About us</a></li> --}}
         <li><a class="dropdown-trigger" href="#!" data-target="fresh-start">Fresh Start<i class="material-icons right">arrow_drop_down</i></a></li>
         <li><a href="{{ route('contact')}}">Contact us</a></li>
+        @if (Auth::user())
+          <li><a class="dropdown-trigger" href="#!" data-target="auth">Hi, {{ Auth::user()->name }}<i class="material-icons right">arrow_drop_down</i></a></li>
+        @endif
       </ul>
     </div>
   </nav>
 </div>
 
 <ul class="sidenav collapsible" id="mobile-demo">
+  @if (Auth::user())
+    <li class="bold"><a class="collapsible-header waves-effect waves-teal">Hi, {{ Auth::user()->name }}<i class="material-icons right">keyboard_arrow_down</i></a>
+      <div class="collapsible-body" style="">
+        <ul>
+          <li><a href="">Dashboard</a></li>
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+      </div>
+    </li>
+  @endif
   <li><a class="collapsible-header waves-effect waves-teal" href="{{ route('home')}}">Home</a></li>
   {{-- <li><a class="collapsible-header waves-effect waves-teal" href="{{ route('about')}}">About us</a></li> --}}
   <li class="bold"><a class="collapsible-header waves-effect waves-teal">Fresh Start <i class="material-icons right">keyboard_arrow_down</i></a>
