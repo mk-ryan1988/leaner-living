@@ -26,4 +26,32 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    /**
+     * The attributes that should be always eager loaded.
+     *
+     * @var array
+     */
+    protected $with = [
+        'stats', 'pics',
+    ];
+
+    public function parQ()
+    {
+      return $this->hasOne('App\ParQ');
+    }
+
+    public function questionnaireAnswers()
+    {
+      return $this->hasMany('App\QuestionnaireAnswer');
+    }
+
+    public function stats()
+    {
+      return $this->hasMany('App\Stats');
+    }
+
+    public function pics()
+    {
+      return $this->hasMany('App\Pics');
+    }
 }

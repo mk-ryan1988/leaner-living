@@ -12,6 +12,12 @@ label {
   font-size: $label-font-size;
   color: $input-border-color;
 }
+.invalid-feedback {
+  position: absolute;
+  left: 15px;
+  bottom: 0px;
+  color: color('red', 'lighten-2');
+}
 
 @import 'input-fields';
 @import 'radio-buttons';

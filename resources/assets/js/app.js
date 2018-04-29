@@ -8,19 +8,22 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
-import Vuetify from 'vuetify';
+import VeeValidate from 'vee-validate';
+import { Form, HasError, AlertError } from 'vform'
+// import Vuetify from 'vuetify';
 
-Vue.use(Vuetify);
+// Vue.use(Vuetify);
 
-import 'vuetify/dist/vuetify.min.css';
+// import 'vuetify/dist/vuetify.min.css';
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-Vue.component('navbar', require('./components/navbar.vue'));
-Vue.component('register', require('./components/register.vue'));
+
+// Vue.component('navbar', require('./components/navbar.vue'));
+Vue.component('parqForm', require('./components/par-q.vue'));
 
 const app = new Vue({
     el: '#app'

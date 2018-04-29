@@ -20,6 +20,8 @@
     $('.modal').modal();
     $('.tabs').tabs();
     $('.modal').modal();
+    $('.pushpin').pushpin();
+    $('select').formSelect();
   });
 </script>
 

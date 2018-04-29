@@ -11,3 +11,78 @@
 
   transition: transform .3s cubic-bezier(0.53, 0.01, 0.36, 1.63) !important;
 }
+.page-enter-active,
+.page-leave-active {
+  transition: opacity .2s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .15s
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0
+}
+
+
+
+// name = grow
+.grow-enter-active, .grow-leave-active {
+   transition: max-height 3s ease-in;
+   max-height: 1000px!important;
+   opacity: 1;
+}
+.grow-enter, .grow-leave-to /* .grow-leave-active in <2.1.8 */ {
+  max-height: 0!important;
+  transition: max-height 0.15s ease-out;
+  opacity: 0;
+}
+
+// name = slide
+.slide-leave-active,
+.slide-enter-active {
+  transition: 1s;
+}
+.slide-enter {
+  transform: translate(0,10%);
+  opacity: 0;
+}
+.slide-leave-to {
+  transform: translate(0,-100%);
+   opacity: 1;
+}
+
+// name = rise
+.rise-enter-active {
+  transition: .4s;
+}
+.rise-leave-active{
+  transition: .4s ease;
+}
+.rise-enter {
+  transform: translateY(100%);
+  opacity: 0;
+}
+.rise-leave-to {
+  opacity: 0;
+}
+
+// name = flipX
+.flipX-leave-active,
+.flipX-enter-active {
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+.flipX-enter {
+ transform: rotateX(180deg);
+   opacity: 0;
+}
+.flipX-leave-to {
+   opacity: 1;
+   transform: rotateX(180deg);
+}

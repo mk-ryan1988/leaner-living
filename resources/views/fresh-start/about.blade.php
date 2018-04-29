@@ -24,7 +24,7 @@
               <i class="material-icons left">play_circle_outline</i>
               Play video
             </a>
-            <a class="waves-effect waves-light btn z-depth-0 white leaner-green-text" style="margin-left: 15px;">
+            <a class="waves-effect waves-light btn z-depth-0 white leaner-green-text" style="margin-left: 15px;" href="{{url('fresh-start/PAR-Q')}}">
               Sign up now
             </a>
           </div>
@@ -180,7 +180,7 @@
           {{-- <p>Places are limited and your programme will commence on the beginning of the upcoming month.</p> --}}
           <h3>£--- <span style="font-size: 1.15rem;">one off payment</span> </h3>
 
-          <a class="waves-effect waves-light btn leaner-green z-depth-0" href="{{route('fresh-start.about')}}">Sign up now</a>
+          <a class="waves-effect waves-light btn leaner-green z-depth-0" href="{{url('fresh-start/PAR-Q')}}">Sign up now</a>
         </div>
       </div>
     </div>

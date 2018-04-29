@@ -19,7 +19,6 @@
     <div class="row stepper-content align-items-center justify-content-center">
         <div class="col-md-12">
             <div class="card">
-
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf

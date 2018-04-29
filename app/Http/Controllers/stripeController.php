@@ -21,10 +21,9 @@ class stripeController extends Controller
       //     'currency' => 'GBP',
       //     'description' => 'Fresh Start',
       //     'source' => $token,
-      // ]);session()->flash('message', 'Post was created!');
+      // ]);
+
       session()->flash('success', 'Payment Accepted!');
-
-
       return redirect()->route('fresh-start.questionnaire');
 
     }

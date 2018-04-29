@@ -8,7 +8,9 @@
 }
 
 /* Text inputs */
-
+label {
+  font-size: $input-font-size;
+}
 input:not([type]),
 input[type=text]:not(.browser-default),
 input[type=password]:not(.browser-default),
@@ -110,6 +112,7 @@ textarea.materialize-textarea {
     @extend %input-after-style;
   }
 }
+
 
 
 /* Validation Sass Placeholders */

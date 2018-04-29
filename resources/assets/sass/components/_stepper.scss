@@ -47,7 +47,7 @@ ul.stepper.horizontal::before {
    background-color: transparent;
    width: 100%;
    min-height: 84px;
-   box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
+   // box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
    position: absolute;
    left: 0;
 }
@@ -133,6 +133,12 @@ ul.stepper:not(.horizontal) .step.active::before, ul.stepper:not(.horizontal) .s
 
 ul.stepper:not(.horizontal) .step.done::before, ul.stepper.horizontal .step.done .step-title::before {
    content: '\e5ca';
+   font-size: 16px;
+   font-family: 'Material Icons';
+}
+
+ul.stepper:not(.horizontal) .step.secure::before, ul.stepper.horizontal .step.secure .step-title::before {
+   content: '\e897';
    font-size: 16px;
    font-family: 'Material Icons';
 }

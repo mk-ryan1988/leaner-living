@@ -1,8 +1,8 @@
-<div class="leaner-green" style="width: 100%; height: 50px;">
+{{-- <div class="leaner-green" style="width: 100%; height: 50px;"> --}}
 
 </div>
 <footer class="page-footer grey darken-4">
-   <div class="container">
+   {{-- <div class="container">
      <div class="row">
        <div class="col l6 s12">
          <h5 class="white-text">Footer Content</h5>
@@ -18,7 +18,7 @@
          </ul>
        </div>
      </div>
-   </div>
+   </div> --}}
    <div class="footer-copyright black">
      <div class="container">
      © 2014 Copyright Text

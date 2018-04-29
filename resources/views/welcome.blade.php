@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="leaner-green" style="height: 200px; margin-top: -64px;">
+  <div class="gradient" style="height: 200px; margin-top: -64px;">
     <div class="container h-100">
     </div>
   </div>
@@ -16,7 +16,8 @@
           </p>
           <div class="valign-wrapper">
             <i class="material-icons medium left">arrow_forward</i>
-            <a class="waves-effect waves-light btn z-depth-0" href="{{route('fresh-start.about')}}">Find out more</a>
+            <a class="waves-effect waves-light btn z-depth-0 modal-trigger"  href="#stats_modal">Find out more</a>
+            {{-- <a class="waves-effect waves-light btn z-depth-0" href="{{route('fresh-start.about')}}">Find out more</a> --}}
           </div>
         </div>
       </div>
@@ -135,13 +136,13 @@
       </div>
     </div>
   </div>
-  <div class="spacerX3"></div>
+  <div class="spacerX3" id="contact-form"></div>
 
   <div class="container-fluid no-padding">
     <div id="bg-deadlift" class="row no-gutters align-items-center">
       {{-- <img style="width: 100%" src="https://image.freepik.com/free-photo/weights-exercise-weightlifter-strong-athletic_1139-709.jpg" alt="" class="responsive-img"> --}}
       <div class="col">
-        <form id="contact-form">
+        <form>
           <div class="row align-items-center">
             <div class="col-12 col-lg-6 offset-lg-3" style="padding: 24px 0px 24px 15px;">
               <div class="card-panel">
@@ -165,7 +166,7 @@
               </div>
             </div>
             <div class="col-12 col-lg-2" style="padding-left: 0px;">
-              <a class="waves-effect waves-light leaner-green btn z-depth-0 flow-text w-100" style="padding: 24px 16px 25px 16px; height: auto;">submit message<i class="material-icons right">send</i></a>
+              <a class="waves-effect waves-light leaner-green lighten-2 btn z-depth-0 flow-text w-100" style="padding: 24px 16px 25px 16px; height: auto;">submit message<i class="material-icons right">send</i></a>
             </div>
           </div>
         </form>
@@ -175,6 +176,8 @@
     <div class="spacerX3"></div>
 
 @endsection
+
+
 
 @section('scripts')
   <script>
