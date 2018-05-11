@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="gradient" style="height: 200px; margin-top: -64px;">
+  <div class="gradient" style="height: 300px; margin-top: -64px;">
     <div class="container h-100">
     </div>
   </div>
@@ -16,7 +16,7 @@
           </p>
           <div class="valign-wrapper">
             <i class="material-icons medium left">arrow_forward</i>
-            <a class="waves-effect waves-light btn z-depth-0 modal-trigger"  href="#stats_modal">Find out more</a>
+            <a class="waves-effect waves-light btn z-depth-0"  href="{{route('fresh-start.about')}}">Find out more</a>
             {{-- <a class="waves-effect waves-light btn z-depth-0" href="{{route('fresh-start.about')}}">Find out more</a> --}}
           </div>
         </div>

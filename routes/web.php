@@ -12,9 +12,6 @@
 */
 Auth::routes();
 
-Route::get('/payment', function () {
-    return view('auth.payment');
-})->name('payment');
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,13 +25,19 @@ Route::prefix('fresh-start')->group(function () {
   Route::get('/about', function () {
     return view('fresh-start.about');
   })->name('fresh-start.about');
-  Route::get('/PAR-Q', function () {
+  Route::get('/par-q', function () {
       return view('auth.PAR-Q');
-  })->name('fresh-star.par-q');
-  Route::get('/questionnaire', function () {
-      return view('fresh-start.questionnaire');
-  })->name('fresh-start.questionnaire');
-  Route::get('/questionnaire1', 'QuestionnaireController@index')->name('fresh-start.questionnaire1');
+  })->name('fresh-start.par-q');
+  Route::get('/payment', function () {
+      return view('auth.payment');
+  })->name('payment');
+  Route::get('/questionnaire', 'QuestionnaireController@index')->name('fresh-start.questionnaire');
+});
+
+Route::prefix('errors')->group(function () {
+  Route::get('/403', function () {
+    return view('errors.403');
+  });
 });
 
 Route::middleware('auth')->group(function () {
@@ -43,15 +46,17 @@ Route::middleware('auth')->group(function () {
       return view('fresh-start.dashboard', ['user' => Auth::user()]);
     })->name('fresh-start.dashboard');
   });
+  Route::prefix('admin')->group(function () {
+    Route::get('/overview', function () {
+      return view('admin.overview', ['user' => Auth::user()]);
+    })->name('admin.overview');
+    Route::get('/users', 'AdminController@usersIndex')->name('admin.users');
+    Route::get('/users/{id}', 'AdminController@userShow')->name('admin.userShow');
+    Route::get('/settings', 'AdminController@settings')->name('admin.settings');
+  });
 });
 
-// Route::get('/profile', 'ProfileController@index')->name('profile');
 
-
-Route::get('/logout', function () {
-  Auth::logout();
-  redirect('/');
-})->name('logout');
 
 // Api routes
 Route::prefix('api')->group(function () {
@@ -60,4 +65,5 @@ Route::prefix('api')->group(function () {
   Route::post('/questionnaire', 'QuestionnaireController@store');
   Route::post('/stats', 'StatsController@store');
   Route::post('/picUpload', 'PicsController@store');
+  Route::post('/settings', 'SettingsController@update');
 });

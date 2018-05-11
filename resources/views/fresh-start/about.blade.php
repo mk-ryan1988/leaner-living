@@ -14,17 +14,17 @@
   <div class="gradient" style="height: 400px; margin-top: -64px;">
     <div class="container h-100">
       <div class="row h-100 align-items-center">
-        <div class="col-12 col-lg-4">
+        <div class="col-12 col-md-4">
           <img src="{{url('/images/fresh-start-whiteout.png')}}" alt="" style="height: 200px; width: auto;">
         </div>
-        <div class="col-12 col-lg-8">
+        <div class="col-12 col-md-8">
           <h4 class="white-text">The Fresh Start is the 12 week solution to your weight loss goals...</h4>
           <div class="margin-top">
             <a class="waves-effect waves-light btn-flat white-text modal-trigger" data-target="video-modal" style="border: 2px solid #fff;">
               <i class="material-icons left">play_circle_outline</i>
               Play video
             </a>
-            <a class="waves-effect waves-light btn z-depth-0 white leaner-green-text" style="margin-left: 15px;" href="{{url('fresh-start/PAR-Q')}}">
+            <a class="waves-effect waves-light btn z-depth-0 white leaner-green-text" style="margin-left: 15px;" href="{{route('fresh-start.par-q')}}">
               Sign up now
             </a>
           </div>
@@ -38,13 +38,13 @@
         <div style="padding: 24px 24px 0px 24px;">
           {{-- <h3>The Fresh Start is the 12 week solution to your weight loss goals</h3> --}}
           <p>
-            Designed by Steve and Ruth utilizing the latest evidence and research as well as 10 years experience in the health and fitness industry working with literally hundreds of weight loss clients.
+            Designed utilizing the latest evidence and research as well as 10 years experience in the health and fitness industry, working with hundreds of weight loss clients.
           </p>
           <p>
             <strong>There are no fad diets, quick fixes or set meal plans here!</strong>
           </p>
           <p>
-            You will be working directly with both Steve and Ruth (two coaches for the price of 1). Who will be offering guidance and support throughout your entire 12 week journey.
+          You will be working directly with both of us (two coaches for the price of 1). Who will be offering guidance and support throughout your entire 12 week journey.
           </p>
           <p>
             Unlike other online programmes that may just send you a meal plan, workout routine and wave bye-bye, we believe the key to success lies in education and understanding.
@@ -56,7 +56,7 @@
             </blockquote>
           </p>
           <p>
-            We have an ever expanding video library that will help educate you on any topic you feel you need a little more help with, we also encourage you to ask us as many questions as you can. The more you can take from us the greater your results will be!
+            We have an ever-expanding video library that will help educate you on any topic you feel you need a little more help with. We also encourage you to ask us as many questions as you can. The more you can take from us the greater your results will be!
           </p>
           <p>
             Everything is designed around both your ability and availability. So if you feel a little unsure about what you’re doing don’t panic! We have all been in those shoes.
@@ -134,7 +134,6 @@
                 Help each other with your struggles and successes.<br>
                 Enjoy other member’s recipes, food prep tips and tricks etc.<br>
                 48hour email response from Ruth and Steve.<br>
-
               </p>
             </div>
             <div class="col-12">
@@ -180,7 +179,7 @@
           {{-- <p>Places are limited and your programme will commence on the beginning of the upcoming month.</p> --}}
           <h3>£--- <span style="font-size: 1.15rem;">one off payment</span> </h3>
 
-          <a class="waves-effect waves-light btn leaner-green z-depth-0" href="{{url('fresh-start/PAR-Q')}}">Sign up now</a>
+          <a class="waves-effect waves-light btn leaner-green z-depth-0" href="{{route('fresh-start.par-q')}}">Sign up now</a>
         </div>
       </div>
     </div>

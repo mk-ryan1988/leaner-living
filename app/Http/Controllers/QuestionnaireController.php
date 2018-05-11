@@ -11,22 +11,25 @@ class QuestionnaireController extends Controller
 {
     public function index() {
 
-      $qustions = QuestionnaireQuestion::with('options')->get();
+      $questions = QuestionnaireQuestion::with('options')->get();
 
-      $groupedQs = $qustions->groupBy('section');
+      $groupedQs = $questions->groupBy('section');
       $groupedQs->toArray();
 
-      return view('fresh-start.questionnaire1', ['qroupedQs' => $groupedQs]);
+      return view('fresh-start.questionnaire', ['qroupedQs' => $groupedQs]);
     }
     public function store(Request $request) {
 
-      // foreach ($request->all() as $key => $input) {
-      //   $answer = new QuestionnaireAnswer;
-      //   $answer->user_id = 1;
-      //   $answer->name = $key;
-      //   $answer->value = $input;
-      //   $answer->save();
-      // }
-      return redirect(route('profile'));
+      foreach ($request->all() as $key => $input) {
+        if ($key != '_token') {
+          $answer = new QuestionnaireAnswer;
+          $answer->user_id = 1;
+          $answer->name = $key;
+          $answer->value = $input;
+          $answer->save();
+        }
+
+      }
+      return redirect(route('fresh-start.dashboard'));
     }
 }

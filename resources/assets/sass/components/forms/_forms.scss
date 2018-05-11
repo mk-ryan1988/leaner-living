@@ -18,6 +18,9 @@ label {
   bottom: 0px;
   color: color('red', 'lighten-2');
 }
+.help-block.invalid-feedback {
+  bottom: -15px;
+}
 
 @import 'input-fields';
 @import 'radio-buttons';

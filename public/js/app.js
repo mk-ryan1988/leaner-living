@@ -51622,6 +51622,25 @@ Vue.component(_vform.HasError.name, _vform.HasError); //
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 Vue.component(_vform.AlertError.name, _vform.AlertError);
@@ -51677,6 +51696,10 @@ exports.default = {
           setTimeout(function () {
             self.showSnackbar = false;
           }, 5000);
+        } else if (e.response.status == 403) {
+          var elem = document.querySelector('.modal');
+          var instance = M.Modal.getInstance(elem);
+          instance.open();
         }
       });
     }
@@ -51692,10 +51715,10 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "row align-items-start justify-content-center" },
-    [
+  return _c("div", {}, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "row align-items-start justify-content-center" }, [
       _c(
         "div",
         { staticClass: "col-12 col-md-8 col-lg-6" },
@@ -51708,17 +51731,17 @@ var render = function() {
           _vm._v(" "),
           _c("p", [
             _vm._v(
-              "\n      PAR-Q is designed to help you help yourself.  Many health benefits are associated with regular exercise, and the completion of PAR-Q is a sensible first step to take if you are planning to increase the amount of physical activity in your life.\n    "
+              "\n        PAR-Q is designed to help you help yourself.  Many health benefits are associated with regular exercise, and the completion of PAR-Q is a sensible first step to take if you are planning to increase the amount of physical activity in your life.\n      "
             )
           ]),
           _vm._v(" "),
           _c("p", [
             _vm._v(
-              "\n      For most people, physical activity should not pose any problems or hazard. PAR-Q has been designed to identify the small number of adults for whom physical activity might be inappropriate or those who should have medical advice concerning the type of activity most suitable for them.\n    "
+              "\n        For most people, physical activity should not pose any problems or hazard. PAR-Q has been designed to identify the small number of adults for whom physical activity might be inappropriate or those who should have medical advice concerning the type of activity most suitable for them.\n      "
             )
           ]),
           _vm._v(" "),
-          _vm._m(0),
+          _vm._m(1),
           _vm._v(" "),
           _c(
             "form",
@@ -51891,7 +51914,7 @@ var render = function() {
               _c("div", { staticClass: "row" }, [
                 _c("div", { staticClass: "col-12" }, [
                   _c("table", [
-                    _vm._m(1),
+                    _vm._m(2),
                     _vm._v(" "),
                     _c("tbody", [
                       _c("tr", [
@@ -51899,7 +51922,7 @@ var render = function() {
                           "td",
                           [
                             _vm._v(
-                              "\n                  1. Has your doctor ever said you have heart trouble?\n                  "
+                              "\n                    1. Has your doctor ever said you have heart trouble?\n                    "
                             ),
                             _c("input", {
                               directives: [
@@ -51998,7 +52021,7 @@ var render = function() {
                           "td",
                           [
                             _vm._v(
-                              "\n                  2. Do you frequently have pains in your heart and chest?\n                  "
+                              "\n                    2. Do you frequently have pains in your heart and chest?\n                    "
                             ),
                             _c("input", {
                               directives: [
@@ -52097,7 +52120,7 @@ var render = function() {
                           "td",
                           [
                             _vm._v(
-                              "\n                  3. Do you often feel fain or have spells of severe dizziness?\n                  "
+                              "\n                    3. Do you often feel fain or have spells of severe dizziness?\n                    "
                             ),
                             _c("input", {
                               directives: [
@@ -52196,7 +52219,7 @@ var render = function() {
                           "td",
                           [
                             _vm._v(
-                              "\n                  4. Has a doctor ever said your blood pressure was too high?\n                  "
+                              "\n                    4. Has a doctor ever said your blood pressure was too high?\n                    "
                             ),
                             _c("input", {
                               directives: [
@@ -52295,7 +52318,7 @@ var render = function() {
                           "td",
                           [
                             _vm._v(
-                              "\n                  5. Has your doctor ever told you that you have a bone or joint problem(s), such as arthritis that has been aggravated by exercise,  or might be made worse with exercise?\n                  "
+                              "\n                    5. Has your doctor ever told you that you have a bone or joint problem(s), such as arthritis that has been aggravated by exercise,  or might be made worse with exercise?\n                    "
                             ),
                             _c("input", {
                               directives: [
@@ -52394,7 +52417,7 @@ var render = function() {
                           "td",
                           [
                             _vm._v(
-                              "\n                  6. Is there a good physical reason, not mentioned here, why you should not follow an activity program even if you wanted to?\n                  "
+                              "\n                    6. Is there a good physical reason, not mentioned here, why you should not follow an activity program even if you wanted to?\n                    "
                             ),
                             _c("input", {
                               directives: [
@@ -52493,7 +52516,7 @@ var render = function() {
                           "td",
                           [
                             _vm._v(
-                              "\n                  7. Do you suffer from any problems of the lower back, i.e., chronic pain, or numbness?\n                  "
+                              "\n                    7. Do you suffer from any problems of the lower back, i.e., chronic pain, or numbness?\n                    "
                             ),
                             _c("input", {
                               directives: [
@@ -52592,7 +52615,7 @@ var render = function() {
                           "td",
                           [
                             _vm._v(
-                              "\n                  8. Are you currently taking any medications?\n                  "
+                              "\n                    8. Are you currently taking any medications?\n                    "
                             ),
                             _c("input", {
                               directives: [
@@ -52691,7 +52714,7 @@ var render = function() {
                           "td",
                           [
                             _vm._v(
-                              "\n                  9. Do you currently have a disability or a communicable disease?\n                  "
+                              "\n                    9. Do you currently have a disability or a communicable disease?\n                    "
                             ),
                             _c("input", {
                               directives: [
@@ -52790,7 +52813,7 @@ var render = function() {
                           "td",
                           [
                             _vm._v(
-                              "\n                  10. Are you or have you been pregnant in the last 6 months?\n                  "
+                              "\n                    10. Are you or have you been pregnant in the last 6 months?\n                    "
                             ),
                             _c("input", {
                               directives: [
@@ -52896,7 +52919,7 @@ var render = function() {
                     "button",
                     {
                       staticClass:
-                        "btn waves-effect waves-light w-100 leaner-green",
+                        "btn waves-effect waves-dark leaner-green w-100",
                       attrs: {
                         disabled: _vm.form.busy,
                         type: "submit",
@@ -52904,7 +52927,7 @@ var render = function() {
                       }
                     },
                     [
-                      _vm._v("\n            Submit PAR-Q\n            "),
+                      _vm._v("\n              Submit PAR-Q\n              "),
                       _c(
                         "i",
                         {
@@ -52960,23 +52983,87 @@ var render = function() {
         ],
         1
       )
-    ]
-  )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "modal center-align",
+        staticStyle: { width: "auto!important" },
+        attrs: { id: "modal1" }
+      },
+      [
+        _c("div", { staticClass: "modal-content" }, [
+          _c(
+            "i",
+            {
+              staticClass:
+                "material-icons medium circle amber-text text-darken-4"
+            },
+            [_vm._v("error_outline")]
+          ),
+          _vm._v(" "),
+          _c("h4", [_vm._v("Thank you for completing the PAR-Q!")]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "\n        Before we commence your fresh start we would like to further discuss some of your answers.\n      "
+            )
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "\n        We will email you shortly but alternately if you would like to talk to use feel free to message us on facebook.\n      "
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "modal-footer right-align" }, [
+          _c(
+            "a",
+            {
+              staticClass:
+                "modal-action modal-close waves-effect waves-dark btn-flat",
+              attrs: { href: "#!" }
+            },
+            [_vm._v("dismiss")]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass:
+                "modal-action waves-effect waves-dark btn blue darken-4 ",
+              attrs: {
+                href: "https://www.facebook.com/LeanerLiving2016/",
+                target: "_blank"
+              }
+            },
+            [_vm._v("Our Facebook page")]
+          )
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("p", [
       _vm._v(
-        "\n      Common sense is your best guide in answering these few questions.  Please read the carefully and check "
+        "\n        Common sense is your best guide in answering these few questions.  Please read the carefully and check "
       ),
       _c("strong", [_vm._v("YES")]),
       _vm._v(" or "),
       _c("strong", [_vm._v("NO")]),
       _vm._v(
-        " opposite the question if it applies to you.  If yes, please explain.\n    "
+        " opposite the question if it applies to you.  If yes, please explain.\n      "
       )
     ])
   },

@@ -135,6 +135,26 @@ border-radius: .25rem;
         display: none;
     }
 }
+.indicator {
+    display: none;
+}
+.tab a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: $primary-color;
+    transition: width .3s;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.tab a.active::after {
+    width: 100%;
+    //transition: width .3s;
+}
+
 .sticky {
   position: -webkit-sticky;
   position: -moz-sticky;
@@ -193,14 +213,19 @@ border-radius: .25rem;
 .radio-group p {
   margin-right: 15px;
 }
-#questionnaire-form .row {
+#questionnaire-form .row,  #questionnaire-answers .row{
   margin-bottom: 2rem;
 }
-.collection.checklist {
+.collection.checklist, .collection.nav {
   cursor: pointer;
 }
-.collection.checklist, .collection.checklist .collection-item, .collection.checklist .collection-header  {
+.collection.checklist, .collection.checklist .collection-item, .collection.checklist .collection-header, .collection.nav  .collection-item{
   border: none;
+  border-radius: 0px;
+}
+.collection.nav{
+  border: none;
+  border-radius: 0px;
 }
 .checklist .collection-item.complete {
   pointer-events: none;
@@ -213,6 +238,18 @@ border-radius: .25rem;
   text-decoration: line-through;
   color: color("grey", "base")!important;
 }
+.nav .collection-item span, .nav .collection-item i.material-icons {
+  color: $off-black;
+}
+.nav .collection-item.active span, .nav .collection-item.active i.material-icons {
+  color: #fff;
+}
 #stats_modal .input-field {
   padding-bottom: 15px;
+}
+.padding-left {
+  padding-left: 20px;
+}
+.no-margin {
+  margin: 0px!important;
 }

@@ -1,0 +1,39 @@
+.md-toolbar {
+    padding: 0 16px;
+    margin-bottom: 16px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-flow: row wrap;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    min-height: 64px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    transition: .3s cubic-bezier(.4,0,.2,1);
+    transition-property: opacity,background-color,box-shadow,color,min-height,-webkit-transform;
+    transition-property: opacity,background-color,box-shadow,transform,color,min-height;
+    transition-property: opacity,background-color,box-shadow,transform,color,min-height,-webkit-transform;
+    will-change: opacity,background-color,box-shadow,transform,color,min-height;
+    background-color: $primary-color;
+
+    a {
+      color: #fff;
+    }
+    ul {
+      display: inline;
+    }
+    .breadcrumb::before {
+      vertical-align: middle;
+    }
+    // li .breadcrumb {
+    //   color: lighten($off-black, 15%);
+    // }
+    // li:last-child .breadcrumb {
+    // color: $off-black;
+    // }
+}

@@ -93,28 +93,15 @@
 @if (Auth::user())
   <div id="card-details" class="row align-items-start justify-content-center">
     <div class="col-12 col-md-6">
-      <h3>Thank you, {{Auth::user()->name}}</h3>
+      <h3>Enter Payment Details</h3>
       <p>Please enter you card details, along with your address, below to complete your admission to the Fresh Start.</p>
       {{-- <h2>Welcome @if (Auth::user()), {{Auth::user()->name}}@endif</h2> --}}
       <form action="/api/charge" method="post" id="stripe-form">
+        @csrf
         <div class="row">
           <div class="col-12 col input-field input cell">
-            <input id="example2-address" data-tid="elements_examples.form.address_placeholder" class="input empty" type="text" required="">
-            <label for="example2-address" data-tid="elements_examples.form.address_label">Address</label>
-          </div>
-        </div>
-        <div class="row" data-locale-reversible>
-          <div class="col-6 col input-field input cell">
-            <input id="example2-city" data-tid="elements_examples.form.city_placeholder" class="input empty" type="text"  required="">
-            <label for="example2-city" data-tid="elements_examples.form.city_label">City</label>
-          </div>
-          <div class="col-3 col input-field input cell">
-            <input id="example2-county" data-tid="elements_examples.form.county_placeholder" class="input empty" type="text"  required="">
-            <label for="example2-county" data-tid="elements_examples.form.county_label">County</label>
-          </div>
-          <div class="col-3 col input-field input cell">
-            <input id="example2-zip" data-tid="elements_examples.form.postal_code_placeholder" class="input empty" type="text"  required="">
-            <label for="example2-zip" data-tid="elements_examples.form.postal_code_label">Post Code</label>
+            <input id="example2-card-name" data-tid="elements_examples.form.name_placeholder" class="input empty" type="text" required="">
+            <label for="example2-card-name" data-tid="elements_examples.form.name_label">Card Name</label>
           </div>
         </div>
         <div class="spacer"></div>
@@ -138,12 +125,17 @@
             <label for="example2-card-cvc" data-tid="elements_examples.form.card_cvc_label">CVC</label>
             <div class="baseline"></div>
           </div>
+          <div class="col col-6 input-field input cell">
+            <div id="example2-postalCode" class="input empty"></div>
+            <label for="example2-postalCode" data-tid="elements_examples.form.postalCode_label">Postal Code</label>
+            <div class="baseline"></div>
+          </div>
 
           </div>
           <div class="spacer"></div>
         <div class="row no-gutters">
           <div class="col">
-            <button class="btn waves-effect waves-light w-100 leaner-green" type="submit" name="action">Pay £---</button>
+            <button class="btn waves-effect waves-dark w-100 leaner-green" type="submit" name="action">Pay £---</button>
           </div>
         </div>
           <div class="form-row">
@@ -174,7 +166,7 @@
       // Stripe's examples are localized to specific languages, but if
       // you wish to have Elements automatically detect your user's locale,
       // use `locale: 'auto'` instead.
-      locale: window.__exampleLocale
+      locale: 'auto'
     });
 
     // Floating labels
@@ -243,6 +235,12 @@
     });
     cardCvc.mount('#example2-card-cvc');
 
+    var postalCode = elements.create('postalCode', {
+      style: elementStyles,
+      classes: elementClasses,
+    });
+    postalCode.mount('#example2-postalCode');
+
     // Handle real-time validation errors from the card Element.
     cardNumber.addEventListener('change', function(event) {
       var displayError = document.getElementById('card-errors');
@@ -277,6 +275,13 @@
       hiddenInput.setAttribute('name', 'stripeToken');
       hiddenInput.setAttribute('value', token.id);
       form.appendChild(hiddenInput);
+
+      var cardName = document.getElementById('example2-card-name');
+      var hiddenName = document.createElement('input');
+      hiddenName.setAttribute('type', 'hidden');
+      hiddenName.setAttribute('name', 'cardName');
+      hiddenName.setAttribute('value', cardName.value);
+      form.appendChild(hiddenName);
 
       // Submit the form
       form.submit();
