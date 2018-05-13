@@ -20,15 +20,17 @@
     </div>
     <div class="h-100" style="width: calc(100% - 300px); heigth: calc(100vh - 64px); margin-left: 300px; overflow: auto;">
       <div class="md-toolbar gradient right-align">
-        <div class="">
-          <a href="#!" class="breadcrumb">Manage Starters</a>
-          <a href="#!" class="breadcrumb">@if(isset($user)) {{$user->name}} @endif</a>
-        </div>
+        @if (Route::currentRouteName() == 'admin.userShow')
+          <div class="">
+            <a href="#!" class="breadcrumb">Manage Starters</a>
+            <a href="#!" class="breadcrumb">@if(isset($user)) {{$user->name}} @endif</a>
+          </div>
+        @endif
         <ul class="right">
           {{-- <li><a href="sass.html">Sass</a></li>
           <li><a href="badges.html">Components</a></li> --}}
           <!-- Dropdown Trigger -->
-          <li><a class="dropdown-trigger" href="#!" data-target="adminDrop">Hi, {{filterName(Auth::user()->name)}}<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a class="dropdown-trigger" href="#!" data-target="adminDrop">Hey, {{filterName(Auth::user()->name)}}<i class="material-icons right">arrow_drop_down</i></a></li>
         </ul>
       </div>
 

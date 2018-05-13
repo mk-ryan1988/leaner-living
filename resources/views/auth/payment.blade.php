@@ -19,13 +19,13 @@
   <div class="col-12">
     <ul class="stepper horizontal w-100 white" id="horizontal" style="margin: 0px!important;">
       <li class="step done">
-        <div data-step-label="" class="step-title waves-effect waves-dark"> <a href="/PAR-Q">PAR-Q</a></div>
+        <div data-step-label="" class="step-title waves-effect waves-dark">PAR-Q</div>
       </li>
       <li class="step secure active">
-        <div class="step-title waves-effect waves-dark"><a href="">Register / Payment</a></div>
+        <div class="step-title waves-effect waves-dark">Register / Payment</div>
       </li>
       <li class="step">
-        <div class="step-title waves-effect waves-dark"><a href="">Questionnaire</a></div>
+        <div class="step-title waves-effect waves-dark">Questionnaire</div>
       </li>
     </ul>
   </div>
@@ -93,7 +93,13 @@
 @if (Auth::user())
   <div id="card-details" class="row align-items-start justify-content-center">
     <div class="col-12 col-md-6">
+      <div class="right-align">
+        <img src="{{url('/images/visa.png')}}" alt="" style="height: 30px; width: auto;">
+        <img src="{{url('/images/mastercard.png')}}" alt="" style="height: 30px; width: auto;">
+        <img src="{{url('/images/americanexpress.png')}}" alt="" style="height: 30px; width: auto;">
+      </div>
       <h3>Enter Payment Details</h3>
+
       <p>Please enter you card details, along with your address, below to complete your admission to the Fresh Start.</p>
       {{-- <h2>Welcome @if (Auth::user()), {{Auth::user()->name}}@endif</h2> --}}
       <form action="/api/charge" method="post" id="stripe-form">
@@ -135,7 +141,7 @@
           <div class="spacer"></div>
         <div class="row no-gutters">
           <div class="col">
-            <button class="btn waves-effect waves-dark w-100 leaner-green" type="submit" name="action">Pay £---</button>
+            <button class="btn waves-effect waves-dark w-100 leaner-green" type="submit" name="action">Pay £{{ filterPrice($freshSettings->freshStart_price) }}</button>
           </div>
         </div>
           <div class="form-row">

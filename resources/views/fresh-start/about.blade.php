@@ -24,9 +24,15 @@
               <i class="material-icons left">play_circle_outline</i>
               Play video
             </a>
-            <a class="waves-effect waves-light btn z-depth-0 white leaner-green-text" style="margin-left: 15px;" href="{{route('fresh-start.par-q')}}">
-              Sign up now
-            </a>
+            @if ($newStarters < 10)
+              <a class="waves-effect waves-light btn z-depth-0 white leaner-green-text" style="margin-left: 15px;" href="{{route('fresh-start.par-q')}}">
+                Sign up now
+              </a>
+            @else
+              <a class="waves-effect waves-light btn z-depth-0 white leaner-green-text" style="margin-left: 15px;" href="http://eepurl.com/dtx7F1" target="_blank">
+                Suscribe to waiting list
+              </a>
+            @endif
           </div>
         </div>
       </div>
@@ -137,7 +143,7 @@
               </p>
             </div>
             <div class="col-12">
-              <i class="material-icons left">school</i>
+              <i class="material-icons left">date_range</i>
               <h6>Check-ins and Accountability</h6>
               <p>
                 Daily/weekly stat forms  (weigh-ins, measurements, progress photos).<br>
@@ -146,7 +152,7 @@
               </p>
             </div>
             <div class="col-12">
-              <i class="material-icons left">school</i>
+              <i class="material-icons left">accessibility_new</i>
               <h6>Aftercare</h6>
               <p>
                 Some goals simply cannot be achieved in 12 weeks and we get that! We will not leave you high and dry if you feel you would still benefit from our help.
@@ -177,9 +183,12 @@
         <div class="card-panel white">
           <h5 class="leaner-green-text">Ready for your Fresh Start?</h5>
           {{-- <p>Places are limited and your programme will commence on the beginning of the upcoming month.</p> --}}
-          <h3>£--- <span style="font-size: 1.15rem;">one off payment</span> </h3>
-
-          <a class="waves-effect waves-light btn leaner-green z-depth-0" href="{{route('fresh-start.par-q')}}">Sign up now</a>
+          <h3>£{{ filterPrice($freshSettings->freshStart_price) }} <span style="font-size: 1.15rem;">one off payment</span> </h3>
+          @if ($newStarters < 10)
+            <a class="waves-effect waves-light btn leaner-green z-depth-0" href="{{route('fresh-start.par-q')}}">Sign up now</a>
+          @else
+            <a class="waves-effect waves-light btn leaner-green z-depth-0" href="http://eepurl.com/dtx7F1" target="_blank">Suscribe to waiting list</a>
+          @endif
         </div>
       </div>
     </div>

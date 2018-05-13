@@ -1,7 +1,6 @@
 <!-- Dropdown Structure -->
 <ul id="fresh-start" class="dropdown-content">
   <li><a href="{{ route('fresh-start.about')}}">About Fresh Start</a></li>
-  <li><a href="{{url('/fresh-start/par-q')}}">Sign up</a></li>
   <li><a href="{{ route('login')}}">Login</a></li>
 </ul>
 <ul id="auth" class="dropdown-content">
@@ -50,7 +49,6 @@
     <div class="collapsible-body" style="">
       <ul>
         <li><a href="{{ route('fresh-start.about')}}">About Fresh Start</a></li>
-        <li><a href="{{url('/fresh-start/par-q')}}">Sign up</a></li>
         <li><a href="{{ route('login')}}">Login</a></li>
       </ul>
     </div>

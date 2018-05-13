@@ -25,6 +25,7 @@ class StoreParqForm extends FormRequest
     {
         return [
           'name' => 'required',
+          'email' => 'required|string|email|max:255|unique:users',
           'dob' => 'required',
           'gender' => 'required',
           'q1More' => 'required_if:q1,true',

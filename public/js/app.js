@@ -51641,6 +51641,13 @@ Vue.component(_vform.HasError.name, _vform.HasError); //
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 Vue.component(_vform.AlertError.name, _vform.AlertError);
@@ -51761,7 +51768,7 @@ var render = function() {
               _c("div", { staticClass: "row" }, [
                 _c(
                   "div",
-                  { staticClass: "col col-12 col-md-6 input-field input cell" },
+                  { staticClass: "col col-12 input-field input cell" },
                   [
                     _c("input", {
                       directives: [
@@ -51802,9 +51809,56 @@ var render = function() {
                   1
                 ),
                 _vm._v(" "),
+                _c("div", { staticClass: "w-100" }),
+                _vm._v(" "),
                 _c(
                   "div",
-                  { staticClass: "col col-12 col-md-3 input-field input cell" },
+                  { staticClass: "col col-12 input-field input cell" },
+                  [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.email,
+                          expression: "form.email"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      class: { "is-invalid": _vm.form.errors.has("email") },
+                      attrs: {
+                        placeholder: "Please enter valid email address",
+                        type: "email",
+                        name: "email"
+                      },
+                      domProps: { value: _vm.form.email },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.form, "email", $event.target.value)
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("has-error", {
+                      staticClass: "red-text text-lighten-1",
+                      attrs: { form: _vm.form, field: "email" }
+                    }),
+                    _vm._v(" "),
+                    _c("label", { attrs: { for: "email" } }, [
+                      _vm._v("Email Address")
+                    ])
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "w-100" }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "col col-12 col-md-6 input-field input cell" },
                   [
                     _c("input", {
                       directives: [
@@ -51843,7 +51897,7 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "div",
-                  { staticClass: "input-field col s12" },
+                  { staticClass: "input-field col col-12 col-md-6" },
                   [
                     _c(
                       "select",
@@ -52961,7 +53015,7 @@ var render = function() {
                 staticClass: "showSnackbar bottom"
               },
               [
-                _c("span", [_vm._v("Some fields have not been completed!")]),
+                _c("span", [_vm._v("Form validation errors please check!")]),
                 _vm._v(" "),
                 _c(
                   "a",

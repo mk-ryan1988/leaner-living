@@ -11713,6 +11713,27 @@ html {
   background-repeat: no-repeat;
 }
 
+#login-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url("/images/OBDSSD0.jpg");
+  background-size: cover;
+}
+
+#login-image:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right bottom, from(#64d9c4), color-stop(#58c49f), color-stop(#53af7a), color-stop(#539955), to(#538330));
+  background: linear-gradient(to right bottom, #64d9c4, #58c49f, #53af7a, #539955, #538330);
+  opacity: .6;
+}
+
 .green-bg {
   background: url("/images/green-alt.png");
   background-size: cover;
@@ -11986,5 +12007,11 @@ ul.indicators {
 
 .no-margin {
   margin: 0px !important;
+}
+
+.valign-wrapper.center-align {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 

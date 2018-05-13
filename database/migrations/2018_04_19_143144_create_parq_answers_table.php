@@ -17,6 +17,7 @@ class CreateParqAnswersTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
+            $table->string('email')->unique();
             $table->string('name', 100);
             $table->string('dob', 10);
             $table->string('gender', 6);

@@ -22,9 +22,7 @@ Route::get('/about', function () {
 })->name('about');
 
 Route::prefix('fresh-start')->group(function () {
-  Route::get('/about', function () {
-    return view('fresh-start.about');
-  })->name('fresh-start.about');
+  Route::get('/about', 'FreshController@about')->name('fresh-start.about');
   Route::get('/par-q', function () {
       return view('auth.PAR-Q');
   })->name('fresh-start.par-q');

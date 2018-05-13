@@ -2,11 +2,11 @@
 
 @section('nested-content')
 
-{{ dd($users) }}
-
-<div class="row">
-  <div class="col">
-    <h5>Manage Fresh Start Settings</h5>
+<div class="padding">
+  <div class="row">
+    <div class="col">
+      <h5>Manage Fresh Starters</h5>
+    </div>
   </div>
 </div>
 

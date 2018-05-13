@@ -32,19 +32,26 @@
         </p>
         <form @submit.prevent="submitForm" @keydown="form.onKeydown($event)" method="post" id="parQ-form">
           <div class="row">
-            <div class="col col-12 col-md-6 input-field input cell">
+            <div class="col col-12 input-field input cell">
               <input v-model="form.name" placeholder="Joe Bloggs" type="text" name="name"
                 class="form-control" :class="{ 'is-invalid': form.errors.has('name') }">
               <has-error class="red-text text-lighten-1" :form="form" field="name"></has-error>
               <label for="name">Full Name</label>
             </div>
-            <div class="col col-12 col-md-3 input-field input cell">
+            <div class="w-100"></div>
+            <div class="col col-12 input-field input cell">
+              <input v-model="form.email" placeholder="Please enter valid email address" type="email" name="email"
+                class="form-control" :class="{ 'is-invalid': form.errors.has('email') }">
+              <has-error class="red-text text-lighten-1" :form="form" field="email"></has-error>
+              <label for="email">Email Address</label>
+            </div>
+            <div class="w-100"></div>
+            <div class="col col-12 col-md-6 input-field input cell">
               <input v-model="form.dob" placeholder="DD/MM/YYY" type="text" name="dob"
               class="form-control" :class="{ 'is-invalid': form.errors.has('dob') }">
-
               <has-error class="red-text text-lighten-1" :form="form" field="dob"></has-error>
             </div>
-            <div class="input-field col s12">
+            <div class="input-field col col-12 col-md-6">
               <select v-model="form.gender">
                 <option class="grey-text" value="" disabled selected>select</option>
                 <option value="male">Male</option>
@@ -232,7 +239,7 @@
         </form>
         <transition name="rise">
           <div v-show="showSnackbar" class="showSnackbar bottom">
-            <span>Some fields have not been completed!</span>
+            <span>Form validation errors please check!</span>
             <a @click="showSnackbar = false" class="waves-effect waves-dark btn-flat">dismiss</a>
           </div>
         </transition>

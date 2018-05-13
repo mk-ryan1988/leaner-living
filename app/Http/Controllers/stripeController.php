@@ -20,6 +20,7 @@ class stripeController extends Controller
       $order->user_id = Auth::id();
       $order->product = 'fresh-start';
       $order->card_name = $request->cardName;
+      $order->commence_at = now()->addMonth()->startOfMonth();
       $order->save();
 
       $parQ = ParQ::where('name', Auth::user()->name)->first();

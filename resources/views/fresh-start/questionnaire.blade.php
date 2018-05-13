@@ -34,13 +34,13 @@
   <div class="col-12">
     <ul class="stepper horizontal w-100 white" id="horizontal" style="margin: 0px!important;">
       <li class="step done">
-        <div data-step-label="" class="step-title waves-effect waves-dark"> <a href="/PAR-Q">PAR-Q</a></div>
+        <div data-step-label="" class="step-title waves-effect waves-dark">PAR-Q</div>
       </li>
       <li class="step done">
-        <div class="step-title waves-effect waves-dark"><a href="">Register / Payment</a></div>
+        <div class="step-title waves-effect waves-dark">Register / Payment</div>
       </li>
       <li class="step active">
-        <div class="step-title waves-effect waves-dark"><a href="">Questionnaire</a></div>
+        <div class="step-title waves-effect waves-dark">Questionnaire</div>
       </li>
     </ul>
   </div>
