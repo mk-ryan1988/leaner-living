@@ -17,7 +17,7 @@ class CreateQuestionnaireOptionsTable extends Migration
             $table->unsignedInteger('question_id');
             $table->foreign('question_id')->references('id')->on('questionnaire_questions');
             $table->string('value', 180);
-            $table->string('name', 10);
+            $table->string('name', 10)->nullable();
         });
     }
 

@@ -17,7 +17,7 @@ class CreateQuestionnaireQuestionsTable extends Migration
             $table->increments('id');
             $table->string('type', 10);
             $table->string('classes', 100);
-            $table->tinyInteger('section', 4);
+            $table->integer('section')->unsigned();
             $table->string('name', 10);
             $table->string('title', 180);
             $table->boolean('other')->default(false);
