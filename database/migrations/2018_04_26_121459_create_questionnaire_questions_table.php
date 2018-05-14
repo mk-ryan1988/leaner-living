@@ -16,7 +16,8 @@ class CreateQuestionnaireQuestionsTable extends Migration
         Schema::create('questionnaire_questions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('type', 10);
-            $table->tinyInteger('section');
+            $table->string('classes', 100);
+            $table->tinyInteger('section', 4);
             $table->string('name', 10);
             $table->string('title', 180);
             $table->boolean('other')->default(false);
