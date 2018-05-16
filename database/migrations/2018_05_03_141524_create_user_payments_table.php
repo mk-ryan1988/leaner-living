@@ -19,7 +19,7 @@ class CreateUserPaymentsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('product', 140);
             $table->string('card_name', 140);
-            $table->timestamp('commence_at');
+            $table->timestamp('commence_at')->nullable();
             $table->timestamps();
         });
     }

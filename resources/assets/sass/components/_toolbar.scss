@@ -13,7 +13,7 @@
     -webkit-box-align: center;
     align-items: center;
     align-content: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     transition: .3s cubic-bezier(.4,0,.2,1);
     transition-property: opacity,background-color,box-shadow,color,min-height,-webkit-transform;
     transition-property: opacity,background-color,box-shadow,transform,color,min-height;

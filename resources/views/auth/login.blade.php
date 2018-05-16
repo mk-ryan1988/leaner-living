@@ -9,8 +9,9 @@
             <div class="col-12">
               <div class="padding h-100">
                     <h6>Welcome back to</h6>
-                    <img src="{{url('/images/LEANER-LIVING-LOGO.png')}}" alt="LEANER-LIVING-LOGO" class="responsive-img"
-                    style="width: 60%;">
+                    <a href="{{url('/')}}">
+                      <img src="{{url('/images/LEANER-LIVING-LOGO.png')}}" alt="LEANER-LIVING-LOGO" class="responsive-img" style="width: 60%;">
+                    </a>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="row">

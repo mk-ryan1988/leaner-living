@@ -16,15 +16,15 @@
   will-change: top, opacity;
 
   @media #{$medium-and-down} {
-   width: 80%;
+   width: 80%!important;
   }
 
-  h1,h2,h3,h4 {
+  h1,h2,h3,h4,h5,h6 {
     margin-top: 0;
   }
 
   .modal-content {
-    padding: 24px;
+    padding: 24px 24px 10px 24px;
   }
   .modal-close {
     cursor: pointer;

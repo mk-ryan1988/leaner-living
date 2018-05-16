@@ -2,10 +2,8 @@
 
 @section('content')
   <ul id="adminDrop" class="dropdown-content">
-    <li><a href="#!">one</a></li>
-    <li><a href="#!">two</a></li>
-    <li class="divider"></li>
-    <li><a href="#!">three</a></li>
+    <li><a href="{{url('/')}}">Home</a></li>
+      <li><a onclick="event.preventDefault();document.getElementById('logout-form').submit();" href="{{ route('logout') }}">Logout</a></li>
   </ul>
   <div class="view-height">
     <div class="white z-depth-3 h-100" style="width: 300px; position: absolute; top: 0; left: 0; z-index: 99">
@@ -21,16 +19,16 @@
     <div class="h-100" style="width: calc(100% - 300px); heigth: calc(100vh - 64px); margin-left: 300px; overflow: auto;">
       <div class="md-toolbar gradient right-align">
         @if (Route::currentRouteName() == 'admin.userShow')
-          <div class="">
-            <a href="#!" class="breadcrumb">Manage Starters</a>
-            <a href="#!" class="breadcrumb">@if(isset($user)) {{$user->name}} @endif</a>
+          <div class="" style="position: absolute; left: 15px;">
+            <a href="{{route('admin.users')}}" class="breadcrumb">Manage Starters</a>
+            <a class="breadcrumb">@if(isset($user)) {{$user->name}} @endif</a>
           </div>
         @endif
         <ul class="right">
           {{-- <li><a href="sass.html">Sass</a></li>
           <li><a href="badges.html">Components</a></li> --}}
           <!-- Dropdown Trigger -->
-          <li><a class="dropdown-trigger" href="#!" data-target="adminDrop">Hey, {{filterName(Auth::user()->name)}}<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a class="dropdown-trigger" data-target="adminDrop">Hey, {{filterName(Auth::user()->name)}}<i class="material-icons right">arrow_drop_down</i></a></li>
         </ul>
       </div>
 
@@ -39,6 +37,8 @@
     </div>
   </div>
 
-
+  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: one;">
+      @csrf
+  </form>
 
 @endsection

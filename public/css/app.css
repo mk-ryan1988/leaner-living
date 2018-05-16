@@ -5269,19 +5269,21 @@ button.btn-floating {
 
 @media only screen and (max-width: 992px) {
   .modal {
-    width: 80%;
+    width: 80% !important;
   }
 }
 
 .modal h1,
 .modal h2,
 .modal h3,
-.modal h4 {
+.modal h4,
+.modal h5,
+.modal h6 {
   margin-top: 0;
 }
 
 .modal .modal-content {
-  padding: 24px;
+  padding: 24px 24px 10px 24px;
 }
 
 .modal .modal-close {
@@ -9241,9 +9243,9 @@ ul.stepper .step-content .row {
       align-items: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -webkit-transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   transition-property: opacity,background-color,box-shadow,color,min-height,-webkit-transform;
@@ -11801,10 +11803,6 @@ ul.indicators {
 
 .testimonial-card .avatar img {
   width: 100%;
-}
-
-.avatar {
-  max-width: 150px;
 }
 
 .testimonial-card .card-body {

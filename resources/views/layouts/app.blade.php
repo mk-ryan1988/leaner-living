@@ -15,16 +15,19 @@
     <body>
 
       <div id="app" class="">
-        @include('partials.navbar')
-        {{-- <navbar></navbar> --}}
+          @include('partials.navbar')
         <main>
-
           @yield('content')
         </main>
-        @include('partials.footer')
+          @include('partials.footer')
       </div>
 
-      @include('partials.scripts')
-      @yield('scripts')
+        @include('partials.scripts')
+
+        @if(session()->has('alert'))
+          @include('partials.alert')
+        @endif
+
+        @yield('scripts')
     </body>
 </html>

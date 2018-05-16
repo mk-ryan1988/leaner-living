@@ -21,7 +21,7 @@ class AdminController extends Controller
 
     public function usersIndex()
     {
-      $users = User::all();
+      $users = User::where('id', 1)->with('payment')->first();
 
       return view('admin.users.index', compact('users'));
     }

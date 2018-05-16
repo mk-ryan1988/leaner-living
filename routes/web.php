@@ -41,7 +41,11 @@ Route::prefix('errors')->group(function () {
 Route::middleware('auth')->group(function () {
   Route::prefix('fresh-start')->group(function () {
     Route::get('/dashboard', function () {
-      return view('fresh-start.dashboard', ['user' => Auth::user()]);
+      if (Auth::id() == 1 || Auth::id() == 2 || Auth::id() == 3) {
+        return redirect()->route('admin.overview');
+      }else {
+        return view('fresh-start.dashboard', ['user' => Auth::user()]);
+      }
     })->name('fresh-start.dashboard');
   });
   Route::prefix('admin')->group(function () {
@@ -53,6 +57,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/settings', 'AdminController@settings')->name('admin.settings');
   });
 });
+
+Route::post('/contact-form', 'ContactController@postForm');
 
 
 

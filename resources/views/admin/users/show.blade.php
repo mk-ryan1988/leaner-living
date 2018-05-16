@@ -15,7 +15,7 @@
 
 </div>
 <div class="row no-margin">
-  <div style="diplay: none" id="tab1" class="col s12 padding">Test 1</div>
+  <div style="diplay: none" id="tab1" class="col s12 padding">Overview</div>
   <div style="diplay: none" id="tab2" class="col s12 padding">
     <div class="row">
       <div class="col-12">

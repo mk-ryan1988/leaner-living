@@ -14,11 +14,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-      // $freshSettings = Setting::displayable();
-      //
-      // view()->composer('*', function($view) use($freshSettings) {
-      //    $view->with('freshSettings', $freshSettings);
-      // });
+      $freshSettings = Setting::displayable();
+
+      view()->composer('*', function($view) use($freshSettings) {
+         $view->with('freshSettings', $freshSettings);
+      });
     }
 
     /**
