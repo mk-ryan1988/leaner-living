@@ -3518,10 +3518,6 @@ input[type=range] + .thumb {
   margin-top: 2rem;
 }
 
-.minus-margin {
-  margin-top: -80px;
-}
-
 .spacer {
   height: 2rem;
 }
@@ -9224,6 +9220,19 @@ ul.stepper .step-content .row {
   margin-bottom: 7px;
 }
 
+@media only screen and (max-width: 576px) {
+  .stepper.horizontal {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .stepper.horizontal .step::after {
+    display: none !important;
+  }
+}
+
 .md-toolbar {
   padding: 0 16px;
   margin-bottom: 16px;
@@ -11709,12 +11718,6 @@ html {
   background: linear-gradient(to right bottom, #64d9c4, #58c49f, #53af7a, #539955, #538330);
 }
 
-#bg-deadlift {
-  background: url("https://image.freepik.com/free-photo/weights-exercise-weightlifter-strong-athletic_1139-709.jpg");
-  background-size: 50% 100%;
-  background-repeat: no-repeat;
-}
-
 #login-image {
   position: relative;
   width: 100%;
@@ -11765,6 +11768,14 @@ ul.indicators {
 
 .view-height {
   height: 100vh;
+}
+
+.view-height.overflow {
+  overflow: auto;
+}
+
+.overflow {
+  overflow: auto;
 }
 
 .testimonial-card {
@@ -12011,5 +12022,90 @@ ul.indicators {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media only screen and (max-width: 576px) {
+  .gradient.header {
+    height: 150px;
+  }
+
+  .gradient.header.large {
+    height: 300px;
+  }
+
+  .gradient.header .col-12 {
+    text-align: center;
+  }
+
+  #contact-form .row > .col-12 {
+    padding: 0px;
+  }
+
+  #contact-form .card-panel {
+    margin: 0px;
+  }
+
+  .carousel {
+    height: 800px !important;
+  }
+
+  #welcome-name {
+    margin-top: 50px;
+  }
+}
+
+@media only screen and (min-width: 577px) {
+  .gradient.header {
+    height: 300px;
+    margin-top: -64px;
+  }
+
+  .gradient.header.large {
+    height: 400px;
+    margin-top: -64px;
+  }
+
+  #bg-deadlift {
+    background: url("https://image.freepik.com/free-photo/weights-exercise-weightlifter-strong-athletic_1139-709.jpg");
+    background-size: 50% 100%;
+    background-repeat: no-repeat;
+  }
+
+  #contact-form .row > .col-12 {
+    padding: 24px 0px 24px 15px;
+    z-index: 1;
+  }
+
+  #contact-form button {
+    padding: 24px 16px 25px 16px;
+    height: auto;
+    margin-left: -15px;
+    z-index: 0;
+  }
+
+  .carousel-item .overflow {
+    max-height: 400px;
+  }
+
+  .minus-margin {
+    margin-top: -80px;
+  }
+
+  #welcome-video {
+    margin-top: 84px;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  #gradient-bottom {
+    height: 300px;
+  }
+
+  #admin-content {
+    width: calc(100% - 300px);
+    heigth: calc(100vh - 64px);
+    margin-left: 300px;
+    overflow: auto;
+  }
 }
 

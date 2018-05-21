@@ -19,6 +19,7 @@ class CreateSettingsTable extends Migration
             $table->mediumText('stripe_key_secret')->nullable();
             $table->mediumText('freshStart_users_limit')->nullable();
             $table->integer('freshStart_price')->unsigned()->nullable();
+            $table->boolean('acceptingStarters', 1)->default(false);
             $table->timestamps();
         });
     }

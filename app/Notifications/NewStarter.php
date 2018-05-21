@@ -2,6 +2,7 @@
 
 namespace App\Notifications;
 
+use App\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -11,15 +12,17 @@ class NewStarter extends Notification
 {
     use Queueable;
 
+    protected $user;
+
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
-    {
-        //
-    }
+     public function __construct(User $user)
+     {
+         $this->user = $user;
+     }
 
     /**
      * Get the notification's delivery channels.
@@ -41,9 +44,8 @@ class NewStarter extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+                    ->line('You have a member of Fresh Start')
+                    ->action('View their profile', url('/admin/users/'.$this->user->id));
     }
 
     /**

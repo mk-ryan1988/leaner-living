@@ -20,6 +20,7 @@
     $('.modal').modal();
     $('.pushpin').pushpin();
     $('select').formSelect();
+    $('.materialboxed').materialbox();
   });
 </script>
 

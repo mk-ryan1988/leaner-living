@@ -11,7 +11,7 @@ class FreshController extends Controller
     public function about() {
       //sets the month afer next
       $nextMonth = now()->addMonth();
-      
+
       //Initializes fresh-start places variable
       $newStarters = 0;
 

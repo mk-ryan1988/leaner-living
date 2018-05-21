@@ -11,20 +11,20 @@
   </div>
 
 
-  <div class="gradient" style="height: 400px; margin-top: -64px;">
+  <div class="gradient header large">
     <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="col-12 col-md-4">
-          <img src="{{url('/images/fresh-start-whiteout.png')}}" alt="" style="height: 200px; width: auto;">
+          <img src="{{url('/images/fresh-start-whiteout.png')}}" alt="" class="" style="height: 200px; width: auto;">
         </div>
         <div class="col-12 col-md-8">
-          <h4 class="white-text">The Fresh Start is the 12 week solution to your weight loss goals...</h4>
+          <h4 class="white-text d-none d-sm-block">The Fresh Start is the 12 week solution to your weight loss goals...</h4>
           <div class="margin-top">
             <a class="waves-effect waves-light btn-flat white-text modal-trigger" data-target="video-modal" style="border: 2px solid #fff;">
               <i class="material-icons left">play_circle_outline</i>
               Play video
             </a>
-            @if ($newStarters < 10)
+            @if (($freshSettings->acceptingStarters == 1) && ($newStarters < 10))
               <a class="waves-effect waves-light btn z-depth-0 white leaner-green-text" style="margin-left: 15px;" href="{{route('fresh-start.par-q')}}">
                 Sign up now
               </a>
@@ -184,7 +184,7 @@
           <h5 class="leaner-green-text">Ready for your Fresh Start?</h5>
           {{-- <p>Places are limited and your programme will commence on the beginning of the upcoming month.</p> --}}
           <h3>£{{ filterPrice($freshSettings->freshStart_price) }} <span style="font-size: 1.15rem;">one off payment</span> </h3>
-          @if ($newStarters < 10)
+          @if (($freshSettings->acceptingStarters == 1) && ($newStarters < 10))
             <a class="waves-effect waves-light btn leaner-green z-depth-0" href="{{route('fresh-start.par-q')}}">Sign up now</a>
           @else
             <a class="waves-effect waves-light btn leaner-green z-depth-0" href="http://eepurl.com/dtx7F1" target="_blank">Suscribe to waiting list</a>

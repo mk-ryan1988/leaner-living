@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Notifications\NewStarter;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+
 
 class RegisterController extends Controller
 {
@@ -28,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/payment#card-details';
+    protected $redirectTo = 'fresh-start/payment';
 
     /**
      * Create a new controller instance.
@@ -63,10 +65,29 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        //checks email domain to set admin permissions
+        $explodedEmail = explode('@', $data['email']);
+        $domain = array_pop($explodedEmail);
+        if ($domain == 'leaner-living.com') {
+          $user->admin = true;
+          $user->save();
+        }else {
+          $user->admin = false;
+          $user->save();
+        }
+
+        //sends email to admin to notify of new user registration
+        $admin = User::where('email', env('ADMIN_EMAIL'))->first();
+        if ($admin) {
+          $admin->notify(new NewStarter($user));
+        }
+
+        return $user;
     }
 }

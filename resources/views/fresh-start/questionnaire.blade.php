@@ -18,7 +18,7 @@
 @section('content')
 
 
-<div class="gradient" style="height: 400px; margin-top: -64px;">
+<div class="gradient header" style="height: 400px;">
   <div class="container h-100">
     <div class="row h-100 align-items-center">
       <div class="col-12 col-lg-4">

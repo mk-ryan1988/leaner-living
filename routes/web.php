@@ -12,7 +12,6 @@
 */
 Auth::routes();
 
-
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
@@ -27,7 +26,15 @@ Route::prefix('fresh-start')->group(function () {
       return view('auth.PAR-Q');
   })->name('fresh-start.par-q');
   Route::get('/payment', function () {
-      return view('auth.payment');
+      if (Auth::check()) {
+        if (Auth::user()->admin == 1) {
+          return redirect()->route('admin.overview');
+        }else {
+          return view('auth.payment');
+        }
+      }else {
+        return view('auth.payment');
+      }
   })->name('payment');
   Route::get('/questionnaire', 'QuestionnaireController@index')->name('fresh-start.questionnaire');
 });
@@ -41,10 +48,12 @@ Route::prefix('errors')->group(function () {
 Route::middleware('auth')->group(function () {
   Route::prefix('fresh-start')->group(function () {
     Route::get('/dashboard', function () {
-      if (Auth::id() == 1 || Auth::id() == 2 || Auth::id() == 3) {
-        return redirect()->route('admin.overview');
-      }else {
-        return view('fresh-start.dashboard', ['user' => Auth::user()]);
+      if (Auth::check()) {
+        if (Auth::user()->admin == 1) {
+          return redirect()->route('admin.overview');
+        }else {
+          return view('fresh-start.dashboard', ['user' => Auth::user()]);
+        }
       }
     })->name('fresh-start.dashboard');
   });

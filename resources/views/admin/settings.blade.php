@@ -48,7 +48,7 @@
                 <div class="col input-field input cell">
                   <i class="material-icons prefix">credit_card</i>
                   <input id="price" value="{{$settings->freshStart_price}}" type="text" name="price" required="required">
-                  <label for="price">Current Price (£)</label>
+                  <label for="price">Current Price (in pence)</label>
                   @if ($errors->has('price'))
                       <span class="invalid-feedback">
                           <strong>{{ $errors->first('price') }}</strong>
@@ -56,7 +56,20 @@
                   @endif
                 </div>
               </div>
-              <div class="row">
+              <div class="row ">
+                <div class="col-12">
+                  <span class="label label-default leaner-green-text">Accept New Starters (set to no to disable sign up - will override the users limit)</span>
+                  <div class="switch">
+                    <label>
+                      No
+                      <input name="acceptingStarters" @if ($settings->acceptingStarters == 1) checked @endif value="{{$settings->acceptingStarters}}" type="checkbox">
+                      <span class="lever"></span>
+                      Yes
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="row margin-top">
                   <div class="col-12">
                       <button type="submit" class="btn btn-primary">
                           {{ __('Update') }}

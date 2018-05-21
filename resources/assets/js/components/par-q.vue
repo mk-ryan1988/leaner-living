@@ -18,7 +18,7 @@
     </div>
 
     <div class="row align-items-start justify-content-center">
-      <div class="col-12 col-md-8 col-lg-6">
+      <div class="col-12 col-md-8 col-lg-6 padding">
         <div class="spacerX2"></div>
         <h4>Physical Activity Readiness Questionnaire (PAR-Q)</h4>
         <p>

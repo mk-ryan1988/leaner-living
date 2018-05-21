@@ -3,7 +3,7 @@
 
 @section('content')
 
-<div class="gradient" style="height: 400px; margin-top: -64px;">
+<div class="gradient header" style="height: 400px;">
   <div class="container h-100">
     <div class="row h-100 align-items-center">
       <div class="col-12 col-lg-4">
@@ -34,7 +34,7 @@
 
 @unless (Auth::user())
   <div class="row align-items-start justify-content-center">
-    <div class="col-12 col-md-6">
+    <div class="col-12 col-md-6 padding">
         <h3>Please create your login!</h3>
         <form method="POST" action="{{ route('register') }}">
             @csrf
@@ -92,7 +92,7 @@
 @endunless
 @if (Auth::user())
   <div id="card-details" class="row align-items-start justify-content-center">
-    <div class="col-12 col-md-6">
+    <div class="col-12 col-md-6 padding">
       <div class="right-align">
         <img src="{{url('/images/visa.png')}}" alt="" style="height: 30px; width: auto;">
         <img src="{{url('/images/mastercard.png')}}" alt="" style="height: 30px; width: auto;">

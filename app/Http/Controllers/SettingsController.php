@@ -16,7 +16,6 @@ class SettingsController extends Controller
         'limit' => 'required',
         'price' => 'required',
        ]);
-
       $secretKey = Crypt::encryptString($request->stripe_secret);
 
       $setting = Setting::first();
@@ -27,6 +26,11 @@ class SettingsController extends Controller
         $setting->stripe_key_secret = $secretKey;
         $setting->freshStart_users_limit = $request->limit;
         $setting->freshStart_price = $request->price;
+        if ($request->has('acceptingStarters')) {
+            $setting->acceptingStarters = 1;
+        }else {
+            $setting->acceptingStarters = 0;
+        }
         $setting->save();
 
       }else {
@@ -34,6 +38,11 @@ class SettingsController extends Controller
         $setting->stripe_key_secret = $secretKey;
         $setting->freshStart_users_limit = $request->limit;
         $setting->freshStart_price = $request->price;
+        if ($request->has('acceptingStarters')) {
+            $setting->acceptingStarters = 1;
+        }else {
+            $setting->acceptingStarters = 0;
+        }
         $setting->save();
       }
 

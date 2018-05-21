@@ -1,15 +1,18 @@
 <!-- Dropdown Structure -->
 <ul id="fresh-start" class="dropdown-content">
   <li><a href="{{ route('fresh-start.about')}}">About Fresh Start</a></li>
-  <li><a href="{{ route('login')}}">Login</a></li>
+  @unless (Auth::check())
+    <li><a href="{{ route('login')}}">Login</a></li>
+  @endunless
 </ul>
 <ul id="auth" class="dropdown-content">
-  @if (Auth::id() == 1 || Auth::id() == 2 || Auth::id() == 3)
-    <li><a href="{{ route('admin.overview')}}">Admin Dashboard</a></li>
-  @else
-      <li><a href="{{ route('fresh-start.dashboard')}}">Dashboard</a></li>
+  @if (Auth::check())
+    @if (Auth::user()->admin == 1)
+      <li><a href="{{ route('admin.overview')}}">Admin Dashboard</a></li>
+    @else
+        <li><a href="{{ route('fresh-start.dashboard')}}">Dashboard</a></li>
+    @endif
   @endif
-
   <li><a onclick="event.preventDefault();document.getElementById('logout-form').submit();" href="{{ route('logout') }}">Logout</a></li>
 </ul>
 

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="gradient" style="height: 300px; margin-top: -64px;">
+  <div class="gradient header">
     <div class="container h-100">
     </div>
   </div>
@@ -9,10 +9,12 @@
     <div class="row align-items-start justify-content-center h-100" style="padding-bottom: 5rem;">
       <div class="col-12 col-lg-5 order-2 order-lg-2">
         <div style="padding: 24px 24px 0px 24px;">
-          <h3>Welcome to LEANER LIVING the home of FRESH START</h3>
+          <h3 class="flow-text d-block d-sm-none">Welcome to LEANER LIVING the home of FRESH START</h3>
+          <h3 class="d-none d-block">Welcome to LEANER LIVING the home of FRESH START</h3>
+
           <p>
-            (ADD AN INTRO HERE)<br>
-            Lorem ipsum dolor sit amet, eam libris tritani ut, at mei detracto accommodare. Novum viderer quo no, sit tempor eripuit convenire te. Ius doming dissentias ne, ea dolorum dissentiunt eos. Eu nostro iracundia mel. Probo liberavisse reprehendunt ex mea, eam ne omnium contentiones.
+            Our main goal at Leaner Living is to <strong>educate</strong> our clients<br>
+            Aimed at first timers and those with a little more confidence in the gym but not advanced athletes. We provide you with absolutely every tool you will need to achieve that goal but most important educate you how we did it and how you can keep that weight off long term.
           </p>
           <div class="valign-wrapper">
             <i class="material-icons medium left">arrow_forward</i>
@@ -29,7 +31,7 @@
       </div>
     </div>
   </div>
-  <div class="spacerX3"></div>
+  <div class="spacerX3 d-none d-sm-block"></div>
   {{-- <div class="container-fluid">
   <div class="row align-items-center">
     <div class="col-5 offset-lg-1" >
@@ -46,7 +48,7 @@
 
     </div>
     <div class="col-12 col-md-5 leaner-green">
-      <h3 class="white-text">Who are we?</h3>
+      <h3 class="white-text flow-text">Who are we?</h3>
     </div>
   </div>
 </div>
@@ -56,7 +58,7 @@
 
         <div class="row">
           <div class="col-11 offset-md-1">
-            <div id="team-carousel" class="carousel carousel-slider center" style="margin-bottom: 2rem;">
+            <div id="team-carousel" class="carousel carousel-slider center" style="margin: 2rem 0rem;">
               <i id="prevSlide1" style="position: absolute; bottom: 5px; right: 70px;" class="material-icons medium waves-effect">arrow_back</i>
               <i id="nextSlide1" style="position: absolute; bottom: 5px; right: 5px;" class="material-icons medium waves-effect">arrow_forward</i>
 
@@ -64,29 +66,45 @@
               <a id="nextSlide" style="position: absolute; bottom: 17.5px; right: 5px;" class="btn z-depth-0 off-black-text waves-effect white"><i class="material-icons">arrow_forward</i></a> --}}
               <div class="carousel-item" style="padding: 24px 0px;" href="#one!">
                 <div class="row" style="margin: 0px;">
-                  <div class="col-5 center-align" style="padding-left: 0px;">
-                      <img src="https://mdbootstrap.com/img/Photos/Others/men.jpg" alt="" style="width: 100%; height: 350px;" class="responsive-img">
+                  <div class="col-sm-5 d-none d-sm-block" style="padding-left: 0px;">
+                      <img src="{{url('/images/steve.jpg')}}" alt="" style="max-height: 500px;" class="responsive-img">
                   </div>
-                  <div class="col-7 left-align" style="padding-right: 0px;">
-                    <div class="panel">
-                      <h2 class="">Steve</h2>
+                  <div class="col-12 col-sm-7 left-align" style="padding-right: 0px;">
+                    <div class="panel overflow flow-text">
+                      <h2 class="" style="margin-top: 0px">Steven</h2>
                       <p>
-                        Delenit omnesque no vel, sed dolorem dignissim id. At est ridens inermis. Te agam reque aliquid pri, ius ea cibo delenit postulant. Qui fierent deleniti et, cu reque numquam inermis sea. Ex lorem discere molestiae ius, eius lucilius eu duo. Cum ea aperiam detracto ullamcorper, est in essent tacimates. Tritani equidem debitis eam id.
+                        Co-founder of Leaner Living with 10 years in the health and fitness industry. Steven has worked with Actors, top sports athletes, physique competitors, power lifters, personal trainers and semi professional sports teams.
+                      </p>
+
+                      <p>
+                        Over the past 10 years Steven has fine-tuned his approach to one-to-one and online coaching. Realizing that no two clients are the same, a coach cannot simply have one arrow in his quiver. Steven offers personal support that is second to none, going above and beyond client expectations providing them with everything they could possibly need to not only achieve their goals but also maintain them.
+                      </p>
+                      <p>
+                        Steven recently competed (July 2016) for the first time with the UKDFBA in the men’s physique category. Coaching himself through every aspect of his prep through 27 weeks of “dieting” Steven managed to go from 100kg to 77kg.
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="carousel-item " href="#two!">
+              <div class="carousel-item" href="#two!">
                 <div class="row" style="margin: 0px;">
-                  <div class="col-5 center-align" style="padding-left: 0px;">
-                      <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" alt="" style="width: 100%; height: 350px;" class="responsive-img">
+                  <div class="col-sm-5 d-none d-sm-block center-align" style="padding-left: 0px;">
+                      <img src="{{url('/images/ruth.jpg')}}" alt="" style="max-height: 500px;" class="responsive-img">
                   </div>
-                  <div class="col-7 left-align" style="padding-right: 0px;">
-                    <div class="panel">
-                      <h2 class="">Ruth</h2>
+                  <div class="col-12 col-sm-7 left-align" style="padding-right: 0px;">
+                    <div class="panel overflow">
+                      <h2 class="" style="margin-top: 0px">Ruth</h2>
                       <p>
-                        Delenit omnesque no vel, sed dolorem dignissim id. At est ridens inermis. Te agam reque aliquid pri, ius ea cibo delenit postulant. Qui fierent deleniti et, cu reque numquam inermis sea. Ex lorem discere molestiae ius, eius lucilius eu duo. Cum ea aperiam detracto ullamcorper, est in essent tacimates. Tritani equidem debitis eam id.
+                        Ruth has always had a strong love for fitness, from starting Ballet at the age of 3 to competing in gymnastics at county level. In her 20's she found weightlifting and immediately found a new passion. Since then she has dieted down to compete in 2 bikini competitions and attend 2 physique photo-shoots.
+                      </p>
+                      <p>
+                        The love for training and the drive to further Ruth’s understanding of nutrition led her to the 'Shredded By Science Academy' from which she graduated fully in 2017.
+                      </p>
+                      <p>
+                        Leaner Living has provided Ruth with the platform to fine tune her skills as a coach and athlete allowing her to help her clients not only achieve their goals short term, but educate them on how to maintain them for life.
+                      </p>
+                      <p>
+                        Together we can take steps towards a fitter, healthier, and happier you.
                       </p>
                     </div>
                   </div>
@@ -101,8 +119,8 @@
       </div>
     </div>
   </div>
-  <div class="spacerX3"></div>
-  <div class="container-fluid">
+  <div class="spacerX3 d-none d-sm-block"></div>
+  {{-- <div class="container-fluid">
     <div class="row align-items-start">
       <div class="col-12 col-lg-10 offset-lg-1">
         <h3 >What our Clients say!</h3>
@@ -110,8 +128,7 @@
           <i id="prevSlide2" style="position: absolute; bottom: 5px; right: 70px;" class="material-icons medium waves-effect">arrow_back</i>
           <i id="nextSlide2" style="position: absolute; bottom: 5px; right: 5px;" class="material-icons medium waves-effect">arrow_forward</i>
 
-          {{-- <a id="prevSlide" style="position: absolute; bottom: 17.5px; right: 70px;" class="btn z-depth-0 off-black-text waves-effect white"><i class="material-icons">arrow_back</i></a>
-          <a id="nextSlide" style="position: absolute; bottom: 17.5px; right: 5px;" class="btn z-depth-0 off-black-text waves-effect white"><i class="material-icons">arrow_forward</i></a> --}}
+
           <div class="carousel-item" style="padding: 24px 0px" href="#one!">
             <div class="">
               <p>
@@ -135,19 +152,28 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> --}}
   <div class="spacerX3" id="contact-form"></div>
 
+  <div class="container-fluid d-block d-sm-none">
+    <div class="row">
+      <div class="col-1 d-none d-md-block leaner-green">
+      </div>
+      <div class="col-12 col-md-5 leaner-green">
+        <h3 class="white-text  flow-text">Have something to ask?</h3>
+      </div>
+    </div>
+  </div>
   <div class="container-fluid no-padding">
     <div id="bg-deadlift" class="row no-gutters align-items-center">
       {{-- <img style="width: 100%" src="https://image.freepik.com/free-photo/weights-exercise-weightlifter-strong-athletic_1139-709.jpg" alt="" class="responsive-img"> --}}
       <div class="col">
         <form id="contact-form" action="/contact-form" method="POST">
           @csrf
-          <div class="row align-items-center">
-            <div class="col-12 col-lg-6 offset-lg-3" style="padding: 24px 0px 24px 15px; z-index: 1;">
-              <div class="card-panel">
-                <h3>Have something to ask?</h3>
+          <div class="row align-items-center no-margin">
+            <div class="col-12 col-lg-6 offset-lg-3 col-wrapper" >
+              <div class="card-panel overflow" style="max-height: 445px;">
+                <h3 class="d-none d-sm-block">Have something to ask?</h3>
                   <div class="row">
                     <div class="input-field col-12">
                       <input placeholder="Full Name" id="name" type="text" name="name" value="{{ old('name') }}" required class="validate">
@@ -166,7 +192,7 @@
               </div>
             </div>
             <div class="col-12 col-lg-2" style="padding-left: 0px;">
-              <button type="submit" class="waves-effect waves-light leaner-green lighten-2 btn z-depth-0 flow-text w-100" style="padding: 24px 16px 25px 16px; height: auto; margin-left: -15px; z-index: 0;">
+              <button type="submit" class="waves-effect waves-light leaner-green lighten-2 btn z-depth-0 flow-text w-100">
                 submit message<i class="material-icons right">send</i>
               </button>
             </div>
@@ -175,7 +201,8 @@
       </div>
     </div>
   </div>
-    <div class="spacerX3"></div>
+
+  <div class="spacerX3"></div>
 
 @endsection
 

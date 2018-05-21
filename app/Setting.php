@@ -19,7 +19,7 @@ class Setting extends Model
      */
     public function scopeDisplayable($query)
     {
-      return $query->where('id', 1)->select('freshStart_users_limit', 'freshStart_price')->first();
+      return $query->where('id', 1)->select('freshStart_users_limit', 'freshStart_price', 'acceptingStarters')->first();
     }
     /**
      * Scope a query to only include the price field.

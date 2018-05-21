@@ -307,3 +307,11 @@ ul.stepper.horizontal .step-actions {
 ul.stepper .step-content .row {
    margin-bottom: 7px;
 }
+@media only screen and (max-width: 576px) {
+  .stepper.horizontal {
+    flex-direction: column;
+  }
+  .stepper.horizontal .step::after {
+    display: none!important;
+  }
+}

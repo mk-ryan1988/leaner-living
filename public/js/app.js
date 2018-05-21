@@ -51728,7 +51728,7 @@ var render = function() {
     _c("div", { staticClass: "row align-items-start justify-content-center" }, [
       _c(
         "div",
-        { staticClass: "col-12 col-md-8 col-lg-6" },
+        { staticClass: "col-12 col-md-8 col-lg-6 padding" },
         [
           _c("div", { staticClass: "spacerX2" }),
           _vm._v(" "),

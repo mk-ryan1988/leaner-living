@@ -134,8 +134,8 @@
 
 <div class="container">
   <div class="row h-100 align-items-end">
-    <div class="col-12 col-lg-4">
-      <h4 class="padding-left">Hey, {{filterName(Auth::user()->name)}}</h4>
+    <div class="col-12 col-lg-4 d-none d-lg-block">
+      <h4 id="welcome-name" class="padding-left">Hey, {{filterName(Auth::user()->name)}}</h4>
       <h6 class="padding-left">Welcome to your Fresh Start!</h6>
       <div class="spacer"></div>
       <div class="card-panel no-padding no-margin white h-100">
@@ -143,13 +143,13 @@
           <li class="collection-header"><h4>Profile Checklist</h4></li>
           <a class="@if ($user->paid) complete @endif collection-item"><i class="material-icons left">payment</i><span>Payment</span></a>
           <a class="@if ($user->questionnaire) complete @endif collection-item"><i class="material-icons left">list</i><span>Questionnaire</span></a>
-          <a class="@if (count($user->stats) > 0)  @endif collection-item modal-trigger" href="#stats_modal"><i class="material-icons left">insert_chart</i> <span>Starting Stats</span></a>
-          <a class="@if (count($user->pics) > 0)  @endif collection-item modal-trigger" href="#pics_modal"><i class="material-icons left">add_a_photo</i> <span>Starting Photos</span></a>
+          <a class="@if (count($user->stats) > 0) complete  @endif collection-item modal-trigger" href="#stats_modal"><i class="material-icons left">insert_chart</i> <span>Starting Stats</span></a>
+          <a class="@if (count($user->pics) > 0) complete @endif collection-item modal-trigger" href="#pics_modal"><i class="material-icons left">add_a_photo</i> <span>Starting Photos</span></a>
         </ul>
       </div>
     </div>
     <div class="col-12 col-lg-8 center-align">
-      <div class="card-panel white" style="height: 415px; margin-top: 84px;">
+      <div class="card-panel white" id="welcome-video" style="height: 415px;">
         <img src="{{url('/images/fresh-start-colour.png')}}" alt="" style="height: 200px; width: auto;">
         <h4>We're currently processing your profile and will have a message for you soon.</h4>
       </div>
@@ -157,11 +157,23 @@
     </div>
   </div>
 </div>
-<div class="container-fluid" style="height: 300px; margin-top: -80px;">
-  <div class="row align-items-start justify-content-center h-100 gradient" style="padding-bottom: 5rem;">
-    <div class="col-12 col-lg-5 order-2 order-lg-2">
+<div class="container-fluid" id="gradient-bottom" style="margin-top: -80px;">
+  <div class="row align-items-start justify-content-center h-100 gradient bottom" style="padding-bottom: 5rem;">
+    <div class="col-12 col-lg-4 d-block d-lg-none" style="padding-top: 5rem;">
+      <h4 id="welcome-name" class="padding-left">Hey, {{filterName(Auth::user()->name)}}</h4>
+      <h6 class="padding-left">Welcome to your Fresh Start!</h6>
+      <div class="spacer"></div>
+      <div class="card-panel no-padding no-margin white h-100">
+        <ul class="collection with-header checklist">
+          <li class="collection-header"><h4>Profile Checklist</h4></li>
+          <a class="@if ($user->paid) complete @endif collection-item"><i class="material-icons left">payment</i><span>Payment</span></a>
+          <a class="@if ($user->questionnaire) complete @endif collection-item"><i class="material-icons left">list</i><span>Questionnaire</span></a>
+          <a class="@if (count($user->stats) > 0) complete  @endif collection-item modal-trigger" href="#stats_modal"><i class="material-icons left">insert_chart</i> <span>Starting Stats</span></a>
+          <a class="@if (count($user->pics) > 0) complete @endif collection-item modal-trigger" href="#pics_modal"><i class="material-icons left">add_a_photo</i> <span>Starting Photos</span></a>
+        </ul>
+      </div>
     </div>
-    <div class="col-12 col-lg-5 order-1 order-lg-3 right-align minus-margin">
+    <div class="col-12 col-lg-5">
 
     </div>
   </div>
