@@ -25,7 +25,7 @@
               Play video
             </a>
             @if (($freshSettings->acceptingStarters == 1) && ($newStarters < 10))
-              <a class="waves-effect waves-light btn z-depth-0 white leaner-green-text" style="margin-left: 15px;" href="{{route('fresh-start.par-q')}}">
+              <a class="waves-effect waves-light btn z-depth-0 white leaner-green-text" style="margin-left: 15px;" href="{{route('fresh-start.par-q')}}" target="_blank">
                 Sign up now
               </a>
             @else
@@ -185,7 +185,7 @@
           {{-- <p>Places are limited and your programme will commence on the beginning of the upcoming month.</p> --}}
           <h3>£{{ filterPrice($freshSettings->freshStart_price) }} <span style="font-size: 1.15rem;">one off payment</span> </h3>
           @if (($freshSettings->acceptingStarters == 1) && ($newStarters < 10))
-            <a class="waves-effect waves-light btn leaner-green z-depth-0" href="{{route('fresh-start.par-q')}}">Sign up now</a>
+            <a class="waves-effect waves-light btn leaner-green z-depth-0" href="{{route('fresh-start.par-q')}}" target="_blank">Sign up now</a>
           @else
             <a class="waves-effect waves-light btn leaner-green z-depth-0" href="http://eepurl.com/dtx7F1" target="_blank">Suscribe to waiting list</a>
           @endif

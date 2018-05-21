@@ -15,12 +15,18 @@ class ContactController extends Controller
            'message' => 'required',
        ]);
 
-       Mail::send('emails.contact', ['input' => $request->input()], function($message) use ($request)
-       {
-         $message->from($request->email, $request->name);
-         $message->to(env('CONTACT_EMAIL'))->subject('Contact Form Message');
+       if (env('MAILGUN_DOMAIN')) {
 
-       });
-       return redirect()->back()->with('alert', 'Thank you, message recieved!');
+         Mail::send('emails.contact', ['input' => $request->input()], function($message) use ($request)
+         {
+           $message->from($request->email, $request->name);
+           $message->to(env('CONTACT_EMAIL'))->subject('Contact Form Message');
+         });
+         return redirect()->back()->with('alert', 'Thank you, message recieved!');
+
+       }else {
+
+         return redirect()->back()->with('alert', 'Unable to send, alternatively message us on facebook!');
+       }
     }
 }

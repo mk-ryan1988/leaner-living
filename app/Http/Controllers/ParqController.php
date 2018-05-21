@@ -42,19 +42,17 @@ class ParqController extends Controller
 
     if ($request->q1 || $request->q2 || $request->q3 || $request->q4 || $request->q5 || $request->q6 || $request->q7 || $request->q8 || $request->q9 || $request->q10) {
 
-      $mailData = array(
-                   'id'       => $parQ->id,
-                   'name'     => $request->name,
-                   'email'    => $request->email,
-                  );
-
-     Mail::to(env('ADMIN_EMAIL'))->send(new parqFailed($mailData));
-
-     abort(403);
+        $mailData = array(
+                     'id'       => $parQ->id,
+                     'name'     => $request->name,
+                     'email'    => $request->email,
+                    );
+        if (env('MAILGUN_DOMAIN')) {
+          Mail::to(env('ADMIN_EMAIL'))->send(new parqFailed($mailData));
+        }
+        abort(403);
 
     }else {
-
-      Auth::loginUsingId(1);
 
       return ['redirect' => route('payment')];
     }

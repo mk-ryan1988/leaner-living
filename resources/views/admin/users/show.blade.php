@@ -146,7 +146,7 @@
               <td>
                 <div class="switch">
                   <label>
-                    <input @if ($user->parQ->q1) checked @endif type="checkbox">
+                    <input @if ($user->parQ->q1) checked @endif disabled type="checkbox">
                     <span class="lever"></span>
                   </label>
                 </div>
@@ -160,7 +160,7 @@
               <td>
                 <div class="switch">
                   <label>
-                    <input @if ($user->parQ->q2) checked @endif type="checkbox">
+                    <input @if ($user->parQ->q2) checked @endif disabled type="checkbox">
                     <span class="lever"></span>
                   </label>
                 </div>
@@ -174,7 +174,7 @@
               <td>
                 <div class="switch">
                   <label>
-                    <input @if ($user->parQ->q3) checked @endif type="checkbox">
+                    <input @if ($user->parQ->q3) checked @endif disabled type="checkbox">
                     <span class="lever"></span>
                   </label>
                 </div>
@@ -188,7 +188,7 @@
               <td>
                 <div class="switch">
                   <label>
-                    <input @if ($user->parQ->q4) checked @endif type="checkbox">
+                    <input @if ($user->parQ->q4) checked @endif disabled type="checkbox">
                     <span class="lever"></span>
                   </label>
                 </div>
@@ -202,7 +202,7 @@
               <td>
                 <div class="switch">
                   <label>
-                    <input @if ($user->parQ->q5) checked @endif type="checkbox">
+                    <input @if ($user->parQ->q5) checked @endif disabled type="checkbox">
                     <span class="lever"></span>
                   </label>
                 </div>
@@ -216,7 +216,7 @@
               <td>
                 <div class="switch">
                   <label>
-                    <input @if ($user->parQ->q6) checked @endif type="checkbox">
+                    <input @if ($user->parQ->q6) checked @endif disabled type="checkbox">
                     <span class="lever"></span>
                   </label>
                 </div>
@@ -230,7 +230,7 @@
               <td>
                 <div class="switch">
                   <label>
-                    <input @if ($user->parQ->q7) checked @endif type="checkbox">
+                    <input @if ($user->parQ->q7) checked @endif disabled type="checkbox">
                     <span class="lever"></span>
                   </label>
                 </div>
@@ -244,7 +244,7 @@
               <td>
                 <div class="switch">
                   <label>
-                    <input @if ($user->parQ->q8) checked @endif type="checkbox">
+                    <input @if ($user->parQ->q8) checked @endif disabled type="checkbox">
                     <span class="lever"></span>
                   </label>
                 </div>
@@ -258,7 +258,7 @@
               <td>
                 <div class="switch">
                   <label>
-                    <input @if ($user->parQ->q9) checked @endif type="checkbox">
+                    <input @if ($user->parQ->q9) checked @endif disabled type="checkbox">
                     <span class="lever"></span>
                   </label>
                 </div>
@@ -272,7 +272,7 @@
               <td>
                 <div class="switch">
                   <label>
-                    <input @if ($user->parQ->q10) checked @endif type="checkbox">
+                    <input @if ($user->parQ->q10) checked @endif disabled type="checkbox">
                     <span class="lever"></span>
                   </label>
                 </div>
@@ -345,9 +345,8 @@
                                 <input class="with-gap"
                                 @foreach ($user->questionnaireAnswers as $key => $answer)
                                   @if ($answer->value == $option->value)checked @endif
-
                                 @endforeach
-                                name="{{$q->name}}" value="{{$option->value}}" type="radio" />
+                                name="{{$q->name}}" value="{{$option->value}}" type="radio" disabled />
                                 <span>{{$option->value}}</span>
                               </label>
                             </p>

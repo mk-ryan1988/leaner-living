@@ -12100,7 +12100,9 @@ ul.indicators {
   #gradient-bottom {
     height: 300px;
   }
+}
 
+@media only screen and (min-width: 989px) {
   #admin-content {
     width: calc(100% - 300px);
     heigth: calc(100vh - 64px);

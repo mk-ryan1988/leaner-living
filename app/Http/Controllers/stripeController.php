@@ -39,7 +39,7 @@ class stripeController extends Controller
         $token = $_POST['stripeToken'];
 
         $charge = \Stripe\Charge::create([
-            'amount' => 14999,
+            'amount' => $settings->freshStart_price,
             'currency' => 'GBP',
             'description' => 'Fresh Start Charge: '. Auth::user()->name,
             'source' => $token,

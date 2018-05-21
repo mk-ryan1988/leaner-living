@@ -21,6 +21,7 @@
     $('.pushpin').pushpin();
     $('select').formSelect();
     $('.materialboxed').materialbox();
+    $('.tooltipped').tooltip();
   });
 </script>
 
