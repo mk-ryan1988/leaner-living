@@ -7,7 +7,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
-        <title>Fresh Start</title>
+        <title>Leaner Living</title>
 
         @include('partials.styles')
 
