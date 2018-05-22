@@ -58,9 +58,8 @@ Route::middleware('auth')->group(function () {
     })->name('fresh-start.dashboard');
   });
   Route::prefix('admin')->group(function () {
-    Route::get('/overview', function () {
-      return view('admin.overview', ['user' => Auth::user()]);
-    })->name('admin.overview');
+    Route::get('/overview', 'AdminController@overview')->name('admin.overview');
+    Route::get('/parq/{id}', 'AdminController@parq')->name('admin.parq');
     Route::get('/users', 'AdminController@usersIndex')->name('admin.users');
     Route::get('/users/{id}', 'AdminController@userShow')->name('admin.userShow');
     Route::get('/settings', 'AdminController@settings')->name('admin.settings');

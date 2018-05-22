@@ -12024,6 +12024,10 @@ ul.indicators {
           justify-content: center;
 }
 
+.minus-margin {
+  margin-top: -80px;
+}
+
 @media only screen and (max-width: 576px) {
   .gradient.header {
     height: 150px;
@@ -12052,6 +12056,10 @@ ul.indicators {
   #welcome-name {
     margin-top: 50px;
   }
+
+  .gradient.header .leaner-logo {
+    display: none;
+  }
 }
 
 @media only screen and (min-width: 577px) {
@@ -12071,8 +12079,12 @@ ul.indicators {
     background-repeat: no-repeat;
   }
 
-  #contact-form .row > .col-12 {
+  #contact-form > .row > .col-12 {
     padding: 24px 0px 24px 15px;
+  }
+
+  #contact-form .card-panel.overflow {
+    position: relative;
     z-index: 1;
   }
 
@@ -12087,18 +12099,33 @@ ul.indicators {
     max-height: 400px;
   }
 
-  .minus-margin {
-    margin-top: -80px;
-  }
-
   #welcome-video {
     margin-top: 84px;
+  }
+
+  .gradient.header .leaner-logo {
+    display: none;
   }
 }
 
 @media only screen and (min-width: 769px) {
   #gradient-bottom {
     height: 300px;
+  }
+
+  .gradient.header .container-fluid {
+    position: relative;
+    max-width: 84%;
+  }
+
+  .gradient.header .leaner-logo {
+    position: absolute;
+    bottom: -135px;
+    left: 0;
+  }
+
+  .gradient.header .leaner-logo {
+    display: block;
   }
 }
 

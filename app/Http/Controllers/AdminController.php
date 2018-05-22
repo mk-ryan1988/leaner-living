@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\ParQ;
 use App\User;
 use App\Setting;
@@ -11,6 +12,19 @@ use Illuminate\Support\Facades\Crypt;
 
 class AdminController extends Controller
 {
+    public function overview()
+    {
+      $user = Auth::user();
+
+      $alerts = ParQ::whereNull('user_id')->get();
+      return view('admin.overview', compact('user', 'alerts'));
+    }
+    public function parq($id)
+    {
+      $parq = ParQ::where('id', $id)->first();
+      return view('admin.parq', compact('parq'));
+    }
+
     public function settings()
     {
       $settings = Setting::first();

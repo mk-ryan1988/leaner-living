@@ -1,6 +1,6 @@
-{{-- <div class="leaner-green" style="width: 100%; height: 50px;"> --}}
+{{-- <div class="leaner-green" style="width: 100%; height: 50px;">
 
-</div>
+</div> --}}
 <footer class="page-footer grey darken-4">
    {{-- <div class="container">
      <div class="row">
@@ -21,8 +21,8 @@
    </div> --}}
    <div class="footer-copyright black">
      <div class="container">
-     © 2014 Copyright Text
-     <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+     © <?php echo date('Y'); ?> Leaner-Living
+     <a class="grey-text text-lighten-4 right waves-effect waves-light " href="https://www.facebook.com/LeanerLiving2016/" target="_blank">Follow us on Facebook</a>
      </div>
    </div>
  </footer>

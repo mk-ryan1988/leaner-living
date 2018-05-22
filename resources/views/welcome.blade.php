@@ -2,18 +2,24 @@
 
 @section('content')
   <div class="gradient header">
-    <div class="container h-100">
+    <div class="container-fluid h-100 valign-wrapper" style="max-width: 84%; ">
+      <img src="{{url('/images/LEANER-LIVING-LOGO.png')}}" class="leaner-logo responsive-img " alt="">
     </div>
   </div>
   <div class="container-fluid">
     <div class="row align-items-start justify-content-center h-100" style="padding-bottom: 5rem;">
       <div class="col-12 col-lg-5 order-2 order-lg-2">
         <div style="padding: 24px 24px 0px 24px;">
-          <h3 class="flow-text d-block d-sm-none">Welcome to LEANER LIVING the home of FRESH START</h3>
-          <h3 class="d-none d-block">Welcome to LEANER LIVING the home of FRESH START</h3>
-
+          {{-- <h3 class="flow-text d-block d-sm-none">Welcome to LEANER LIVING the home of FRESH START</h3> --}}
+          <h3 class="d-block d-lg-none">Welcome to LEANER LIVING the home of FRESH START</h3>
+          <div class="spacerX3 d-none d-lg-block"></div>
           <p>
-            Our main goal at Leaner Living is to <strong>educate</strong> our clients<br>
+            This year we have launched the Fresh Start programme, this is our way of reaching a greater number of people while still providing a high quality product and service.
+          </p>
+          <p>
+            The Fresh Start is a culmination of 10 years coaching experience working with hundreds of clients looking to achieve the same goal, weight loss!
+          </p>
+          <p>
             Aimed at first timers and those with a little more confidence in the gym but not advanced athletes. We provide you with absolutely every tool you will need to achieve that goal but most important educate you how we did it and how you can keep that weight off long term.
           </p>
           <div class="valign-wrapper">
@@ -32,6 +38,42 @@
     </div>
   </div>
   <div class="spacerX3 d-none d-sm-block"></div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-1 d-none d-md-block leaner-green">
+      </div>
+      <div class="col-12 col-md-5 leaner-green">
+        <h3 class="white-text flow-text">About Us?</h3>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row align-items-start">
+      <div class="col-12 col-lg-11 z-depth-1 h-100 white">
+        <div class="row">
+          <div class="col-11 offset-md-1">
+            <div style="padding: 25px 0px;">
+              <p>
+                Our main goal at Leaner Living is to <strong>educate</strong> our clients.<br>
+                We believe that with a greater understanding of both exercise and nutrition you have a greater chance of not only executing but also adhering to a plan.<br> The byproduct of this will be results, not just short term “transformations” but long term maintainable change.
+              </p>
+              <p>
+                Leaner Living is a team of exercise and nutrition specialists who adopt a flexible dieting approach. Our goal is to keep up to date with the latest research and provide the best information to help you achieve your fat loss and fitness goals.
+                Leaner Living is a growing community of like minded individuals looking to drop body-fat and be active. Educating you on the basic understanding of what your body needs, combined with healthy eating and regular exercise.
+              </p>
+              <p>
+                We provide our clients with the highest level of personal support, education and package flexibility. There are no generic meal plans and we will not copy and paste a program. Everything we provide you has been designed around your needs, enjoyment and ability level.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="spacerX3 d-none d-sm-block"></div>
+
   {{-- <div class="container-fluid">
   <div class="row align-items-center">
     <div class="col-5 offset-lg-1" >
@@ -66,7 +108,7 @@
               <a id="nextSlide" style="position: absolute; bottom: 17.5px; right: 5px;" class="btn z-depth-0 off-black-text waves-effect white"><i class="material-icons">arrow_forward</i></a> --}}
               <div class="carousel-item" style="padding: 24px 0px;" href="#one!">
                 <div class="row" style="margin: 0px;">
-                  <div class="col-sm-5 d-none d-sm-block" style="padding-left: 0px;">
+                  <div class="col-sm-5 d-none d-sm-block left-align" style="padding-left: 0px;">
                       <img src="{{url('/images/steve.jpg')}}" alt="" style="max-height: 500px;" class="responsive-img">
                   </div>
                   <div class="col-12 col-sm-7 left-align" style="padding-right: 0px;">
@@ -88,7 +130,7 @@
               </div>
               <div class="carousel-item" href="#two!">
                 <div class="row" style="margin: 0px;">
-                  <div class="col-sm-5 d-none d-sm-block center-align" style="padding-left: 0px;">
+                  <div class="col-sm-5 d-none d-sm-block left-align" style="padding-left: 0px;">
                       <img src="{{url('/images/ruth.jpg')}}" alt="" style="max-height: 500px;" class="responsive-img">
                   </div>
                   <div class="col-12 col-sm-7 left-align" style="padding-right: 0px;">
@@ -172,8 +214,8 @@
           @csrf
           <div class="row align-items-center no-margin">
             <div class="col-12 col-lg-6 offset-lg-3 col-wrapper" >
-              <div class="card-panel overflow" style="max-height: 445px;">
-                <h3 class="d-none d-sm-block">Have something to ask?</h3>
+              <div class="card-panel overflow" style="max-height: 445px; z-index: 1; position: relative;">
+                <h3 class="d-none d-sm-block" style="margin-top: 0px">Have something to ask?</h3>
                   <div class="row">
                     <div class="input-field col-12">
                       <input placeholder="Full Name" id="name" type="text" name="name" value="{{ old('name') }}" required class="validate">
@@ -184,15 +226,18 @@
                     </div>
                   </div>
                   <div class="row align-items-center">
-                    <div class="input-field col-12">
+                    <div class="input-field col-12" style="margin-bottom: 0px;">
                       <textarea placeholder="Enter your message here" id="message" name="message" value="{{ old('message') }}" class="materialize-textarea" required class="validate"></textarea>
                     </div>
                   </div>
-                  <p>you can also reach us via a <a href="mailto::fresh-start@leaner-Living.com">fresh-start@leaner-Living.com</a></p>
+                  <p>
+                    you can also reach us via <a href="mailto::fresh-start@leaner-Living.com">fresh-start@leaner-Living.com</a><br>
+                    or alternately feel free to message us on <a href="https://www.facebook.com/LeanerLiving2016/" target="_blank" class="">our Facebook page</a>
+                  </p>
               </div>
             </div>
             <div class="col-12 col-lg-2" style="padding-left: 0px;">
-              <button type="submit" class="waves-effect waves-light leaner-green lighten-2 btn z-depth-0 flow-text w-100">
+              <button type="submit" class="waves-effect waves-light leaner-green lighten-2 btn z-depth-0 flow-text w-100" style="max-height: 445px; z-index: 0;">
                 submit message<i class="material-icons right">send</i>
               </button>
             </div>

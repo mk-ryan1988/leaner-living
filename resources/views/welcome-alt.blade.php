@@ -35,3 +35,16 @@
     </div>
   </div>
 </div>
+
+
+<p>
+  Our main goal at Leaner Living is to <strong>educate</strong> our clients.<br>
+  We believe that with a greater understanding of both exercise and nutrition you have a greater chance of not only executing but also adhering to a plan. The byproduct of this will be results, not just short term “transformations” but long term maintainable change.
+</p>
+<p>
+  Leaner Living is a team of exercise and nutrition specialists who adopt a flexible dieting approach. Our goal is to keep up to date with the latest research and provide the best information to help you achieve your fat loss and fitness goals.
+  Leaner Living is a growing community of like minded individuals looking to drop body-fat and be active. Educating you on the basic understanding of what your body needs, combined with healthy eating and regular exercise.
+</p>
+<p>
+  We provide our clients with the highest level of personal support, education and package flexibility. There are no generic meal plans and we will not copy and paste a program. Everything we provide you has been designed around your needs, enjoyment and ability level.
+</p>

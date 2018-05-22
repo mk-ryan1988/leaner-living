@@ -41,15 +41,21 @@
 </div>
 
 <ul class="sidenav collapsible" id="mobile-demo">
-  @if (Auth::user())
-    <li class="bold"><a class="collapsible-header waves-effect waves-teal">Hi, {{ Auth::user()->name }}<i class="material-icons right">keyboard_arrow_down</i></a>
-      <div class="collapsible-body" style="">
-        <ul>
-          <li><a href="">Dashboard</a></li>
-          <li><a onclick="event.preventDefault();document.getElementById('logout-form').submit();" href="{{ route('logout') }}">Logout</a></li>
-        </ul>
-      </div>
-    </li>
+  <h6 class="center-align">Welcome to</h6>
+  <img src="{{url('/images/LEANER-LIVING-LOGO.png')}}" alt="LEANER-LIVING-LOGO" class="responsive-img center-align padding">
+  <div class="divider"></div>
+
+  @if (Auth::check())
+    @if (Auth::user())
+      <li class="bold"><a class="collapsible-header waves-effect waves-teal">Hi, {{ Auth::user()->name }}<i class="material-icons right">keyboard_arrow_down</i></a>
+        <div class="collapsible-body" style="">
+          <ul>
+            <li><a href="">Dashboard</a></li>
+            <li><a onclick="event.preventDefault();document.getElementById('logout-form').submit();" href="{{ route('logout') }}">Logout</a></li>
+          </ul>
+        </div>
+      </li>
+    @endif
   @endif
   <li><a class="collapsible-header waves-effect waves-teal" href="{{ route('home')}}">Home</a></li>
   {{-- <li><a class="collapsible-header waves-effect waves-teal" href="{{ route('about')}}">About us</a></li> --}}
@@ -57,9 +63,12 @@
     <div class="collapsible-body" style="">
       <ul>
         <li><a href="{{ route('fresh-start.about')}}">About Fresh Start</a></li>
-        <li><a href="{{ route('login')}}">Login</a></li>
+        @unless (Auth::check())
+          <li><a href="{{ route('login')}}">Login</a></li>
+        @endunless
       </ul>
     </div>
   </li>
   <li><a class="collapsible-header waves-effect waves-teal" href="{{url('/#contact-form')}}">Contact us</a></li>
+  <li ><a class="collapsible-header waves-effect waves-teal blue-text text-darken-2" href="https://www.facebook.com/LeanerLiving2016/" target="_blank">Our Facebook Page</a></li>
 </ul>

@@ -273,6 +273,9 @@ border-radius: .25rem;
 .valign-wrapper.center-align {
   justify-content: center;
 }
+.minus-margin {
+  margin-top: -80px;
+}
 
 
 //mobile styling
@@ -303,6 +306,10 @@ border-radius: .25rem;
     // .gradient.bottom {
     //   height: 300px;
     // }
+    .gradient.header .leaner-logo {
+      display: none;
+    }
+
 }
 @media only screen and (min-width: 577px) {
     .gradient.header {
@@ -318,8 +325,11 @@ border-radius: .25rem;
       background-size: 50% 100%;
       background-repeat: no-repeat;
     }
-    #contact-form .row > .col-12 {
+    #contact-form > .row > .col-12 {
         padding: 24px 0px 24px 15px;
+    }
+    #contact-form .card-panel.overflow {
+        position: relative;
         z-index: 1;
     }
     #contact-form button {
@@ -330,17 +340,29 @@ border-radius: .25rem;
     .carousel-item .overflow {
       max-height: 400px;
     }
-    .minus-margin {
-      margin-top: -80px;
-    }
     #welcome-video {
        margin-top: 84px;
+    }
+    .gradient.header .leaner-logo {
+      display: none;
     }
 
 }
 @media only screen and (min-width: 769px) {
     #gradient-bottom {
       height: 300px;
+    }
+    .gradient.header .container-fluid {
+      position: relative;
+      max-width: 84%;
+    }
+    .gradient.header .leaner-logo {
+      position: absolute;
+      bottom: -135px;
+      left: 0;
+    }
+    .gradient.header .leaner-logo {
+      display: block;
     }
 }
 @media only screen and (min-width: 989px) {

@@ -150,8 +150,13 @@
     </div>
     <div class="col-12 col-lg-8 center-align">
       <div class="card-panel white" id="welcome-video" style="height: 415px;">
-        <img src="{{url('/images/fresh-start-colour.png')}}" alt="" style="height: 200px; width: auto;">
-        <h4>We're currently processing your profile and will have a message for you soon.</h4>
+        <div class="video-container">
+          <video  width="100%" height="auto" controls>
+           <source src="{{url('/videos/Welcome-to-the-Fresh-Start-compressed.mp4')}}" type="video/mp4">
+
+          Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
       <a href="https://www.facebook.com/groups/150603038982328/" target="_blank" class="modal-action waves-effect waves-dark btn leaner-green w-100">Join the fresh start closed facebook group!</a>
     </div>
