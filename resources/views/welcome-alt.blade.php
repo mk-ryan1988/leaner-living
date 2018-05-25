@@ -100,7 +100,7 @@
     <div class="col-12 col-lg-6 right-align">
 
       <div class="content-panel h-100">
-
+        <img src="{{url('images/ruth.jpg')}}" alt="" class=" left" style="width: 200px; height: 200px; margin-right: 10px; margin-bottom: 30px;">
         <h3 class="underline">Ruth</h3>
         <p>
           Ruth has always had a strong love for fitness, from starting Ballet at the age of 3 to competing in gymnastics at county level. In her 20's she found weightlifting and immediately found a new passion. Since then she has dieted down to compete in 2 bikini competitions and attend 2 physique photo-shoots.
