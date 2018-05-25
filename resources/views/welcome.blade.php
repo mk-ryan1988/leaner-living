@@ -11,7 +11,7 @@
       <div class="col-12 col-lg-5 order-2 order-lg-2">
         <div style="padding: 24px 24px 0px 24px;">
           {{-- <h3 class="flow-text d-block d-sm-none">Welcome to LEANER LIVING the home of FRESH START</h3> --}}
-          <h3 class="d-block d-lg-none">Welcome to LEANER LIVING the home of FRESH START</h3>
+          <h3 class="d-block d-lg-none">Welcome to LEANER LIVING home of The FRESH START</h3>
           <div class="spacerX3 d-none d-lg-block"></div>
           <p>
             This year we have launched the Fresh Start programme, this is our way of reaching a greater number of people while still providing a high quality product and service.

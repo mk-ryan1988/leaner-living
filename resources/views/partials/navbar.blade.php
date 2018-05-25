@@ -17,6 +17,7 @@
 </ul>
 
 <div class="" style="">
+  {{-- style="position: absolute; top: 0px; z-index: 2;" --}}
   <nav class="transparent z-depth-0" style="position: absolute; top: 0px; z-index: 2;">
     <div class="nav-wrapper container">
       <a href="{{ route('home')}}" class="brand-logo">
@@ -24,7 +25,7 @@
         style="height: 50px; vertical-align: middle;"> --}}
       </a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
+      <ul class="hide-on-med-and-down">
         <li><a href="{{ route('home')}}">Home</a></li>
         <li><a class="dropdown-trigger" href="#!" data-target="fresh-start">Fresh Start<i class="material-icons right">arrow_drop_down</i></a></li>
         <li><a href="{{url('/#contact-form')}}">Contact us</a></li>
