@@ -70,6 +70,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'admin' => 0,
         ]);
 
         //checks email domain to set admin permissions
@@ -77,9 +78,6 @@ class RegisterController extends Controller
         $domain = array_pop($explodedEmail);
         if ($domain == 'leaner-living.com') {
           $user->admin = true;
-          $user->save();
-        }else {
-          $user->admin = false;
           $user->save();
         }
 
@@ -91,6 +89,7 @@ class RegisterController extends Controller
           }
         }
 
+        dd(Auth::id());
         return $user;
     }
 }
