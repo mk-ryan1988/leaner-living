@@ -15,8 +15,8 @@ class AdminController extends Controller
     public function overview()
     {
       $user = Auth::user();
-
       $alerts = ParQ::whereNull('user_id')->get();
+
       return view('admin.overview', compact('user', 'alerts'));
     }
     public function parq($id)
@@ -35,7 +35,7 @@ class AdminController extends Controller
 
     public function usersIndex()
     {
-      $users = User::where('id', 1)->with('payment')->first();
+      $users = User::where('admin', 0)->with('payment')->get();
 
       return view('admin.users.index', compact('users'));
     }
