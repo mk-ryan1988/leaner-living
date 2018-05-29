@@ -361,7 +361,7 @@ border-radius: .25rem;
     }
     #bg-deadlift {
       background: url('https://image.freepik.com/free-photo/weights-exercise-weightlifter-strong-athletic_1139-709.jpg');
-      background-size: 50% 100%;
+      background-size: 100% 100%;
       background-repeat: no-repeat;
     }
     #contact-form > .row > .col-12 {
@@ -402,6 +402,11 @@ border-radius: .25rem;
     }
     .gradient.header .leaner-logo {
       display: block;
+    }
+    #bg-deadlift {
+      background: url('https://image.freepik.com/free-photo/weights-exercise-weightlifter-strong-athletic_1139-709.jpg');
+      background-size: 50% 100%;
+      background-repeat: no-repeat;
     }
 }
 @media only screen and (min-width: 989px) {

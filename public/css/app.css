@@ -12127,7 +12127,7 @@ ul.indicators {
 
   #bg-deadlift {
     background: url("https://image.freepik.com/free-photo/weights-exercise-weightlifter-strong-athletic_1139-709.jpg");
-    background-size: 50% 100%;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
   }
 
@@ -12178,6 +12178,12 @@ ul.indicators {
 
   .gradient.header .leaner-logo {
     display: block;
+  }
+
+  #bg-deadlift {
+    background: url("https://image.freepik.com/free-photo/weights-exercise-weightlifter-strong-athletic_1139-709.jpg");
+    background-size: 50% 100%;
+    background-repeat: no-repeat;
   }
 }
 

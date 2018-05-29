@@ -214,7 +214,7 @@
           @csrf
           <div class="row align-items-center no-margin">
             <div class="col-12 col-lg-6 offset-lg-3 col-wrapper" >
-              <div class="card-panel overflow" style="max-height: 445px; z-index: 1; position: relative;">
+              <div class="card-panel" style="z-index: 1; position: relative;">
                 <h3 class="d-none d-sm-block" style="margin-top: 0px">Have something to ask?</h3>
                   <div class="row">
                     <div class="input-field col-12">
