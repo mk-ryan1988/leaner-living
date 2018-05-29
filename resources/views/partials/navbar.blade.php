@@ -25,7 +25,7 @@
         style="height: 50px; vertical-align: middle;"> --}}
       </a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="hide-on-med-and-down">
+      <ul class="@unless (Route::currentRouteName() == 'home-alt')right @endunless hide-on-med-and-down">
         <li><a href="{{ route('home')}}">Home</a></li>
         <li><a class="dropdown-trigger" href="#!" data-target="fresh-start">Fresh Start<i class="material-icons right">arrow_drop_down</i></a></li>
         <li><a href="{{url('/#contact-form')}}">Contact us</a></li>

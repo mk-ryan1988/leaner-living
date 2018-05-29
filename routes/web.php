@@ -18,7 +18,7 @@ Route::get('/', function () {
 
 Route::get('/home', function () {
     return view('welcome-alt');
-})->name('home');
+})->name('home-alt');
 
 Route::get('/about', function () {
     return view('about');
