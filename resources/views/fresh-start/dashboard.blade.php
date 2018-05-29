@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+  {{-- {{dd($user)}} --}}
   <div id="stats_modal" class="modal">
     <form action="/api/stats" method="post" id="stats_form">
       @csrf

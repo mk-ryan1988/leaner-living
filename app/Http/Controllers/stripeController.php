@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+
 use Auth;
 use App\ParQ;
+use App\User;
 use App\Payment;
 use App\Setting;
 use Illuminate\Http\Request;
@@ -46,6 +48,11 @@ class stripeController extends Controller
             'receipt_email' => Auth::user()->email,
             "metadata" => array("order_id" => $result)
         ]);
+
+        $paid = User::find(Auth::id());
+        $paid->paid = 1;
+        $paid->paid_at = now();
+        $paid->save();
 
         return redirect()->route('fresh-start.questionnaire')->with('success', 'Payment Accepted!');
       }

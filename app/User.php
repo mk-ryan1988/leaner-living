@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'paid', 'paid_at'
     ];
 
     /**
@@ -32,7 +32,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $with = [
-        'stats', 'pics',
+        'stats', 'pics', 'questionnaireAnswers'
     ];
 
     public function parQ()
