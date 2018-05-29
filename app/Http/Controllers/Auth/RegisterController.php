@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Auth;
 use App\User;
 use App\Notifications\NewStarter;
 use App\Http\Controllers\Controller;
@@ -91,7 +92,7 @@ class RegisterController extends Controller
         }
 
         Auth::login($user);
-        
+
         return $user;
     }
 }
