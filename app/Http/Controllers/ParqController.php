@@ -54,7 +54,7 @@ class ParqController extends Controller
 
     }else {
 
-      return ['redirect' => route('payment')];
+      return ['redirect' => route('fresh-start.fresh-register')];
     }
   }
 }

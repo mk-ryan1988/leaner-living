@@ -29,6 +29,9 @@ Route::prefix('fresh-start')->group(function () {
   Route::get('/par-q', function () {
       return view('auth.PAR-Q');
   })->name('fresh-start.par-q');
+  Route::get('/register', function () {
+      return view('auth.fresh-register');
+  })->name('fresh-start.fresh-register');
   Route::get('/payment', function () {
       if (Auth::check()) {
         if (Auth::user()->admin == 1) {

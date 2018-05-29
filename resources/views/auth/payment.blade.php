@@ -32,133 +32,74 @@
 </div>
 <div class="spacer"></div>
 
-@unless (Auth::user())
-  <div class="row align-items-start justify-content-center">
-    <div class="col-12 col-md-6 padding">
-        <h3>Please create your login!</h3>
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
-
-            <div class="row">
-                <div class="col-12 col input-field">
-                    <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required>
-                    <label for="name">{{ __('Name') }}</label>
-                    @if ($errors->has('name'))
-                        <span class="invalid-feedback">
-                            <strong>{{ $errors->first('name') }}</strong>
-                        </span>
-                    @endif
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col input-field">
-                    <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-                    <label for="email">{{ __('E-Mail Address') }}</label>
-                    @if ($errors->has('email'))
-                        <span class="invalid-feedback">
-                            <strong>{{ $errors->first('email') }}</strong>
-                        </span>
-                    @endif
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col input-field">
-                    <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-                    <label for="password">{{ __('Password') }}</label>
-                    @if ($errors->has('password'))
-                        <span class="invalid-feedback">
-                            <strong>{{ $errors->first('password') }}</strong>
-                        </span>
-                    @endif
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col input-field">
-                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                    <label for="password-confirm">{{ __('Confirm Password') }}</label>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12">
-                    <button type="submit" class="btn btn-primary w-100">
-                        {{ __('Register') }}
-                    </button>
-                </div>
-            </div>
-        </form>
+<div id="card-details" class="row align-items-start justify-content-center">
+  <div class="col-12 col-md-6 padding">
+    <div class="right-align">
+      <img src="{{url('/images/visa.png')}}" alt="" style="height: 30px; width: auto;">
+      <img src="{{url('/images/mastercard.png')}}" alt="" style="height: 30px; width: auto;">
+      <img src="{{url('/images/americanexpress.png')}}" alt="" style="height: 30px; width: auto;">
     </div>
-  </div>
-@endunless
-@if (Auth::user())
-  <div id="card-details" class="row align-items-start justify-content-center">
-    <div class="col-12 col-md-6 padding">
-      <div class="right-align">
-        <img src="{{url('/images/visa.png')}}" alt="" style="height: 30px; width: auto;">
-        <img src="{{url('/images/mastercard.png')}}" alt="" style="height: 30px; width: auto;">
-        <img src="{{url('/images/americanexpress.png')}}" alt="" style="height: 30px; width: auto;">
+    <h3>Enter Payment Details</h3>
+
+    <p>Please enter you card details, along with your address, below to complete your admission to the Fresh Start.</p>
+    {{-- <h2>Welcome @if (Auth::user()), {{Auth::user()->name}}@endif</h2> --}}
+    <form action="/api/charge" method="post" id="stripe-form">
+      @csrf
+      <div class="row">
+        <div class="col-12 col input-field input cell">
+          <input id="example2-card-name" data-tid="elements_examples.form.name_placeholder" class="input empty" type="text" required="">
+          <label for="example2-card-name" data-tid="elements_examples.form.name_label">Card Name</label>
+        </div>
       </div>
-      <h3>Enter Payment Details</h3>
+      <div class="spacer"></div>
+      <div class="row">
+        <div class="col col-6 input-field input cell">
+          <div id="example2-card-number" class="input empty"></div>
+          <label for="example2-card-number" data-tid="elements_examples.form.card_number_label">Card number</label>
+          <div class="baseline"></div>
+        </div>
 
-      <p>Please enter you card details, along with your address, below to complete your admission to the Fresh Start.</p>
-      {{-- <h2>Welcome @if (Auth::user()), {{Auth::user()->name}}@endif</h2> --}}
-      <form action="/api/charge" method="post" id="stripe-form">
-        @csrf
-        <div class="row">
-          <div class="col-12 col input-field input cell">
-            <input id="example2-card-name" data-tid="elements_examples.form.name_placeholder" class="input empty" type="text" required="">
-            <label for="example2-card-name" data-tid="elements_examples.form.name_label">Card Name</label>
-          </div>
+        <div class="col col-6 input-field input cell">
+          <div id="example2-card-expiry" class="input empty"></div>
+          <label for="example2-card-expiry" data-tid="elements_examples.form.card_expiry_label">Expiration</label>
+          <div class="baseline"></div>
+        </div>
+      </div>
+      <div class="spacer"></div>
+      <div class="row">
+        <div class="col col-6 input-field input cell">
+          <div id="example2-card-cvc" class="input empty"></div>
+          <label for="example2-card-cvc" data-tid="elements_examples.form.card_cvc_label">CVC</label>
+          <div class="baseline"></div>
+        </div>
+        <div class="col col-6 input-field input cell">
+          <div id="example2-postalCode" class="input empty"></div>
+          <label for="example2-postalCode" data-tid="elements_examples.form.postalCode_label">Postal Code</label>
+          <div class="baseline"></div>
+        </div>
+
         </div>
         <div class="spacer"></div>
-        <div class="row">
-          <div class="col col-6 input-field input cell">
-            <div id="example2-card-number" class="input empty"></div>
-            <label for="example2-card-number" data-tid="elements_examples.form.card_number_label">Card number</label>
-            <div class="baseline"></div>
-          </div>
-
-          <div class="col col-6 input-field input cell">
-            <div id="example2-card-expiry" class="input empty"></div>
-            <label for="example2-card-expiry" data-tid="elements_examples.form.card_expiry_label">Expiration</label>
-            <div class="baseline"></div>
-          </div>
+      <div class="row no-gutters">
+        <div class="col">
+          <button class="btn waves-effect waves-dark w-100 leaner-green" type="submit" name="action">Pay £{{ filterPrice($freshSettings->freshStart_price) }}</button>
         </div>
-        <div class="spacer"></div>
-        <div class="row">
-          <div class="col col-6 input-field input cell">
-            <div id="example2-card-cvc" class="input empty"></div>
-            <label for="example2-card-cvc" data-tid="elements_examples.form.card_cvc_label">CVC</label>
-            <div class="baseline"></div>
-          </div>
-          <div class="col col-6 input-field input cell">
-            <div id="example2-postalCode" class="input empty"></div>
-            <label for="example2-postalCode" data-tid="elements_examples.form.postalCode_label">Postal Code</label>
-            <div class="baseline"></div>
-          </div>
+      </div>
+        <div class="form-row">
+          {{-- <label for="card-element">
+            Credit or debit card
+          </label> --}}
+          {{-- <div id="card-element">
+            <!-- A Stripe Element will be inserted here. -->
+          </div> --}}
 
-          </div>
-          <div class="spacer"></div>
-        <div class="row no-gutters">
-          <div class="col">
-            <button class="btn waves-effect waves-dark w-100 leaner-green" type="submit" name="action">Pay £{{ filterPrice($freshSettings->freshStart_price) }}</button>
-          </div>
+          <!-- Used to display form errors. -->
+          <div id="card-errors" role="alert"></div>
         </div>
-          <div class="form-row">
-            {{-- <label for="card-element">
-              Credit or debit card
-            </label> --}}
-            {{-- <div id="card-element">
-              <!-- A Stripe Element will be inserted here. -->
-            </div> --}}
-
-            <!-- Used to display form errors. -->
-            <div id="card-errors" role="alert"></div>
-          </div>
-      </form>
-    </div>
+    </form>
   </div>
-@endif
+</div>
+
 <div class="spacer"></div>
 @endsection
 
