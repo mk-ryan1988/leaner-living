@@ -16,15 +16,24 @@
 </div>
 <div class="container-fluid green-bg">
   <div class="row justify-content-center align-items-center">
-    <div class="col-12 col-lg-4 right-align">
+
+    {{-- Displays on desktops --}}
+    <div class="col-12 col-lg-4 hide-on-med-and-down right-align">
       <h3 class="white-text">THE FRESH START</h3>
-      {{-- <img src="{{url('/images/fresh-start-whiteout.png')}}" alt="" class="responsive-img"> --}}
       <div class="valign-wrapper justify-content-end">
         <i class="material-icons white-text medium left">arrow_forward</i>
         <a class="waves-effect waves-light btn-flat white-text" style="border: 2px solid #fff"  href="{{route('fresh-start.about')}}">Sign up now</a>
-        {{-- <a class="waves-effect waves-light btn z-depth-0" href="{{route('fresh-start.about')}}">Find out more</a> --}}
       </div>
     </div>
+    {{-- Displays on ipad down --}}
+    <div class="col-12 col-lg-4 hide-on-large-only left-align">
+      <h5 class="white-text">THE FRESH START</h5>
+      <div class="valign-wrapper justify-content-start">
+        <i class="material-icons white-text medium left">arrow_forward</i>
+        <a class="waves-effect waves-light btn-flat white-text" style="border: 2px solid #fff"  href="{{route('fresh-start.about')}}">Sign up now</a>
+      </div>
+    </div>
+
     <div class="col-12 col-lg-6 h-100 padding">
       <div class="video-container z-depth-3">
         <iframe class="z-depth-3" src="https://www.youtube-nocookie.com/embed/nzCKG7wPpws?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -35,7 +44,8 @@
     </div>
   </div>
 </div>
-<div class="container section">
+<div class="spacerX2"></div>
+<div class="container ">
   <div class="row view-height">
     <div class="col-12">
       <header>

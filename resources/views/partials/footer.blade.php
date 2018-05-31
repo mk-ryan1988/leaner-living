@@ -1,7 +1,4 @@
-{{-- <div class="leaner-green" style="width: 100%; height: 50px;">
-
-</div> --}}
-<footer class="page-footer grey darken-4">
+<footer class="d-none d-md-block page-footer grey darken-4">
    {{-- <div class="container">
      <div class="row">
        <div class="col l6 s12">

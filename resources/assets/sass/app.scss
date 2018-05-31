@@ -44,7 +44,7 @@
   	left: 0;
     // background-image: url('https://image.freepik.com/free-photo/young-woman-measuring-her-waist-by-measure-tape_1301-7674.jpg');
     // background-image: url('https://image.freepik.com/free-photo/female-athlete-being-measured-waist_1149-1073.jpg');
-    background-image: url('/images/3311.jpg');
+    background-image: url('/images/home-bg.jpg');
     background-size: cover;
     background-position: right;
     opacity: 0.6;
@@ -89,12 +89,6 @@ ul.indicators {
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
-.view-height {
-  height: 100vh;
-}
-.view-height.overflow {
-  overflow: auto;
 }
 .overflow {
   overflow: auto;
@@ -348,6 +342,13 @@ border-radius: .25rem;
     .gradient.header .leaner-logo {
       display: none;
     }
+    #home-banner {
+      &:before {
+        background-image: url('/images/home-bg-sml.jpg');
+        background-size: cover;
+        background-position: center;
+      }
+    }
 
 }
 @media only screen and (min-width: 577px) {
@@ -385,7 +386,19 @@ border-radius: .25rem;
     .gradient.header .leaner-logo {
       display: none;
     }
-
+    #home-banner {
+      &:before {
+        background-image: url('/images/home-bg-sml.jpg');
+        background-size: cover;
+        background-position: right;
+      }
+    }
+    .view-height {
+      height: 100vh;
+    }
+    .view-height.overflow {
+      overflow: auto;
+    }
 }
 @media only screen and (min-width: 769px) {
     #gradient-bottom {
@@ -415,6 +428,13 @@ border-radius: .25rem;
       heigth: calc(100vh - 64px);
       margin-left: 300px;
       overflow: auto;
+    }
+    #home-banner {
+      &:before {
+        background-image: url('/images/home-bg.jpg');
+        background-size: cover;
+        background-position: right;
+      }
     }
 
 }

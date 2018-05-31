@@ -24,6 +24,14 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
+
+Route::get('/members', function () {
+    return view('members.index');
+})->name('members area');
+Route::get('/members/profile', function () {
+    return view('members.profile');
+})->name('members profile');
+
 Route::prefix('fresh-start')->group(function () {
   Route::get('/about', 'FreshController@about')->name('fresh-start.about');
   Route::get('/par-q', function () {

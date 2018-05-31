@@ -9287,6 +9287,68 @@ ul.stepper .step-content .row {
   vertical-align: middle;
 }
 
+.bottom-nav {
+  position: fixed;
+  left: 0;
+  bottom: 61px;
+  width: 100%;
+  -webkit-box-shadow: 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: space-evenly;
+  -webkit-transform: translateY(60px);
+  transform: translateY(60px);
+  -webkit-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.5, 1);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.5, 1);
+  width: 100%;
+  height: 54px;
+  z-index: 4;
+}
+
+.bottom-nav a {
+  height: 100%;
+  max-width: 168px;
+  min-width: 80px;
+  padding: 6px 0 10px;
+  color: #263238;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bottom-nav a i.material-icons {
+  font-size: 24px;
+  line-height: 24px;
+  margin: auto;
+}
+
+.bottom-nav a span {
+  display: none;
+  line-height: 1;
+  font-size: 14px;
+}
+
+.bottom-nav a.active span {
+  display: block;
+}
+
+.bottom-nav a.active span,
+.bottom-nav a.active i {
+  color: #0F7143;
+}
+
 /*!
  * Bootstrap Grid v4.0.0 (https://getbootstrap.com)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -11760,7 +11822,7 @@ html {
   bottom: 0;
   right: 0;
   left: 0;
-  background-image: url("/images/3311.jpg");
+  background-image: url("/images/home-bg.jpg");
   background-size: cover;
   background-position: right;
   opacity: 0.6;
@@ -11816,14 +11878,6 @@ ul.indicators {
   background-color: #fff;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
-
-.view-height {
-  height: 100vh;
-}
-
-.view-height.overflow {
-  overflow: auto;
 }
 
 .overflow {
@@ -12112,6 +12166,12 @@ ul.indicators {
   .gradient.header .leaner-logo {
     display: none;
   }
+
+  #home-banner:before {
+    background-image: url("/images/home-bg-sml.jpg");
+    background-size: cover;
+    background-position: center;
+  }
 }
 
 @media only screen and (min-width: 577px) {
@@ -12158,6 +12218,20 @@ ul.indicators {
   .gradient.header .leaner-logo {
     display: none;
   }
+
+  #home-banner:before {
+    background-image: url("/images/home-bg-sml.jpg");
+    background-size: cover;
+    background-position: right;
+  }
+
+  .view-height {
+    height: 100vh;
+  }
+
+  .view-height.overflow {
+    overflow: auto;
+  }
 }
 
 @media only screen and (min-width: 769px) {
@@ -12193,6 +12267,12 @@ ul.indicators {
     heigth: calc(100vh - 64px);
     margin-left: 300px;
     overflow: auto;
+  }
+
+  #home-banner:before {
+    background-image: url("/images/home-bg.jpg");
+    background-size: cover;
+    background-position: right;
   }
 }
 

@@ -19,6 +19,11 @@
         <main>
           @yield('content')
         </main>
+
+          @if ( str_contains(url()->current(), 'members'))
+            @include('partials.bottom-nav')
+          @endif
+
           @include('partials.footer')
       </div>
 

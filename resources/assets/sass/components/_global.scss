@@ -15,8 +15,13 @@ body {
 }
 
 main {
-  // flex: 1 0 auto;
+  // position: relative;
+  // min-height: 100%;
+  // z-index: 1;
 }
+// div#app {
+//   min-height: 100%;
+// }
 
 button,
 input,

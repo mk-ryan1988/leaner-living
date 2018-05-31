@@ -12,6 +12,15 @@ if (! function_exists('isActive')) {
         }
     }
 }
+if (! function_exists('isActiveBottom')) {
+    function isActiveBottom($value, $default = null) {
+
+        $route = url()->current();
+        if ($value == $route) {
+          return 'active';
+        }
+    }
+}
 if (! function_exists('filterName')) {
     function filterName($value, $default = null) {
 
