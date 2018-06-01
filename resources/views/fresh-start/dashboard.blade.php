@@ -150,7 +150,7 @@
       </div>
     </div>
     <div class="col-12 col-lg-8 center-align">
-      <div class="card-panel white" id="welcome-video" style="height: auto;">
+      <div class="card-panel white" id="welcome-video" style="height: autogit ;">
         <div class="video-container">
           <video  width="100%" height="auto" controls>
            <source src="{{url('/videos/Welcome-to-the-Fresh-Start-compressed.mp4')}}" type="video/mp4">
