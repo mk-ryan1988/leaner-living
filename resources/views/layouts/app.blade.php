@@ -1,3 +1,4 @@
+<?php Header("Cache-Control: max-age=3000, must-revalidate"); ?>
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
