@@ -8,6 +8,11 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
+        {{-- To stop caching issue --}}
+        <meta http-equiv=“Pragma” content=”no-cache”>
+        <meta http-equiv=“Expires” content=”-1″>
+        <meta http-equiv=“CACHE-CONTROL” content=”NO-CACHE”>
+        
         <title>Leaner Living</title>
 
         @include('partials.styles')
