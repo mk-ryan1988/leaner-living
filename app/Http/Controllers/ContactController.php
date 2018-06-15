@@ -15,7 +15,7 @@ class ContactController extends Controller
            'message' => 'required',
        ]);
 
-       if (env('MAILGUN_DOMAIN')) {
+       if (true) {
 
          Mail::send('emails.contact', ['input' => $request->input()], function($message) use ($request)
          {
