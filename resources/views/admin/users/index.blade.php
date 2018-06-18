@@ -19,7 +19,7 @@
               {{$user->payment->commence_at->format('M Y')}}
             </p>
 
-            <a href="{{route('admin.userShow', ['id' => 1])}}" class="secondary-content"><i class="material-icons">input</i></a>
+            <a href="{{route('admin.userShow', ['id' => $user->id])}}" class="secondary-content"><i class="material-icons">input</i></a>
           </li>
         @endforeach
         </ul>
