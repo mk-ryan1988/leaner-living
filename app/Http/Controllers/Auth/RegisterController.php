@@ -80,12 +80,10 @@ class RegisterController extends Controller
           $user->save();
         }
 
-        if (env('MAILGUN_DOMAIN')) {
-          //sends email to admin to notify of new user registration
-          $admin = User::where('email', env('ADMIN_EMAIL'))->first();
-          if ($admin) {
-            $admin->notify(new NewStarter($user));
-          }
+        //sends email to admin to notify of new user registration
+        $admin = User::where('email', env('ADMIN_EMAIL'))->first();
+        if ($admin) {
+          $admin->notify(new NewStarter($user));
         }
 
         return $user;

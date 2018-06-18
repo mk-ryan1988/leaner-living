@@ -114,7 +114,6 @@
                                         <p><strong>Their email address is:</strong> {{$input['email']}}</p>
                                         <p><strong>Their message is:</strong></p> --}}
                                         <p>
-                                          {{$message}}
                                         </p>
                                         <p>
                                            Regards,<br>

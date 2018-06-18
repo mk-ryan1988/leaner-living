@@ -19,7 +19,7 @@ class ContactController extends Controller
 
          Mail::send('emails.contact', ['input' => $request->input()], function($message) use ($request)
          {
-           $message->from($request->email, $request->name);
+           $message->from(env('APP_EMAIL'));
            $message->to(env('CONTACT_EMAIL'))->subject('Contact Form Message');
          });
          return redirect()->back()->with('alert', 'Thank you, message recieved!');

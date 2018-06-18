@@ -47,9 +47,8 @@ class ParqController extends Controller
                      'name'     => $request->name,
                      'email'    => $request->email,
                     );
-        if (env('MAILGUN_DOMAIN')) {
-          Mail::to(env('ADMIN_EMAIL'))->send(new parqFailed($mailData));
-        }
+        Mail::to(env('CONTACT_EMAIL'))->send(new parqFailed($mailData));
+
         abort(403);
 
     }else {
