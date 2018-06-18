@@ -53127,9 +53127,9 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
-        _c("th", [_vm._v("QUESTION")]),
+        _c("th", { staticClass: "leaner-green-text" }, [_vm._v("QUESTION")]),
         _vm._v(" "),
-        _c("th", [_vm._v("NO/YES")])
+        _c("th", { staticClass: "leaner-green-text" }, [_vm._v("NO/YES")])
       ])
     ])
   }

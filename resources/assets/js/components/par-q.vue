@@ -67,8 +67,8 @@
               <table>
                 <thead>
                   <tr>
-                    <th>QUESTION</th>
-                    <th>NO/YES</th>
+                    <th class="leaner-green-text">QUESTION</th>
+                    <th class="leaner-green-text">NO/YES</th>
                   </tr>
                 </thead>
 
