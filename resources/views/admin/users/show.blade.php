@@ -17,115 +17,119 @@
   @if ($user->stats && $user->pics)
     <div style="diplay: none" id="tab1" class="col s12 padding">
       <h4>Starting Pics</h4>
-      <div class="row">
-        @foreach ($user->pics as $picCollection)
-            <div class="col-12 col-md-4">
-              <img src="{{$picCollection->pic_1}}" class="responsive-img materialboxed" alt="">
+      @if (count($user->pics) > 0)
+        <div class="row">
+          @foreach ($user->pics as $picCollection)
+              <div class="col-12 col-md-4">
+                <img src="{{$picCollection->pic_1}}" class="responsive-img materialboxed" alt="">
+              </div>
+              <div class="col-12 col-md-4">
+                <img src="{{$picCollection->pic_2}}" class="responsive-img materialboxed" alt="">
+              </div>
+              <div class="col-12 col-md-4">
+                <img src="{{$picCollection->pic_3}}" class="responsive-img materialboxed" alt="">
+              </div>
+              @break
+          @endforeach
+
+        </div>
+      @endif
+      <h4>Starting Stats</h4>
+      @if (count($user->stats) > 0)
+        @foreach ($user->stats as $stats)
+          @if ($loop->first)
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <div class="row">
+                  <div class="col">
+                    <label class="leaner-green-text">Chest</label>
+                    <p style="border-bottom: 2px dotted grey">
+                      {{ $stats->chest }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="row">
+                  <div class="col">
+                    <label class="leaner-green-text">Waist</label>
+                    <p style="border-bottom: 2px dotted grey">
+                      {{ $stats->waist }}
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="col-12 col-md-4">
-              <img src="{{$picCollection->pic_2}}" class="responsive-img materialboxed" alt="">
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <div class="row">
+                  <div class="col">
+                    <label class="leaner-green-text">Left Arm</label>
+                    <p style="border-bottom: 2px dotted grey">
+                      {{ $stats->left_arm }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="row">
+                  <div class="col">
+                    <label class="leaner-green-text">Right Arm</label>
+                    <p style="border-bottom: 2px dotted grey">
+                      {{ $stats->right_arm }}
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="col-12 col-md-4">
-              <img src="{{$picCollection->pic_3}}" class="responsive-img materialboxed" alt="">
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <div class="row">
+                  <div class="col">
+                    <label class="leaner-green-text">Left Leg</label>
+                    <p style="border-bottom: 2px dotted grey">
+                      {{ $stats->left_leg }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="row">
+                  <div class="col">
+                    <label class="leaner-green-text">Right Leg</label>
+                    <p style="border-bottom: 2px dotted grey">
+                      {{ $stats->right_leg }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <div class="row">
+                  <div class="col">
+                    <label class="leaner-green-text">Left Leg</label>
+                    <p style="border-bottom: 2px dotted grey">
+                      {{ $stats->current_weight }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="row">
+                  <div class="col">
+                    <label class="leaner-green-text">Right Leg</label>
+                    <p style="border-bottom: 2px dotted grey">
+                      {{ $stats->target_weight }}
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
             @break
+          @endif
         @endforeach
-
-      </div>
-      <h4>Starting Stats</h4>
-      @foreach ($user->stats as $stats)
-        @if ($loop->first)
-          <div class="row">
-            <div class="col-12 col-md-6">
-              <div class="row">
-                <div class="col">
-                  <label class="leaner-green-text">Chest</label>
-                  <p style="border-bottom: 2px dotted grey">
-                    {{ $stats->chest }}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6">
-              <div class="row">
-                <div class="col">
-                  <label class="leaner-green-text">Waist</label>
-                  <p style="border-bottom: 2px dotted grey">
-                    {{ $stats->waist }}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12 col-md-6">
-              <div class="row">
-                <div class="col">
-                  <label class="leaner-green-text">Left Arm</label>
-                  <p style="border-bottom: 2px dotted grey">
-                    {{ $stats->left_arm }}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6">
-              <div class="row">
-                <div class="col">
-                  <label class="leaner-green-text">Right Arm</label>
-                  <p style="border-bottom: 2px dotted grey">
-                    {{ $stats->right_arm }}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12 col-md-6">
-              <div class="row">
-                <div class="col">
-                  <label class="leaner-green-text">Left Leg</label>
-                  <p style="border-bottom: 2px dotted grey">
-                    {{ $stats->left_leg }}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6">
-              <div class="row">
-                <div class="col">
-                  <label class="leaner-green-text">Right Leg</label>
-                  <p style="border-bottom: 2px dotted grey">
-                    {{ $stats->right_leg }}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12 col-md-6">
-              <div class="row">
-                <div class="col">
-                  <label class="leaner-green-text">Left Leg</label>
-                  <p style="border-bottom: 2px dotted grey">
-                    {{ $stats->current_weight }}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6">
-              <div class="row">
-                <div class="col">
-                  <label class="leaner-green-text">Right Leg</label>
-                  <p style="border-bottom: 2px dotted grey">
-                    {{ $stats->target_weight }}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          @break
-        @endif
-      @endforeach
+      @endif
     </div>
   @endif
   @if ($user->parQ)
