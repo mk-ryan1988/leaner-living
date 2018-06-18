@@ -33,6 +33,8 @@
           @endforeach
 
         </div>
+        @else
+          <p>Nothing to show</p>
       @endif
       <h4>Starting Stats</h4>
       @if (count($user->stats) > 0)
@@ -129,6 +131,8 @@
             @break
           @endif
         @endforeach
+      @else
+        <p>Nothing to show</p>
       @endif
     </div>
   @endif
