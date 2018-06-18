@@ -20,7 +20,7 @@ class ContactController extends Controller
          Mail::send('emails.contact', ['input' => $request->input()], function($message) use ($request)
          {
            $message->from('freshBot@leaner-living.com');
-           $message->to('test@leaner-living.com')->subject('Contact Form Message');
+           $message->to('freshStart@leaner-living.com')->subject('Contact Form Message');
          });
          return redirect()->back()->with('alert', 'Thank you, message recieved!');
 
