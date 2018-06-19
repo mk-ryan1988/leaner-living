@@ -103,7 +103,7 @@
       <div class="modal-content">
         <h4>Starting Photos</h4>
         <p>
-          Can you please take 3 full body photos of yourself on a plain backdrop.<br>
+          Can you please take 3 full body photos of yourself on a plain backdrop, one being front on, one side on, and one rear facing.<br>
           This can be in whatever you feel comfortable in and is purely for us to track your progress. We will never use results from our programmes without permission from the participant.
         </p>
         <div class="spacer"></div>
