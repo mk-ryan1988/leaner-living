@@ -94,11 +94,11 @@
             <td align="center">
                 <table class="content" width="100%" cellpadding="0" cellspacing="0">
                    <tr>
-                     <td class="header">
-                         <a href="http://www.leaner-living.comt/admin/overview">
-                            <img src="http://www.leaner-living.com/images/fresh-start-colour.png" alt="" style="height: 150px; width: auto;">
-                         </a>
-                     </td>
+                       <td class="header">
+                           <a href="http://www.leaner-living.comt/admin/overview">
+                              <img src="http://www.leaner-living.com/images/fresh-start-colour.png" alt="" style="height: 150px; width: auto;">
+                           </a>
+                       </td>
                    </tr>
 
                     <!-- Email Body -->
@@ -110,9 +110,12 @@
 
                                     <td class="content-cell">
                                         <h2>Hey,</h2>
-                                        <p>A new user has submitted but failed a PAR-Questionnaire</p>
+                                        <p>A new user has signed up to Fresh Start</p>
+                                        <p>{{$mailData['name']}},<br>
+                                           {{$mailData['email']}}
+                                        </p>
                                         <p>
-                                           <a target="_blank" class="button button-green" href="http://www.leaner-living.com/admin/overview/{{$mailData['id']}}">View {{$mailData['name']}}'s PAR-Q</a>
+                                           <a target="_blank" class="button button-green" href="http://www.leaner-living.com/admin/overview/">View DashBoard</a>
                                         </p>
                                         <p>
                                            Regards,<br>

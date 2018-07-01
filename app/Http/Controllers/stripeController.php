@@ -8,6 +8,7 @@ use App\ParQ;
 use App\User;
 use App\Payment;
 use App\Setting;
+use App\Mail\payment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
 
@@ -54,30 +55,34 @@ class stripeController extends Controller
         $paid->paid_at = now();
         $paid->save();
 
+        $mailData = array(
+                     'name'     => Auth::user()->name,
+                     'email'    => Auth::user()->email,
+                    );
+        Mail::to('freshStart@leaner-living.com')->send(new payment($mailData));
         return redirect()->route('fresh-start.questionnaire')->with('success', 'Payment Accepted!');
+
       }
 
     }
     public function test(Request $request) {
 
 
-      $secretKey = 'sk_test_ky4FSsiuwLe1d77E1L0pj9mg';
-
       // Set your secret key: remember to change this to your live secret key in production
       // See your keys here: https://dashboard.stripe.com/account/apikeys
-      \Stripe\Stripe::setApiKey($secretKey);
+      \Stripe\Stripe::setApiKey('sk_test_ky4FSsiuwLe1d77E1L0pj9mg');
 
       // Token is created using Checkout or Elements!
       // Get the payment token ID submitted by the form:
       $token = $_POST['stripeToken'];
 
       $charge = \Stripe\Charge::create([
-          'amount' => $secretKey,
+          'amount' => 9999,
           'currency' => 'GBP',
           'description' => 'Fresh Start Charge: testing',
           'source' => $token,
           'receipt_email' => 'mkryan1988@gmail.com',
-          "metadata" => '0001'
+          "metadata" => array("order_id" => 001)
       ]);
 
       return redirect()->route('fresh-start.questionnaire')->with('success', 'Payment Accepted!');

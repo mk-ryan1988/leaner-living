@@ -107,7 +107,7 @@
   <script type="text/javascript">
   (function() {
     'use strict';
-    var stripe = Stripe('pk_test_xFpY5YYGorzCtPmELc8Sop3X');
+    var stripe = Stripe('pk_live_MqnQMb2pl1kLATEq1jo3wHKV');
 
     var elements = stripe.elements({
       // Stripe's examples are localized to specific languages, but if
