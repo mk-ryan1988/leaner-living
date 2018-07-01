@@ -16,9 +16,7 @@ class stripeController extends Controller
     public function index(Request $request) {
 
       $settings = Setting::first();
-      // $secretKey = Crypt::decryptString($settings->stripe_key_secret);
-
-      $secretKey = 'sk_test_ky4FSsiuwLe1d77E1L0pj9mg';
+      $secretKey = Crypt::decryptString($settings->stripe_key_secret);
 
       $order = new Payment;
       $order->user_id = Auth::id();
@@ -58,6 +56,31 @@ class stripeController extends Controller
 
         return redirect()->route('fresh-start.questionnaire')->with('success', 'Payment Accepted!');
       }
+
+    }
+    public function test(Request $request) {
+
+
+      $secretKey = 'sk_test_ky4FSsiuwLe1d77E1L0pj9mg';
+
+      // Set your secret key: remember to change this to your live secret key in production
+      // See your keys here: https://dashboard.stripe.com/account/apikeys
+      \Stripe\Stripe::setApiKey($secretKey);
+
+      // Token is created using Checkout or Elements!
+      // Get the payment token ID submitted by the form:
+      $token = $_POST['stripeToken'];
+
+      $charge = \Stripe\Charge::create([
+          'amount' => $settings->freshStart_price,
+          'currency' => 'GBP',
+          'description' => 'Fresh Start Charge: testing',
+          'source' => $token,
+          'receipt_email' => 'mkryan1988@gmail.com',
+          "metadata" => array("order_id" => $result)
+      ]);
+
+      return redirect()->route('fresh-start.questionnaire')->with('success', 'Payment Accepted!');
 
     }
 }

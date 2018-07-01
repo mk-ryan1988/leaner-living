@@ -87,7 +87,7 @@ Route::post('/contact-form', 'ContactController@postForm');
 
 // Api routes
 Route::prefix('api')->group(function () {
-  Route::post('/charge', 'stripeController@index');
+  Route::post('/charge', 'stripeController@test');
   Route::post('/parq', 'ParqController@store');
   Route::post('/questionnaire', 'QuestionnaireController@store');
   Route::post('/stats', 'StatsController@store');
