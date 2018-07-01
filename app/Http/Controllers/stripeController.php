@@ -72,12 +72,12 @@ class stripeController extends Controller
       $token = $_POST['stripeToken'];
 
       $charge = \Stripe\Charge::create([
-          'amount' => $settings->freshStart_price,
+          'amount' => $secretKey,
           'currency' => 'GBP',
           'description' => 'Fresh Start Charge: testing',
           'source' => $token,
           'receipt_email' => 'mkryan1988@gmail.com',
-          "metadata" => array("order_id" => $result)
+          "metadata" => '0001'
       ]);
 
       return redirect()->route('fresh-start.questionnaire')->with('success', 'Payment Accepted!');
