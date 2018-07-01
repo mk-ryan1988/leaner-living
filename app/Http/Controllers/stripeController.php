@@ -18,7 +18,7 @@ class stripeController extends Controller
       $settings = Setting::first();
       // $secretKey = Crypt::decryptString($settings->stripe_key_secret);
 
-      $secretKey = sk_test_ky4FSsiuwLe1d77E1L0pj9mg;
+      $secretKey = 'sk_test_ky4FSsiuwLe1d77E1L0pj9mg';
 
       $order = new Payment;
       $order->user_id = Auth::id();
