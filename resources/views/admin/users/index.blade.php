@@ -16,7 +16,9 @@
             <i class="material-icons circle green">account_circle</i>
             <span class="title">{{$user->name}}</span>
             <p>Commence Date:<br>
-              {{$user->payment->commence_at->format('M Y')}}
+              @if ($user->payment)
+                {{$user->payment->commence_at->format('M Y')}}
+              @endif
             </p>
 
             <a href="{{route('admin.userShow', ['id' => $user->id])}}" class="secondary-content"><i class="material-icons">input</i></a>

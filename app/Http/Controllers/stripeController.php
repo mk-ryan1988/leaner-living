@@ -27,7 +27,7 @@ class stripeController extends Controller
       $order->commence_at = now()->addMonth()->startOfMonth();
       $order->save();
 
-      $parQ = ParQ::where('name', Auth::user()->name)->first();
+      $parQ = ParQ::where('email', Auth::user()->email)->first();
       $parQ->user_id = Auth::id();
       $parQ->save();
 
