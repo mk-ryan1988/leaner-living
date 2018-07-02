@@ -45,9 +45,9 @@ class stripeController extends Controller
         $charge = \Stripe\Charge::create([
             'amount' => $settings->freshStart_price,
             'currency' => 'GBP',
-            'description' => 'Fresh Start Charge: Mark Testing',
+            'description' => 'Fresh Start',
             'source' => $token,
-            'receipt_email' => 'mkryan1988@gmail.com',
+            'receipt_email' => Auth::user()->email,
             "metadata" => array("order_id" => $result)
         ]);
 
