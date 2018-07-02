@@ -47,7 +47,7 @@ class ParqController extends Controller
                      'name'     => $request->name,
                      'email'    => $request->email,
                     );
-        Mail::to('freshStart@leaner-living.com')->send(new parqFailed($mailData));
+        Mail::to('freshstart@leaner-living.com')->send(new parqFailed($mailData));
 
         abort(403);
 

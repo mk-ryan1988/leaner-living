@@ -27,29 +27,29 @@ class stripeController extends Controller
       $order->commence_at = now()->addMonth()->startOfMonth();
       $order->save();
 
-      // $parQ = ParQ::where('name', Auth::user()->name)->first();
-      // $parQ->user_id = Auth::id();
-      // $parQ->save();
+      $parQ = ParQ::where('name', Auth::user()->name)->first();
+      $parQ->user_id = Auth::id();
+      $parQ->save();
 
       $result = $order->id;
 
       if ($result) {
-        // // Set your secret key: remember to change this to your live secret key in production
-        // // See your keys here: https://dashboard.stripe.com/account/apikeys
-        // \Stripe\Stripe::setApiKey($secretKey);
-        //
-        // // Token is created using Checkout or Elements!
-        // // Get the payment token ID submitted by the form:
-        // $token = $_POST['stripeToken'];
-        //
-        // $charge = \Stripe\Charge::create([
-        //     'amount' => $settings->freshStart_price,
-        //     'currency' => 'GBP',
-        //     'description' => 'Fresh Start Charge: Mark Testing',
-        //     'source' => $token,
-        //     'receipt_email' => 'mkryan1988@gmail.com',
-        //     "metadata" => array("order_id" => $result)
-        // ]);
+        // Set your secret key: remember to change this to your live secret key in production
+        // See your keys here: https://dashboard.stripe.com/account/apikeys
+        \Stripe\Stripe::setApiKey($secretKey);
+
+        // Token is created using Checkout or Elements!
+        // Get the payment token ID submitted by the form:
+        $token = $_POST['stripeToken'];
+
+        $charge = \Stripe\Charge::create([
+            'amount' => $settings->freshStart_price,
+            'currency' => 'GBP',
+            'description' => 'Fresh Start Charge: Mark Testing',
+            'source' => $token,
+            'receipt_email' => 'mkryan1988@gmail.com',
+            "metadata" => array("order_id" => $result)
+        ]);
 
         $paid = User::find(Auth::id());
         $paid->paid = 1;
@@ -60,7 +60,7 @@ class stripeController extends Controller
                      'name'     => Auth::user()->name,
                      'email'    => Auth::user()->email,
                     );
-        Mail::to('admin@leaner-living.com')->send(new paymentConfirm($mailData));
+        Mail::to('freshstart@leaner-living.com')->send(new paymentConfirm($mailData));
 
         return redirect()->route('fresh-start.questionnaire')->with('success', 'Payment Accepted!');
 
