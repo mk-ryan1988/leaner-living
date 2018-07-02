@@ -32,7 +32,6 @@ class stripeController extends Controller
       // $parQ->save();
 
       // $result = $order->id;
-      $result = '0001';
 
       // if ($result) {
       //   // Set your secret key: remember to change this to your live secret key in production
@@ -70,7 +69,7 @@ class stripeController extends Controller
                    'name'     => 'Mark Ryan',
                    'email'    => 'mkryan1988@gmail.com',
                   );
-      Mail::to('admin@leaner-living.com')->send(new paymentConfirm($mailData));
+      Mail::to('mkryan1988@gmail.com')->send(new paymentConfirm($mailData));
 
       return redirect()->route('fresh-start.questionnaire')->with('success', 'Payment Accepted!');
 
