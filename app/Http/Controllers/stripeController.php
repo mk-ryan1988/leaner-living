@@ -51,21 +51,28 @@ class stripeController extends Controller
       //       'receipt_email' => 'mkryan1988@gmail.com',
       //       "metadata" => array("order_id" => $result)
       //   ]);
+      //
+      //   // $paid = User::find(Auth::id());
+      //   // $paid->paid = 1;
+      //   // $paid->paid_at = now();
+      //   // $paid->save();
+      //
+      //   $mailData = array(
+      //                'name'     => 'Mark Ryan',
+      //                'email'    => 'mkryan1988@gmail.com',
+      //               );
+      //   Mail::to('admin@leaner-living.com')->send(new paymentConfirm($mailData));
+      //
+      //   return redirect()->route('fresh-start.questionnaire')->with('success', 'Payment Accepted!');
+      //
+      // }
+      $mailData = array(
+                   'name'     => 'Mark Ryan',
+                   'email'    => 'mkryan1988@gmail.com',
+                  );
+      Mail::to('admin@leaner-living.com')->send(new paymentConfirm($mailData));
 
-        // $paid = User::find(Auth::id());
-        // $paid->paid = 1;
-        // $paid->paid_at = now();
-        // $paid->save();
-
-        $mailData = array(
-                     'name'     => 'Mark Ryan',
-                     'email'    => 'mkryan1988@gmail.com',
-                    );
-        Mail::to('admin@leaner-living.com')->send(new paymentConfirm($mailData));
-
-        return redirect()->route('fresh-start.questionnaire')->with('success', 'Payment Accepted!');
-
-      }
+      return redirect()->route('fresh-start.questionnaire')->with('success', 'Payment Accepted!');
 
     }
     public function test(Request $request) {
