@@ -172,8 +172,8 @@
       <div class="card-panel no-padding no-margin white h-100">
         <ul class="collection with-header checklist">
           <li class="collection-header"><h4>Profile Checklist</h4></li>
-          <a class="@if ($user->paid) complete @endif collection-item"><i class="material-icons left">payment</i><span>Payment</span></a>
-          <a class="@if ($user->questionnaire) complete @endif collection-item"><i class="material-icons left">list</i><span>Questionnaire</span></a>
+          <a @if ($user->paid) disabled @endif href="{{url('/fresh-start/payment')}}" class="@if ($user->paid) complete @endif collection-item"><i class="material-icons left">payment</i><span>Payment</span></a>
+          <a @if ($user->questionnaire) disabled @endif href="{{url('/fresh-start/questionnaire')}}" class="@if ($user->questionnaire) complete @endif collection-item"><i class="material-icons left">list</i><span>Questionnaire</span></a>
           <a class="@if (count($user->stats) > 0) complete  @endif collection-item modal-trigger" href="#stats_modal"><i class="material-icons left">insert_chart</i> <span>Starting Stats</span></a>
           <a class="@if (count($user->pics) > 0) complete @endif collection-item modal-trigger" href="#pics_modal"><i class="material-icons left">add_a_photo</i> <span>Starting Photos</span></a>
         </ul>
