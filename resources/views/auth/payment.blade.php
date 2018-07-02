@@ -2,7 +2,6 @@
 
 
 @section('content')
-{{dd(Auth::user())}}
 <div class="gradient header" style="height: 400px;">
   <div class="container h-100">
     <div class="row h-100 align-items-center">
