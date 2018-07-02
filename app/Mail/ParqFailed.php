@@ -36,7 +36,7 @@ class ParqFailed extends Mailable
     public function build()
     {
 
-      return $this->from('fresh-start@leaner-living.com')
+      return $this->from('freshBot@leaner-living.com')
       ->view('emails.parqFailed');
     }
 }
