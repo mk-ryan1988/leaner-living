@@ -110,7 +110,7 @@
               <div class="col-12 col-md-6">
                 <div class="row">
                   <div class="col">
-                    <label class="leaner-green-text">Left Leg</label>
+                    <label class="leaner-green-text">Current Weight</label>
                     <p style="border-bottom: 2px dotted grey">
                       {{ $stats->current_weight }}
                     </p>
@@ -120,7 +120,7 @@
               <div class="col-12 col-md-6">
                 <div class="row">
                   <div class="col">
-                    <label class="leaner-green-text">Right Leg</label>
+                    <label class="leaner-green-text">Target Weight</label>
                     <p style="border-bottom: 2px dotted grey">
                       {{ $stats->target_weight }}
                     </p>

@@ -111,7 +111,7 @@
         <div class="file-field input-field">
           <div class="btn">
             <span>File</span>
-            <input name="photos[]" type="file" multiple>
+            <input name="photos[]" type="file" multiple capture="user">
           </div>
           <div class="file-path-wrapper">
             <input class="file-path validate" type="text" placeholder="Upload your pictures here">
