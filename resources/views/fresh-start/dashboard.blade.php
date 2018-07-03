@@ -227,7 +227,6 @@
     </div>
   </div>
 </div> --}}
-
 @endsection
 @if ($errors->has('photos') || $errors->has('photos.*'))
   @section('scripts')
@@ -238,7 +237,7 @@
     </script>
   @endsection
 @endif
-@if ($errors->has('chest') || $errors->has('waist') || $errors->has('left_leg') || $errors->has('right_leg') || $errors->has('left_arm') || $errors->has('right_arm') || $errors->has('current_weight') || $errors->has('target_weight'))
+@if (session('stats_error') || $errors->has('chest') || $errors->has('waist') || $errors->has('left_leg') || $errors->has('right_leg') || $errors->has('left_arm') || $errors->has('right_arm') || $errors->has('current_weight') || $errors->has('target_weight'))
   @section('scripts')
     <script type="text/javascript">
       $(document).ready(function(){

@@ -45,7 +45,7 @@ class stripeController extends Controller
         $charge = \Stripe\Charge::create([
             'amount' => $settings->freshStart_price,
             'currency' => 'GBP',
-            'description' => 'Fresh Start'. Auth::user()->name,
+            'description' => 'Fresh Start: '. Auth::user()->name,
             'source' => $token,
             'receipt_email' => Auth::user()->email,
             "metadata" => array("order_id" => $result)
@@ -68,7 +68,7 @@ class stripeController extends Controller
 
     }
     public function test(Request $request) {
-
+      $name = 'Mark Ryan';
 
       // Set your secret key: remember to change this to your live secret key in production
       // See your keys here: https://dashboard.stripe.com/account/apikeys
@@ -81,7 +81,7 @@ class stripeController extends Controller
       $charge = \Stripe\Charge::create([
           'amount' => 9999,
           'currency' => 'GBP',
-          'description' => 'Fresh Start Charge: testing',
+          'description' => 'Fresh Start: ' .$name,
           'source' => $token,
           'receipt_email' => 'mkryan1988@gmail.com',
           "metadata" => array("order_id" => 001)
