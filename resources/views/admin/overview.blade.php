@@ -10,7 +10,7 @@
           @foreach ($alerts as $key => $alert)
             <li class="collection-item avatar ">
             <i class="material-icons circle red accent-2">notifications_active</i>
-            <span class="title">Failed PAR-Q</span>
+            <span class="title">Failed or pending PAR-Q</span>
             <p>{{$alert->name}}<br>
              <a href="mailto:{{$alert->email}}">{{$alert->email}}</a>
             </p>

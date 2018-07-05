@@ -27,10 +27,6 @@ class stripeController extends Controller
       $order->commence_at = now()->addMonth()->startOfMonth();
       $order->save();
 
-      $parQ = ParQ::where('email', Auth::user()->email)->first();
-      $parQ->user_id = Auth::id();
-      $parQ->save();
-
       $result = $order->id;
 
       if ($result) {
@@ -55,6 +51,12 @@ class stripeController extends Controller
         $paid->paid = 1;
         $paid->paid_at = now();
         $paid->save();
+
+        $parQ = ParQ::where('email', Auth::user()->email)->first();
+        if ($parQ) {
+          $parQ->user_id = Auth::id();
+          $parQ->save();
+        }
 
         $mailData = array(
                      'name'     => Auth::user()->name,
