@@ -106,6 +106,7 @@
           Can you please take 3 full body photos of yourself on a plain backdrop, one being front on, one side on, and one rear facing.<br>
           This can be in whatever you feel comfortable in and is purely for us to track your progress. We will never use results from our programmes without permission from the participant.
         </p>
+        <p> <strong>* all 3 images must be uploaded at once</strong> </p>
         <div class="spacer"></div>
         @csrf
         <div class="file-field input-field">
@@ -116,6 +117,11 @@
           <div class="file-path-wrapper">
             <input class="file-path validate" type="text" placeholder="Upload your pictures here">
           </div>
+          @if ($errors->has('photos'))
+              <span class="invalid-feedback" style="bottom: -20px!important;">
+                  <strong class="red-text text-accent-2">Please make sure you select 3 images.</strong>
+              </span>
+          @endif
           @if ($errors->has('photos.*'))
               <span class="invalid-feedback" style="bottom: -20px!important;">
                   <strong>Problem Uplaoding! Please check files are images and do not exceed 4MBs each.</strong>

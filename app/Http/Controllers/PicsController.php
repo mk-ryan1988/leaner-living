@@ -14,7 +14,7 @@ class PicsController extends Controller
 
 
     $this->validate($request, [
-             'photos' => 'required',
+             'photos' => 'required|min:3',
              'photos.*' => 'mimes:png,jpeg,jpg',
              'photos.*' => 'max:4000'
      ]);
@@ -37,7 +37,7 @@ class PicsController extends Controller
       }
     }
 
-    $user_photos->save();
+    // $user_photos->save();
 
     return redirect()->route('fresh-start.dashboard')->with('status', 'Profile updated!');
 
