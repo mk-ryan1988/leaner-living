@@ -21,10 +21,10 @@
         <div data-step-label="" class="step-title waves-effect waves-dark">PAR-Q</div>
       </li>
       <li class="step">
-        <div class="step-title waves-effect waves-dark">Register / Payment</div>
+        <div class="step-title waves-effect waves-dark">Payment</div>
       </li>
       <li class="step">
-        <div class="step-title waves-effect waves-dark">Questionnaire</div>
+        <div class="step-title waves-effect waves-dark">Next Steps</div>
       </li>
     </ul>
   </div>

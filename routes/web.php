@@ -54,8 +54,35 @@ Route::prefix('fresh-start')->group(function () {
         return view('auth.payment');
       }
   })->name('payment');
+  Route::get('/register', function () {
+      return view('fresh-start.payment-alt');
+  })->name('payment-alt');
   Route::get('/questionnaire', 'QuestionnaireController@index')->name('fresh-start.questionnaire');
 });
+
+Route::prefix('fresh-start-alt/')->group(function () {
+  Route::get('/about', 'FreshController@about')->name('fresh-start.about');
+  Route::get('/par-q', function () {
+      return view('fresh-start.par-q');
+  })->name('fresh-start-alt.par-q');
+  // Route::get('/register', function () {
+  //     return view('auth.fresh-register');
+  // })->name('fresh-start.fresh-register');
+  // Route::get('/payment', function () {
+  //     if (Auth::check()) {
+  //       if (Auth::user()->admin == 1) {
+  //         return redirect()->route('admin.overview');
+  //       }else {
+  //         return view('auth.payment');
+  //       }
+  //     }else {
+  //       return view('auth.payment');
+  //     }
+  // })->name('payment');
+  Route::get('/questionnaire', 'QuestionnaireController@index')->name('fresh-start.questionnaire');
+});
+
+
 
 Route::prefix('errors')->group(function () {
   Route::get('/403', function () {
