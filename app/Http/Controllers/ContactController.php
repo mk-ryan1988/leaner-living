@@ -21,6 +21,7 @@ class ContactController extends Controller
          {
            $message->from('freshBot@leaner-living.com');
            $message->to('freshStart@leaner-living.com')->subject('Contact Form Message');
+          //  $message->to('mkryan1988@gmail.com')->subject('Contact Form Message');
          });
          return redirect()->back()->with('alert', 'Thank you, message recieved!');
 

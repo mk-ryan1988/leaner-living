@@ -24,6 +24,9 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
+Route::get('/test', function () {
+  return view('test');
+})->name('test');
 
 Route::get('/members', function () {
     return view('members.index');
