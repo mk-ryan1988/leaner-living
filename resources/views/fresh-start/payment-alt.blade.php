@@ -40,17 +40,27 @@
     </div>
     <h3>Enter Payment Details</h3>
 
-    <p>Please enter you card details, along with your address, below to complete your admission to the Fresh Start.</p>
+    <p>Please enter you card details, along with your address, below to complete your admission to the Fresh Start.
+      <br>
+      If you have a <strong>promo code</strong> please enter this is the boxbelow before clicking the pay button at the bottom of the page.
+    </p>
     {{-- <h2>Welcome @if (Auth::user()), {{Auth::user()->name}}@endif</h2> --}}
     <form action="/api/charge" method="post" id="stripe-form">
       @csrf
+      <div class="row">
+        <div class="col-12 col input-field input cell">
+          <input id="example2-promo-code" name="promo" data-tid="elements_examples.form.name_placeholder" class="input empty" type="text">
+          <label for="example2-promo-code" data-tid="elements_examples.form.name_label">Promo Code</label>
+        </div>
+      </div>
+      <div class="spacer"></div>
       <div class="row">
         <div class="col-12 col input-field input cell">
           <input id="example2-card-name" data-tid="elements_examples.form.name_placeholder" class="input empty" type="text" required="">
           <label for="example2-card-name" data-tid="elements_examples.form.name_label">Card Name</label>
         </div>
       </div>
-      <div class="spacer"></div>
+      {{-- <div class="spacer"></div> --}}
       <div class="row">
         <div class="col col-6 input-field input cell">
           <div id="example2-card-number" class="input empty"></div>
@@ -106,7 +116,7 @@
   <script type="text/javascript">
   (function() {
     'use strict';
-    var stripe = Stripe('pk_live_MqnQMb2pl1kLATEq1jo3wHKV');
+    var stripe = Stripe('pk_test_xFpY5YYGorzCtPmELc8Sop3X');
 
     var elements = stripe.elements({
       // Stripe's examples are localized to specific languages, but if

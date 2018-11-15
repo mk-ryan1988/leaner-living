@@ -17,6 +17,10 @@ class stripeController extends Controller
 {
     public function index(Request $request) {
 
+      $promoCodes = [];
+
+      dd($request->all());
+
       $settings = Setting::first();
       $secretKey = Crypt::decryptString($settings->stripe_key_secret);
 
@@ -32,7 +36,8 @@ class stripeController extends Controller
       if ($result) {
         // Set your secret key: remember to change this to your live secret key in production
         // See your keys here: https://dashboard.stripe.com/account/apikeys
-        \Stripe\Stripe::setApiKey($secretKey);
+        // \Stripe\Stripe::setApiKey($secretKey);
+        \Stripe\Stripe::setApiKey('sk_test_ky4FSsiuwLe1d77E1L0pj9mg');
 
         // Token is created using Checkout or Elements!
         // Get the payment token ID submitted by the form:
@@ -47,16 +52,16 @@ class stripeController extends Controller
             "metadata" => array("order_id" => $result)
         ]);
 
-        $paid = User::find(Auth::id());
-        $paid->paid = 1;
-        $paid->paid_at = now();
-        $paid->save();
+        // $paid = User::find(Auth::id());
+        // $paid->paid = 1;
+        // $paid->paid_at = now();
+        // $paid->save();
 
-        $parQ = ParQ::where('email', Auth::user()->email)->first();
-        if ($parQ) {
-          $parQ->user_id = Auth::id();
-          $parQ->save();
-        }
+        // $parQ = ParQ::where('email', Auth::user()->email)->first();
+        // if ($parQ) {
+        //   $parQ->user_id = Auth::id();
+        //   $parQ->save();
+        // }
 
         $mailData = array(
                      'name'     => Auth::user()->name,
