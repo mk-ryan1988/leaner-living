@@ -51659,6 +51659,7 @@ exports.default = {
         name: '',
         dob: '',
         gender: '',
+        email: '',
         q1: false,
         q1More: '',
         q2: false,
@@ -51695,6 +51696,7 @@ exports.default = {
       var _this = this;
 
       this.form.post('/api/parq').then(function (response) {
+        localStorage.setItem('email', _this.form.email);
         window.location = response.data.redirect;
       }).catch(function (e) {
         if (e.response.status == 422) {

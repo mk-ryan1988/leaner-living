@@ -36,35 +36,14 @@ Route::get('/members/profile', function () {
 })->name('members profile');
 
 Route::prefix('fresh-start')->group(function () {
+  //about view
   Route::get('/about', 'FreshController@about')->name('fresh-start.about');
-  Route::get('/par-q', function () {
-      return view('auth.PAR-Q');
-  })->name('fresh-start.par-q');
-  Route::get('/register', function () {
-      return view('auth.fresh-register');
-  })->name('fresh-start.fresh-register');
-  Route::get('/payment', function () {
-      if (Auth::check()) {
-        if (Auth::user()->admin == 1) {
-          return redirect()->route('admin.overview');
-        }else {
-          return view('auth.payment');
-        }
-      }else {
-        return view('auth.payment');
-      }
-  })->name('payment');
-  Route::get('/register', function () {
-      return view('fresh-start.payment-alt');
-  })->name('payment-alt');
-  Route::get('/questionnaire', 'QuestionnaireController@index')->name('fresh-start.questionnaire');
-});
-
-Route::prefix('fresh-start-alt/')->group(function () {
-  Route::get('/about', 'FreshController@about')->name('fresh-start.about');
+  
+  // 1.par-q view
   Route::get('/par-q', function () {
       return view('fresh-start.par-q');
-  })->name('fresh-start-alt.par-q');
+  })->name('fresh-start.par-q');
+
   // Route::get('/register', function () {
   //     return view('auth.fresh-register');
   // })->name('fresh-start.fresh-register');
@@ -79,8 +58,26 @@ Route::prefix('fresh-start-alt/')->group(function () {
   //       return view('auth.payment');
   //     }
   // })->name('payment');
-  Route::get('/questionnaire', 'QuestionnaireController@index')->name('fresh-start.questionnaire');
+  // Route::get('/questionnaire', 'QuestionnaireController@index')->name('fresh-start.questionnaire');
+
+  // 2.payment view
+  Route::get('/payment-alt', function () {
+      return view('fresh-start.payment-alt');
+  })->name('fresh-start.payment-alt');
+
+  // 3.next-steps view
+  Route::get('/next-steps', function () {
+      return view('fresh-start.next-steps');
+  })->name('fresh-start.next-steps');
 });
+
+// Route::prefix('fresh-start-alt/')->group(function () {
+//   Route::get('/about', 'FreshController@about')->name('fresh-start.about');
+//   Route::get('/par-q', function () {
+//       return view('fresh-start.par-q');
+//   })->name('fresh-start-alt.par-q');
+//   Route::get('/questionnaire', 'QuestionnaireController@index')->name('fresh-start.questionnaire');
+// });
 
 
 

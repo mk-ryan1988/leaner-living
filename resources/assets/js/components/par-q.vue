@@ -265,6 +265,7 @@ export default {
         name: '',
         dob: '',
         gender: '',
+        email: '',
         q1: false,
         q1More: '',
         q2: false,
@@ -299,6 +300,7 @@ export default {
     submitForm: function() {
      this.form.post('/api/parq')
        .then(response => {
+         localStorage.setItem('email', this.form.email);
          window.location = response.data.redirect;
      }).catch(e => {
          if (e.response.status == 422) {

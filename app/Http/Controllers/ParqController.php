@@ -61,6 +61,6 @@ class ParqController extends Controller
 
     Mail::to('freshstart@leaner-living.com')->send(new parqResponse($request->all()));
 
-    return ['redirect' => route('payment-alt')];
+    return ['redirect' => route('fresh-start.payment-alt')];
   }
 }

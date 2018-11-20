@@ -17,23 +17,28 @@ class stripeController extends Controller
 {
     public function index(Request $request) {
 
-      $promoCodes = [];
-
-      dd($request->all());
-
       $settings = Setting::first();
       $secretKey = Crypt::decryptString($settings->stripe_key_secret);
 
-      $order = new Payment;
-      $order->user_id = Auth::id();
-      $order->product = 'fresh-start';
-      $order->card_name = $request->cardName;
-      $order->commence_at = now()->addMonth()->startOfMonth();
-      $order->save();
+      $promoCode = 'BF50';
+      $standardPrice = $settings->freshStart_price;
 
-      $result = $order->id;
+      if (strtoupper($request->promoCode) === $promoCode) {
+        $price = (50 / 100) * $standardPrice;
+      } else {
+        $price = $standardPrice;
+      }
+  
+      // $order = new Payment;
+      // $order->user_id = Auth::id();
+      // $order->product = 'fresh-start';
+      // $order->card_name = $request->cardName;
+      // $order->commence_at = now()->addMonth()->startOfMonth();
+      // $order->save();
 
-      if ($result) {
+      // $result = $order->id;
+
+      if (true) {
         // Set your secret key: remember to change this to your live secret key in production
         // See your keys here: https://dashboard.stripe.com/account/apikeys
         // \Stripe\Stripe::setApiKey($secretKey);
@@ -44,12 +49,12 @@ class stripeController extends Controller
         $token = $_POST['stripeToken'];
 
         $charge = \Stripe\Charge::create([
-            'amount' => $settings->freshStart_price,
+            'amount' => $price,
             'currency' => 'GBP',
-            'description' => 'Fresh Start: '. Auth::user()->name,
+            'description' => 'Fresh Start: '.  $request->cardName,
             'source' => $token,
-            'receipt_email' => Auth::user()->email,
-            "metadata" => array("order_id" => $result)
+            'receipt_email' => $request->email
+            // 'metadata' => array("order_id" => $result)
         ]);
 
         // $paid = User::find(Auth::id());
@@ -64,12 +69,12 @@ class stripeController extends Controller
         // }
 
         $mailData = array(
-                     'name'     => Auth::user()->name,
-                     'email'    => Auth::user()->email,
+                     'name'     => $request->cardName,
+                     'email'    => $request->email,
                     );
         Mail::to('freshstart@leaner-living.com')->send(new paymentConfirm($mailData));
 
-        return redirect()->route('fresh-start.questionnaire')->with('success', 'Payment Accepted!');
+        return redirect()->route('fresh-start.next-steps')->with('email',  $request->email);
 
       }
 

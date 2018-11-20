@@ -24,7 +24,7 @@
         <div class="step-title waves-effect waves-dark">Register / Payment</div>
       </li>
       <li class="step">
-        <div class="step-title waves-effect waves-dark">Questionnaire</div>
+        <div class="step-title waves-effect waves-dark">Next Steps</div>
       </li>
     </ul>
   </div>
@@ -33,67 +33,75 @@
 
 <div id="card-details" class="row align-items-start justify-content-center">
   <div class="col-12 col-md-6 padding">
-    <div class="right-align">
-      <img src="{{url('/images/visa.png')}}" alt="" style="height: 30px; width: auto;">
-      <img src="{{url('/images/mastercard.png')}}" alt="" style="height: 30px; width: auto;">
-      <img src="{{url('/images/americanexpress.png')}}" alt="" style="height: 30px; width: auto;">
-    </div>
-    <h3>Enter Payment Details</h3>
-
-    <p>Please enter you card details, along with your address, below to complete your admission to the Fresh Start.
-      <br>
-      If you have a <strong>promo code</strong> please enter this is the boxbelow before clicking the pay button at the bottom of the page.
-    </p>
-    {{-- <h2>Welcome @if (Auth::user()), {{Auth::user()->name}}@endif</h2> --}}
     <form action="/api/charge" method="post" id="stripe-form">
       @csrf
-      <div class="row">
-        <div class="col-12 col input-field input cell">
-          <input id="example2-promo-code" name="promo" data-tid="elements_examples.form.name_placeholder" class="input empty" type="text">
-          <label for="example2-promo-code" data-tid="elements_examples.form.name_label">Promo Code</label>
+      <div class="card-panel z-depth-0">
+        <h5>Apply Promo Code</h5>
+        <div class="row valign-wrapper">
+          <div class="col s6 input-field input cell">
+              <input id="example2-promo-code" name="promoCode" data-tid="elements_examples.form.name_placeholder" class="input empty" type="text">
+              <label for="example2-promo-code" data-tid="elements_examples.form.name_label">Promo Code</label>
+              <span id="promo-helper" class="helper-text" data-error="wrong" data-success="right"></span>
+          </div>
+          <div class="col s6">
+              <a style="margin-bottom: 18px;" class="btn waves-effect waves-dark w-100 leaner-green z-depth-0" id="apply-code" name="apply">apply code</a>
+          </div>
         </div>
       </div>
-      <div class="spacer"></div>
-      <div class="row">
-        <div class="col-12 col input-field input cell">
-          <input id="example2-card-name" data-tid="elements_examples.form.name_placeholder" class="input empty" type="text" required="">
-          <label for="example2-card-name" data-tid="elements_examples.form.name_label">Card Name</label>
+      <div class="card-panel z-depth-0">
+        <h5>Email Address</h5>
+        <div class="row valign-wrapper">
+          <div class="col s12 input-field input cell">
+          <input id="example2-email-address" value=" {{ session('email') }}" name="email" data-tid="elements_examples.form.name_placeholder" class="input empty" type="text">
+              <label for="example2-email-address" data-tid="elements_examples.form.name_label">Email Address</label>
+          </div>
         </div>
       </div>
-      {{-- <div class="spacer"></div> --}}
-      <div class="row">
-        <div class="col col-6 input-field input cell">
-          <div id="example2-card-number" class="input empty"></div>
-          <label for="example2-card-number" data-tid="elements_examples.form.card_number_label">Card number</label>
-          <div class="baseline"></div>
+      <div class="card-panel z-depth-0">
+        <div class="left-align">
+          <img src="{{url('/images/visa.png')}}" alt="" style="height: 30px; width: auto;">
+          <img src="{{url('/images/mastercard.png')}}" alt="" style="height: 30px; width: auto;">
+          <img src="{{url('/images/americanexpress.png')}}" alt="" style="height: 30px; width: auto;">
         </div>
-
-        <div class="col col-6 input-field input cell">
-          <div id="example2-card-expiry" class="input empty"></div>
-          <label for="example2-card-expiry" data-tid="elements_examples.form.card_expiry_label">Expiration</label>
-          <div class="baseline"></div>
+        <h5>Enter Payment Details</h5>
+        <p>
+          Please enter you card details, along with your address, below to complete your admission to the Fresh Start. 
+        </p>
+        <div class="row">
+          <div class="col-12 col input-field input cell">
+            <input id="example2-card-name" data-tid="elements_examples.form.name_placeholder" class="input empty" type="text" required="">
+            <label for="example2-card-name" data-tid="elements_examples.form.name_label">Card Name</label>
+          </div>
         </div>
-      </div>
-      <div class="spacer"></div>
-      <div class="row">
-        <div class="col col-6 input-field input cell">
-          <div id="example2-card-cvc" class="input empty"></div>
-          <label for="example2-card-cvc" data-tid="elements_examples.form.card_cvc_label">CVC</label>
-          <div class="baseline"></div>
-        </div>
-        <div class="col col-6 input-field input cell">
-          <div id="example2-postalCode" class="input empty"></div>
-          <label for="example2-postalCode" data-tid="elements_examples.form.postalCode_label">Postal Code</label>
-          <div class="baseline"></div>
-        </div>
-
+        {{-- <div class="spacer"></div> --}}
+        <div class="row">
+          <div class="col col-6 input-field input cell">
+            <div id="example2-card-number" class="input empty"></div>
+            <label for="example2-card-number" data-tid="elements_examples.form.card_number_label">Card number</label>
+            <div class="baseline"></div>
+          </div>
+  
+          <div class="col col-6 input-field input cell">
+            <div id="example2-card-expiry" class="input empty"></div>
+            <label for="example2-card-expiry" data-tid="elements_examples.form.card_expiry_label">Expiration</label>
+            <div class="baseline"></div>
+          </div>
         </div>
         <div class="spacer"></div>
-      <div class="row no-gutters">
-        <div class="col">
-          <button class="btn waves-effect waves-dark w-100 leaner-green" type="submit" name="action">Pay £{{ filterPrice($freshSettings->freshStart_price) }}</button>
+        <div class="row">
+          <div class="col col-6 input-field input cell">
+            <div id="example2-card-cvc" class="input empty"></div>
+            <label for="example2-card-cvc" data-tid="elements_examples.form.card_cvc_label">CVC</label>
+            <div class="baseline"></div>
+          </div>
+          <div class="col col-6 input-field input cell">
+            <div id="example2-postalCode" class="input empty"></div>
+            <label for="example2-postalCode" data-tid="elements_examples.form.postalCode_label">Postal Code</label>
+            <div class="baseline"></div>
+          </div>
+  
         </div>
-      </div>
+        <div class="spacer"></div>
         <div class="form-row">
           {{-- <label for="card-element">
             Credit or debit card
@@ -105,7 +113,20 @@
           <!-- Used to display form errors. -->
           <div id="card-errors" role="alert"></div>
         </div>
+      </div>
+      <button class="btn waves-effect waves-dark w-100 leaner-green" id="submit-btn" type="submit" name="action"></button>
     </form>
+    {{-- <div class="row">
+      <div class="col s12">
+        Enter Promo Code Here:
+        <div class="input-field inline">
+          <input id="email_inline" type="email" class="validate">
+          <label for="email_inline">Promo Code</label>
+        </div>
+      </div>
+    </div> --}}
+    {{-- <h2>Welcome @if (Auth::user()), {{Auth::user()->name}}@endif</h2> --}}
+
   </div>
 </div>
 
@@ -239,10 +260,42 @@
       hiddenName.setAttribute('value', cardName.value);
       form.appendChild(hiddenName);
 
+
+
       // Submit the form
       form.submit();
     }
 
   })();
+  //sets price on button
+  $(document).ready(function () {
+    $("#submit-btn").html('Pay £' + {{ filterPrice($freshSettings->freshStart_price) }});
+    $('#example2-email-address').attr('value', localStorage.getItem('email'));
+  });
+
+  //check if code is good and applys it to price button
+  $("#apply-code").click(function(){
+    $(this).addClass( "disabled" );
+    var code = 'BF50'
+    var price = {{ filterPrice($freshSettings->freshStart_price) }};
+    var enteredCode =  $('#example2-promo-code').val().toUpperCase();
+    if (enteredCode === code) {
+      newPrice = ((price/100) * 50).toFixed(2)
+      $("#submit-btn").html('Pay £' + newPrice);
+      $('#example2-promo-code').attr('readonly', true);
+      $("#promo-helper").html('Promo code applied');
+      // $(this).removeClass("disabled");
+    } else {
+      alert(false);
+      $("#promo-helper").html('Invalid promo code');
+      $(this).removeClass( "disabled" );
+    }
+  });
   </script>
+  <style>
+    a.disabled {
+      pointer-events: none;
+      cursor: default;
+    }
+  </style>
 @endsection
