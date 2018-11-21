@@ -10,7 +10,7 @@
       Thank you for signing up to Fresh Start!
     </p>
     <p>
-      Please start your journey by completing the following questionnaire followed by adding some starting stats and images.
+      Please start your journey by completing the following questionnaire. We will then deal with your application and let you know whats next.
     </p>
 
 @endcomponent
@@ -37,7 +37,7 @@
         <div data-step-label="" class="step-title waves-effect waves-dark">PAR-Q</div>
       </li>
       <li class="step done">
-        <div class="step-title waves-effect waves-dark">Register / Payment</div>
+        <div class="step-title waves-effect waves-dark">Payment</div>
       </li>
       <li class="step active">
         <div class="step-title waves-effect waves-dark">Questionnaire</div>
@@ -48,7 +48,20 @@
 <div class="spacer"></div>
 <div class="row align-items-center justify-content-center">
    <form action="/api/questionnaire" method="post" id="questionnaire-form" class="col-12 col-lg-8">
-     @csrf
+    @csrf
+    <div class="padding z-depth-0 white">
+        <div class="row">
+          <div class="input-field col col-12 col-md-6">
+              <input value="{{ session('name') }}" id="full_name" name="full_name" type="text" required class="validate">
+              <label for="full_name">First Name</label>
+          </div>
+          <div class="input-field col col-12 col-md-6">
+              <input value="{{ session('email') }}" id="email" name="email" type="email" required class="validate">
+              <label for="email">Email</label>
+          </div>
+        </div>
+    </div>
+    <div class="spacer"></div>
     @foreach ($qroupedQs as $key => $questions)
       {{-- Questions section headers --}}
       <div class="col-8 col-md-4 leaner-green">
@@ -77,14 +90,20 @@
           </header>
       </div>
       {{-- Questions section content --}}
-      <div class="padding z-depth-1 white">
+      <div class="padding z-depth-0 white">
         @foreach ($questions as $key => $q)
           @switch($q->type)
               @case('textarea')
                   <div class="row">
                     <div class="input-field col">
-                      <textarea id="{{$q->name}}" name="{{$q->name}}" class="materialize-textarea"></textarea>
-                      <label for="{{$q->name}}">{{$q->title}}</label>
+                      <p><strong>{{$q->title}}</strong></p>
+                      @if ($q->name == 's4q5' || $q->name == 's4q6')
+                        <textarea id="{{$q->name}}" name="{{$q->name}}" class="materialize-textarea"></textarea>
+                        {{-- <label class="active" for="{{$q->name}}">{{$q->title}}</label> --}}
+                      @else
+                        <textarea required id="{{$q->name}}" name="{{$q->name}}" class="materialize-textarea"></textarea>
+                        {{-- <label class="active" for="{{$q->name}}">{{$q->title}}</label> --}}
+                      @endif
                     </div>
                   </div>
                   @break
@@ -96,12 +115,21 @@
                     </div>
                     <div class="{{$q->classes}} col-12">
                       @foreach ($q->options as $key => $option)
-                        <p>
-                          <label>
-                            <input class="with-gap" name="{{$q->name}}" value="{{$option->value}}" type="radio" />
-                            <span>{{$option->value}}</span>
-                          </label>
-                        </p>
+                        @if ($q->name == 's2q2' || $q->name == 's2q3' || $q->name == 's4q4')
+                          <p>
+                            <label>
+                              <input class="with-gap" name="{{$q->name}}" value="{{$option->value}}" type="radio" />
+                              <span>{{$option->value}}</span>
+                            </label>
+                          </p> 
+                        @else   
+                          <p>
+                            <label>
+                              <input required class="with-gap" name="{{$q->name}}" value="{{$option->value}}" type="radio" />
+                              <span>{{$option->value}}</span>
+                            </label>
+                          </p> 
+                        @endif
                       @endforeach
                       @if ($q->other)
                         <p>
@@ -140,7 +168,7 @@
                       <label class="leaner-green-text">{{$q->title}}</label>
                     </div>
                     @foreach ($q->options as $key => $option)
-                      <div class="col-6 col-md-3">
+                      <div class="col-12 col-md-3">
                         <input placeholder="{{$option->value}}" type="text" name="{{$option->name}}" class="">
                       </div>
                     @endforeach
@@ -154,7 +182,7 @@
 
         @endforeach
         @if ($loop->last)
-          <button class="btn waves-effect waves-dark leaner-green" type="submit" >Submit Questionnaire
+          <button class="btn waves-effect waves-dark leaner-green w-100" type="submit" >Submit Questionnaire
             <i class="material-icons right">send</i>
           </button>
         @endif
@@ -181,3 +209,4 @@
     </script>
   @endsection
 @endif
+

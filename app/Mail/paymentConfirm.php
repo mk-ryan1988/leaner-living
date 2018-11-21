@@ -37,6 +37,7 @@ class paymentConfirm extends Mailable
   {
 
     return $this->from('freshBot@leaner-living.com')
-    ->view('emails.payment_confirm');
+      ->subject('Payment Confirmation')
+      ->view('emails.payment_confirm');
   }
 }

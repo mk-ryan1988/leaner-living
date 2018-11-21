@@ -309,6 +309,24 @@ border-radius: .25rem;
 .minus-margin {
   margin-top: -80px;
 }
+.btn-outline {
+  border: 1px solid #0F7143;
+  color: #0F7143;
+  background-color: #fff;
+  border-radius: 2px;
+  display: inline-block;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 16px;
+  // text-transform: uppercase;
+  vertical-align: middle;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+}
+.radio-group {
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 
 
 //mobile styling
@@ -349,7 +367,31 @@ border-radius: .25rem;
         background-position: center;
       }
     }
-
+    .row {
+      margin: 0px!important;
+    }
+    #signUp-stepper {
+      margin-right: 0px!important;
+    }
+    #signUp-stepper .col-12 {
+      overflow: auto;
+      background: #fff;
+    }
+    #signUp-stepper .col-12 #horizontal {
+      flex-direction: row;
+    }
+    // .spacer {
+    //   height: 1rem!important;
+    // }
+    .padding {
+      padding: 16px !important;
+    }
+    .input-field {
+      margin-bottom: 2rem!important;
+    }
+    #modal1 {
+      max-width: 290px;
+    }
 }
 @media only screen and (min-width: 577px) {
     .gradient.header {

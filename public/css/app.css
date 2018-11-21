@@ -12134,6 +12134,27 @@ ul.indicators {
   margin-top: -80px;
 }
 
+.btn-outline {
+  border: 1px solid #0F7143;
+  color: #0F7143;
+  background-color: #fff;
+  border-radius: 2px;
+  display: inline-block;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 16px;
+  vertical-align: middle;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.radio-group {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
 @media only screen and (max-width: 576px) {
   .gradient.header {
     height: 150px;
@@ -12171,6 +12192,38 @@ ul.indicators {
     background-image: url("/images/home-bg-sml.jpg");
     background-size: cover;
     background-position: center;
+  }
+
+  .row {
+    margin: 0px !important;
+  }
+
+  #signUp-stepper {
+    margin-right: 0px !important;
+  }
+
+  #signUp-stepper .col-12 {
+    overflow: auto;
+    background: #fff;
+  }
+
+  #signUp-stepper .col-12 #horizontal {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+
+  .padding {
+    padding: 16px !important;
+  }
+
+  .input-field {
+    margin-bottom: 2rem !important;
+  }
+
+  #modal1 {
+    max-width: 290px;
   }
 }
 

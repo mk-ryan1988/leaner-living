@@ -51732,9 +51732,9 @@ var render = function() {
         "div",
         { staticClass: "col-12 col-md-8 col-lg-6 padding" },
         [
-          _c("div", { staticClass: "spacerX2" }),
+          _c("div", { staticClass: "spacerX2 hide-on-small-only" }),
           _vm._v(" "),
-          _c("h4", [
+          _c("h4", { staticClass: "flow-text" }, [
             _vm._v("Physical Activity Readiness Questionnaire (PAR-Q)")
           ]),
           _vm._v(" "),
@@ -51939,7 +51939,7 @@ var render = function() {
                             staticClass: "grey-text",
                             attrs: { value: "", disabled: "", selected: "" }
                           },
-                          [_vm._v("select")]
+                          [_vm._v("Select Gender")]
                         ),
                         _vm._v(" "),
                         _c("option", { attrs: { value: "male" } }, [
@@ -51955,11 +51955,7 @@ var render = function() {
                     _c("has-error", {
                       staticClass: "red-text text-lighten-1",
                       attrs: { form: _vm.form, field: "gender" }
-                    }),
-                    _vm._v(" "),
-                    _c("label", { attrs: { for: "gender" } }, [
-                      _vm._v("Gender")
-                    ])
+                    })
                   ],
                   1
                 )

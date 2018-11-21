@@ -87,6 +87,21 @@
                 border-bottom: 10px solid #0F7143;
                 border-left: 18px solid #0F7143;
         }
+        .button.button-blue {
+               font-family: Avenir, Helvetica, sans-serif;
+                box-sizing: border-box;
+                border-radius: 3px;
+                box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16);
+                color: #FFF;
+                display: inline-block;
+                text-decoration: none;
+                -webkit-text-size-adjust: none;
+                background-color: #586ADA;
+                border-top: 10px solid #586ADA;
+                border-right: 18px solid #586ADA;
+                border-bottom: 10px solid #586ADA;
+                border-left: 18px solid #586ADA;
+        }
     </style>
 
     <table class="wrapper" width="100%" cellpadding="0" cellspacing="0">
@@ -110,12 +125,12 @@
 
                                     <td class="content-cell">
                                         <h2>Hey,</h2>
-                                        <p>A new user has signed up to Fresh Start</p>
+                                        <p>You have recieved a new payment via Fresh Start</p>
                                         <p>{{$mailData['name']}},<br>
-                                           {{$mailData['email']}}
+                                           <a href="mailto:{{$mailData['email']}}">{{$mailData['email']}}</a>
                                         </p>
                                         <p>
-                                           <a target="_blank" class="button button-green" href="http://www.leaner-living.com/admin/overview/">View DashBoard</a>
+                                           <a target="_blank" class="button button-blue" href="https://dashboard.stripe.com">View Stripe dashboard</a>
                                         </p>
                                         <p>
                                            Regards,<br>

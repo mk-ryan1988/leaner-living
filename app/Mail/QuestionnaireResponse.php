@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class ParqResponse extends Mailable
+class QuestionnaireResponse extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -34,9 +34,9 @@ class ParqResponse extends Mailable
      * @return $this
      */
     public function build()
-    {   
+    {
         return $this->from($this->mailData['email'])
-            ->subject('PAR-Q Response')
-            ->view('emails.parqResponse');
+            ->subject('Questionnaire Response')
+            ->view('emails.questionnaireResponse');
     }
 }

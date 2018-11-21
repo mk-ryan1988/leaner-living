@@ -61,25 +61,18 @@ Route::prefix('fresh-start')->group(function () {
   // Route::get('/questionnaire', 'QuestionnaireController@index')->name('fresh-start.questionnaire');
 
   // 2.payment view
-  Route::get('/payment-alt', function () {
+  Route::get('/payment', function () {
       return view('fresh-start.payment-alt');
-  })->name('fresh-start.payment-alt');
+  })->name('fresh-start.payment');
 
-  // 3.next-steps view
-  Route::get('/next-steps', function () {
-      return view('fresh-start.next-steps');
-  })->name('fresh-start.next-steps');
-});
-
-// Route::prefix('fresh-start-alt/')->group(function () {
-//   Route::get('/about', 'FreshController@about')->name('fresh-start.about');
-//   Route::get('/par-q', function () {
-//       return view('fresh-start.par-q');
-//   })->name('fresh-start-alt.par-q');
-//   Route::get('/questionnaire', 'QuestionnaireController@index')->name('fresh-start.questionnaire');
-// });
-
-
+  // 4.questionaire view
+  Route::get('/questionnaire', 'QuestionnaireController@index')->name('fresh-start.questionnaire');
+  
+  // 5.next-steps view
+  Route::get('/welcome', function () {
+      return view('fresh-start.welcome');
+    })->name('fresh-start.welcome');
+  });
 
 Route::prefix('errors')->group(function () {
   Route::get('/403', function () {
@@ -109,8 +102,6 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::post('/contact-form', 'ContactController@postForm');
-
-
 
 // Api routes
 Route::prefix('api')->group(function () {

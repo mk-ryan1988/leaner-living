@@ -2,14 +2,26 @@
 
 
 @section('content')
-<div class="gradient header" style="height: 400px;">
+<div class="gradient header hide-on-small-only" style="height: 400px;">
   <div class="container h-100">
     <div class="row h-100 align-items-center">
       <div class="col-12 col-lg-4">
         <img src="{{url('/images/fresh-start-whiteout.png')}}" alt="" style="height: 200px; width: auto;">
       </div>
-      <div class="col-12 col-lg-8">
+      <div class="col-12 col-lg-8 hide-on-small-only">
         <h4 class="white-text">The Fresh Start is the 12 week solution to your weight loss goals...</h4>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="gradient header hide-on-med-and-up" style="height: 160px;">
+  <div class="container h-100">
+    <div class="row h-100 align-items-start">
+      <div class="col-12 col-lg-4">
+        <img src="{{url('/images/fresh-start-whiteout.png')}}" alt="" style="height: 64px; width: auto; margin-top: 16px;">
+      </div>
+      <div class="col-12 col-lg-8 ">
+        <h4 class="white-text flow-text">The Fresh Start is the 12 week solution to your weight loss goals...</h4>
       </div>
     </div>
   </div>
@@ -21,10 +33,10 @@
         <div data-step-label="" class="step-title waves-effect waves-dark">PAR-Q</div>
       </li>
       <li class="step secure active">
-        <div class="step-title waves-effect waves-dark">Register / Payment</div>
+        <div class="step-title waves-effect waves-dark">Payment</div>
       </li>
       <li class="step">
-        <div class="step-title waves-effect waves-dark">Next Steps</div>
+        <div class="step-title waves-effect waves-dark">Questionnaire</div>
       </li>
     </ul>
   </div>
@@ -75,26 +87,26 @@
         </div>
         {{-- <div class="spacer"></div> --}}
         <div class="row">
-          <div class="col col-6 input-field input cell">
+          <div class="col-12 col col-sm-6 input-field input cell">
             <div id="example2-card-number" class="input empty"></div>
             <label for="example2-card-number" data-tid="elements_examples.form.card_number_label">Card number</label>
             <div class="baseline"></div>
           </div>
   
-          <div class="col col-6 input-field input cell">
+          <div class="col-12 col col-sm-6 input-field input cell">
             <div id="example2-card-expiry" class="input empty"></div>
             <label for="example2-card-expiry" data-tid="elements_examples.form.card_expiry_label">Expiration</label>
             <div class="baseline"></div>
           </div>
         </div>
-        <div class="spacer"></div>
+        <div class="spacer hide-on-small-only"></div>
         <div class="row">
-          <div class="col col-6 input-field input cell">
+          <div class="col-12 col col-sm-6 input-field input cell">
             <div id="example2-card-cvc" class="input empty"></div>
             <label for="example2-card-cvc" data-tid="elements_examples.form.card_cvc_label">CVC</label>
             <div class="baseline"></div>
           </div>
-          <div class="col col-6 input-field input cell">
+          <div class="col-12 col col-sm-6 input-field input cell">
             <div id="example2-postalCode" class="input empty"></div>
             <label for="example2-postalCode" data-tid="elements_examples.form.postalCode_label">Postal Code</label>
             <div class="baseline"></div>
@@ -259,7 +271,6 @@
       hiddenName.setAttribute('name', 'cardName');
       hiddenName.setAttribute('value', cardName.value);
       form.appendChild(hiddenName);
-
 
 
       // Submit the form

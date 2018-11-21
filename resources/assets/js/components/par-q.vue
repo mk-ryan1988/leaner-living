@@ -19,8 +19,8 @@
 
     <div class="row align-items-start justify-content-center">
       <div class="col-12 col-md-8 col-lg-6 padding">
-        <div class="spacerX2"></div>
-        <h4>Physical Activity Readiness Questionnaire (PAR-Q)</h4>
+        <div class="spacerX2 hide-on-small-only"></div>
+        <h4 class="flow-text">Physical Activity Readiness Questionnaire (PAR-Q)</h4>
         <p>
           PAR-Q is designed to help you help yourself.  Many health benefits are associated with regular exercise, and the completion of PAR-Q is a sensible first step to take if you are planning to increase the amount of physical activity in your life.
         </p>
@@ -53,12 +53,12 @@
             </div>
             <div class="input-field col col-12 col-md-6">
               <select v-model="form.gender">
-                <option class="grey-text" value="" disabled selected>select</option>
+                <option class="grey-text" value="" disabled selected>Select Gender</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
               </select>
               <has-error class="red-text text-lighten-1" :form="form" field="gender"></has-error>
-              <label for="gender">Gender</label>
+              <!-- <label for="gender">Gender</label> -->
             </div>
           </div>
           <div class="spacer"></div>
