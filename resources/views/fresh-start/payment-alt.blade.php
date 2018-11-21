@@ -149,7 +149,7 @@
   <script type="text/javascript">
   (function() {
     'use strict';
-    var stripe = Stripe('pk_test_xFpY5YYGorzCtPmELc8Sop3X');
+    var stripe = Stripe('pk_live_MqnQMb2pl1kLATEq1jo3wHKV');
 
     var elements = stripe.elements({
       // Stripe's examples are localized to specific languages, but if
@@ -284,20 +284,41 @@
     $('#example2-email-address').attr('value', localStorage.getItem('email'));
   });
 
-  //check if code is good and applys it to price button
+  //check if code is good and applies it to price button
   $("#apply-code").click(function(){
+
+    function isValid() {
+      var code = 'BF50';
+      var price = {{ filterPrice($freshSettings->freshStart_price) }};
+      var enteredCode =  $('#example2-promo-code').val().toUpperCase();
+    
+      // check if code is vailid
+      if (code === enteredCode ) {
+        // Get today's date
+        const today = new Date();
+        //inDate variable
+        var inDate = null;
+
+        // Compare today with October 3rd
+        if (today.getDate() > 25  || today.getMonth() === 11 || today.getYear() === 2018) {
+          return inDate = false;
+        } else {
+          return inDate = true;
+        }
+      } else {
+        return false;
+      }
+    }
     $(this).addClass( "disabled" );
-    var code = 'BF50'
-    var price = {{ filterPrice($freshSettings->freshStart_price) }};
-    var enteredCode =  $('#example2-promo-code').val().toUpperCase();
-    if (enteredCode === code) {
+   
+    if (isValid()) {
+      var price = {{ filterPrice($freshSettings->freshStart_price) }}
       newPrice = ((price/100) * 50).toFixed(2)
       $("#submit-btn").html('Pay £' + newPrice);
       $('#example2-promo-code').attr('readonly', true);
       $("#promo-helper").html('Promo code applied');
       // $(this).removeClass("disabled");
     } else {
-      alert(false);
       $("#promo-helper").html('Invalid promo code');
       $(this).removeClass( "disabled" );
     }

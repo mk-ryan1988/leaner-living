@@ -9,21 +9,33 @@ use App\ParQ;
 use App\User;
 use App\Payment;
 use App\Setting;
+use Carbon\Carbon;
 use App\Mail\paymentConfirm;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
 
 class stripeController extends Controller
-{
+{   
+    public function isValid($enteredCode)
+    {
+      $date = '25-11-2018';
+      $promoCode = 'BF50';
+      if (Carbon::parse($date)->gt(Carbon::now())) {
+        if (strtoupper($enteredCode) === $promoCode) {
+          return true;
+        } else {
+          return false;
+        }
+      } else {
+        return false;
+      }
+    }
     public function index(Request $request) {
 
       $settings = Setting::first();
-      $secretKey = Crypt::decryptString($settings->stripe_key_secret);
-
-      $promoCode = 'BF50';
       $standardPrice = $settings->freshStart_price;
 
-      if (strtoupper($request->promoCode) === $promoCode) {
+      if ($this->isValid($request->promoCode)) {
         $price = (50 / 100) * $standardPrice;
       } else {
         $price = $standardPrice;
@@ -42,7 +54,7 @@ class stripeController extends Controller
         // Set your secret key: remember to change this to your live secret key in production
         // See your keys here: https://dashboard.stripe.com/account/apikeys
         // \Stripe\Stripe::setApiKey($secretKey);
-        \Stripe\Stripe::setApiKey('sk_test_ky4FSsiuwLe1d77E1L0pj9mg');
+        \Stripe\Stripe::setApiKey('sk_live_WKH98Mr0tuo6QMUlPVkpfNkj');
 
         // Token is created using Checkout or Elements!
         // Get the payment token ID submitted by the form:
