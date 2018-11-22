@@ -36,7 +36,7 @@ class ParqResponse extends Mailable
     public function build()
     {   
         return $this->from('freshBot@leaner-living.com')
-            ->subject('PAR-Q Response: ' + $this->mailData['email'])
+            ->subject('PAR-Q Response: ' . $this->mailData['email'])
             ->view('emails.parqResponse');
     }
 }
