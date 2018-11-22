@@ -127,7 +127,8 @@
                                         <h2>Hey,</h2>
                                         <p>You have recieved a new payment via Fresh Start</p>
                                         <p>{{$mailData['name']}},<br>
-                                           <a href="mailto:{{$mailData['email']}}">{{$mailData['email']}}</a>
+                                           <a href="mailto:{{$mailData['email']}}">{{$mailData['email']}}</a><br>
+                                           Payment ID: {{$mailData['id']}} 
                                         </p>
                                         <p>
                                            <a target="_blank" class="button button-blue" href="https://dashboard.stripe.com">View Stripe dashboard</a>

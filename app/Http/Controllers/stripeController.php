@@ -40,7 +40,6 @@ class stripeController extends Controller
       } else {
         $price = $standardPrice;
       }
-  
       // $order = new Payment;
       // $order->user_id = Auth::id();
       // $order->product = 'fresh-start';
@@ -55,6 +54,7 @@ class stripeController extends Controller
         // See your keys here: https://dashboard.stripe.com/account/apikeys
         // \Stripe\Stripe::setApiKey($secretKey);
         \Stripe\Stripe::setApiKey('sk_live_WKH98Mr0tuo6QMUlPVkpfNkj');
+        // \Stripe\Stripe::setApiKey('sk_test_ky4FSsiuwLe1d77E1L0pj9mg');
 
         // Token is created using Checkout or Elements!
         // Get the payment token ID submitted by the form:
@@ -65,8 +65,8 @@ class stripeController extends Controller
             'currency' => 'GBP',
             'description' => 'Fresh Start: '.  $request->cardName,
             'source' => $token,
-            'receipt_email' => $request->email
-            // 'metadata' => array("order_id" => $result)
+            'receipt_email' => $request->email,
+            'metadata' => array("name" => $request->cardName)
         ]);
 
         // $paid = User::find(Auth::id());
@@ -81,12 +81,13 @@ class stripeController extends Controller
         // }
 
         $mailData = array(
+                     'id'       => $charge->id,
                      'name'     => $request->cardName,
                      'email'    => $request->email
                     );
         Mail::to('freshstart@leaner-living.com')->send(new paymentConfirm($mailData));
-
-        return redirect()->route('fresh-start.questionnaire')->with('success', 'Payment Accepted!')->with('name', $request->cardName)->with('email', $request->email);
+return 'done';
+        // return redirect()->route('fresh-start.questionnaire')->with('success', 'Payment Accepted!')->with('name', $request->cardName)->with('email', $request->email);
 
         // return redirect()->route('fresh-start.next-steps')->with('email',  $request->email);
 

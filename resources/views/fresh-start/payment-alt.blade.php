@@ -150,6 +150,7 @@
   (function() {
     'use strict';
     var stripe = Stripe('pk_live_MqnQMb2pl1kLATEq1jo3wHKV');
+    // var stripe = Stripe('pk_test_xFpY5YYGorzCtPmELc8Sop3X');
 
     var elements = stripe.elements({
       // Stripe's examples are localized to specific languages, but if
@@ -242,9 +243,11 @@
 
     // Handle form submission.
     var form = document.getElementById('stripe-form');
+   
     form.addEventListener('submit', function(event) {
       event.preventDefault();
-      stripe.createToken(cardNumber).then(function(result) {
+      var card_name = document.getElementById('example2-card-name').value;
+      stripe.createToken(cardNumber, {name: card_name}).then(function(result) {
         if (result.error) {
           // Inform the user if there was an error.
           var errorElement = document.getElementById('card-errors');
