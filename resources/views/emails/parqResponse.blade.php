@@ -144,11 +144,11 @@
                                         <h2>Hey,</h2>
                                         <p>Someone has completed a PAR-Questionnaire</p>
                                         <hr>
-                                        <p><strong>Name:</strong> {{$mailData['name']}}</p>
+                                        {{-- <p><strong>Name:</strong> {{$mailData['name']}}</p>
                                         <p><strong>Email:</strong> <a href="mailto:{{$mailData['email']}}">{{$mailData['email']}}</a></p>
-                                        <p><strong>D.O.B:</strong> {{$mailData['dob']}} &nbsp; <strong>Gender:</strong> {{$mailData['gender']}}</p>
+                                        <p><strong>D.O.B:</strong> {{$mailData['dob']}} &nbsp; <strong>Gender:</strong> {{$mailData['gender']}}</p> --}}
                                         
-                                        <table class="answers">
+                                        {{-- <table class="answers">
                                             <thead>
                                                 <th>Question</th>
                                                 <th class="last">Yes / No</th>
@@ -285,7 +285,7 @@
                                                 <td>{{$mailData['q10More']}}</td>
                                             </tr>
 
-                                        </table>
+                                        </table> --}}
 
                                         <p>
                                            Regards,<br>
