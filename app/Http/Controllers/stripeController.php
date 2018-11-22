@@ -86,8 +86,8 @@ class stripeController extends Controller
                      'email'    => $request->email
                     );
         Mail::to('freshstart@leaner-living.com')->send(new paymentConfirm($mailData));
-return 'done';
-        // return redirect()->route('fresh-start.questionnaire')->with('success', 'Payment Accepted!')->with('name', $request->cardName)->with('email', $request->email);
+
+        return redirect()->route('fresh-start.questionnaire')->with('success', 'Payment Accepted!')->with('name', $request->cardName)->with('email', $request->email);
 
         // return redirect()->route('fresh-start.next-steps')->with('email',  $request->email);
 
