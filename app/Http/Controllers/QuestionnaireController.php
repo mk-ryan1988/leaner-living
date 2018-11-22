@@ -50,7 +50,7 @@ class QuestionnaireController extends Controller
       // $completed->questionnaire = 1;
       // $completed->save();
 
-      Mail::to('freshstart@leaner-living.com')->send(new QuestionnaireResponse($mailData));
+      Mail::to('admin@leaner-living.com')->send(new QuestionnaireResponse($mailData));
 // dd('done');
       return redirect(route('fresh-start.welcome'));
     }
