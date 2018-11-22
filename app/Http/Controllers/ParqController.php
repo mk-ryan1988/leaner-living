@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use Mail;
 use App\ParQ;
-use App\Mail\parqFailed;
-use App\Mail\parqResponse;
+use App\Mail\ParqResponse;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreParqForm;
 
@@ -59,7 +58,7 @@ class ParqController extends Controller
     //   return ['redirect' => route('fresh-start.fresh-register')];
     // }
 
-    Mail::to('admin@leaner-living.com')->send(new parqResponse($request->all()));
+    Mail::to('admin@leaner-living.com')->send(new ParqResponse($request->all()));
 
     return ['redirect' => route('fresh-start.payment')];
   }
