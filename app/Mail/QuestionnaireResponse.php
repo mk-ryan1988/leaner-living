@@ -35,8 +35,8 @@ class QuestionnaireResponse extends Mailable
      */
     public function build()
     {
-        return $this->from($this->mailData['email'])
-            ->subject('Questionnaire Response')
+        return $this->from('freshBot@leaner-living.com')
+            ->subject('Questionnaire Response: ' + $this->mailData['email'])
             ->view('emails.questionnaireResponse');
     }
 }
