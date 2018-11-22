@@ -42,7 +42,7 @@
               <div class="card-content">
                 <span class="card-title" style="font-size: 20px;">Welcome to Fresh Start</span>
                 <p>
-                We welcome you to join our facebook group and sign up to our dedicated mobile app so you'll have all our support at your fingertips.
+                We welcome you to join our facebook group and sign up to our dedicated web app so you'll have all our support at your fingertips. Our Web App works like a native app without the need to download from an app store just sign up and add to your homescreen!
               </p>
               </div>
             </div>
