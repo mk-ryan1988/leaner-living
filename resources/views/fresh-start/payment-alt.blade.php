@@ -291,7 +291,7 @@
   $("#apply-code").click(function(){
 
     function isValid() {
-      var code = 'BF50';
+      var code = 'BP100';
       var price = {{ filterPrice($freshSettings->freshStart_price) }};
       var enteredCode =  $('#example2-promo-code').val().toUpperCase();
     
@@ -316,7 +316,7 @@
    
     if (isValid()) {
       var price = {{ filterPrice($freshSettings->freshStart_price) }}
-      newPrice = ((price/100) * 50).toFixed(2)
+      newPrice = 100
       $("#submit-btn").html('Pay £' + newPrice);
       $('#example2-promo-code').attr('readonly', true);
       $("#promo-helper").html('Promo code applied');
