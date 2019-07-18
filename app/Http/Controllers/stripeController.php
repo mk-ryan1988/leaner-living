@@ -18,8 +18,8 @@ class stripeController extends Controller
 {   
     public function isValid($enteredCode)
     {
-      $date = ’19-05-2019’;
-      $promoCode = ‘BP100’;
+      $date = Carbon::createFromFormat('d/m/Y', '19/05/2019');
+      $promoCode = "BP100";
       if (Carbon::parse($date)->gt(Carbon::now())) {
         if (strtoupper($enteredCode) === $promoCode) {
           return true;
@@ -36,7 +36,7 @@ class stripeController extends Controller
       $standardPrice = $settings->freshStart_price;
 
       if ($this->isValid($request->promoCode)) {
-        $price = 10000
+        $price = 10000;
       } else {
         $price = $standardPrice;
       }

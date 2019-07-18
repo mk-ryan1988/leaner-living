@@ -231,7 +231,7 @@
                     </div>
                   </div>
                   <p>
-                    you can also reach us via <a href="mailto::fresh-start@leaner-Living.com">fresh-start@leaner-Living.com</a><br>
+                    you can also reach us via <a href="mailto::freshstart@leaner-Living.com">freshstart@leaner-Living.com</a><br>
                     or alternately feel free to message us on <a href="https://www.facebook.com/LeanerLiving2016/" target="_blank" class="">our Facebook page</a>
                   </p>
               </div>
